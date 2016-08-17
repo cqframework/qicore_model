@@ -79,6 +79,8 @@ import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.dstu3.model.*;
+import org.hl7.fhir.dstu3.model.*;
+import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.dstu3.model.HumanName;
 import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.dstu3.model.*;
@@ -297,6 +299,10 @@ public interface Iqicorepatient
          Patient.PatientCommunicationComponent param);
 
    public Patient.PatientCommunicationComponent addCommunication();
+
+   public DateTimeType getBirthTime();
+
+   public Iqicorepatient setBirthTime(DateTimeType param);
 
    public List<HumanName> getName();
 

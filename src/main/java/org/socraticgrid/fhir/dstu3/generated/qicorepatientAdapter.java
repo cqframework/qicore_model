@@ -537,6 +537,35 @@ public class qicorepatientAdapter implements Iqicorepatient
       return adaptedClass.addCommunication();
    }
 
+   public DateTimeType getBirthTime()
+   {
+      List<org.hl7.fhir.dstu3.model.Extension> extensions = adaptedClass
+            .getExtensionsByUrl("http://hl7.org/fhir/StructureDefinition/patient-birthTime");
+      if (extensions == null || extensions.size() <= 0)
+      {
+         return null;
+      }
+      else if (extensions.size() == 1)
+      {
+         return (org.hl7.fhir.dstu3.model.DateTimeType) extensions.get(0)
+               .getValue();
+      }
+      else
+      {
+         throw new RuntimeException(
+               "More than one extension exists for birthTime");
+      }
+   }
+
+   public Iqicorepatient setBirthTime(DateTimeType param)
+   {
+      adaptedClass
+            .addExtension()
+            .setUrl("http://hl7.org/fhir/StructureDefinition/patient-birthTime")
+            .setValue(param);
+      return this;
+   }
+
    public List<HumanName> getName()
    {
       try
