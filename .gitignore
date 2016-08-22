@@ -24,3 +24,4 @@ target/*
 
 # Project-specific
 /bin/
+/src/main/stage
