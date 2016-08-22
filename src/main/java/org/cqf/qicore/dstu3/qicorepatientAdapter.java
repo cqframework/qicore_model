@@ -8,7 +8,6 @@ import org.hl7.fhir.dstu3.model.ContactPoint;
 import org.hl7.fhir.dstu3.model.Address;
 import org.hl7.fhir.dstu3.model.Type;
 import org.hl7.fhir.dstu3.model.BooleanType;
-import org.hl7.fhir.dstu3.model.Enumerations;
 import org.hl7.fhir.dstu3.model.DateTimeType;
 import org.hl7.fhir.dstu3.model.Reference;
 import org.hl7.fhir.dstu3.model.Organization;
@@ -25,6 +24,12 @@ import org.hl7.fhir.dstu3.model.IdType;
 import org.hl7.fhir.dstu3.model.Resource;
 import org.hl7.fhir.dstu3.model.IntegerType;
 import org.hl7.fhir.dstu3.model.*;
+import ca.uhn.fhir.model.api.ExtensionDt;
+import org.cqf.qicore.dstu3.Iqicorepatient;
+import org.cqf.qicore.dstu3.qicoreorganizationAdapter;
+import org.cqf.qicore.dstu3.qicorepatientAddressAdapter;
+import org.cqf.qicore.dstu3.qicorepatientNationalityAdapter;
+import org.cqf.qicore.dstu3.qicorepatientTelecomAdapter;
 
 public class qicorepatientAdapter implements Iqicorepatient
 {
@@ -97,7 +102,7 @@ public class qicorepatientAdapter implements Iqicorepatient
       }
    }
 
-   public qicorepatientAdapter setContact(List<Patient.ContactComponent> param)
+   public org.cqf.qicore.dstu3.qicorepatientAdapter setContact(List<Patient.ContactComponent> param)
    {
       adaptedClass.setContact(param);
       return this;
@@ -108,7 +113,7 @@ public class qicorepatientAdapter implements Iqicorepatient
       return adaptedClass.hasContact();
    }
 
-   public qicorepatientAdapter addContact(Patient.ContactComponent param)
+   public org.cqf.qicore.dstu3.qicorepatientAdapter addContact(Patient.ContactComponent param)
    {
       adaptedClass.addContact(param);
       return this;
@@ -160,33 +165,33 @@ public class qicorepatientAdapter implements Iqicorepatient
    }
 
    public Iqicorepatient setGenderElement(
-         Enumeration<Enumerations.AdministrativeGender> param)
+           Enumeration<Enumerations.AdministrativeGender> param)
    {
       adaptedClass.setGenderElement(param);
       return this;
    }
 
    public List<qicorepatientTelecomAdapter> getWrappedTelecom() {
-		List<qicorepatientTelecomAdapter> wrappedItems = new java.util.ArrayList<>();
-		List<org.hl7.fhir.dstu3.model.ContactPoint> items = adaptedClass
-				.getTelecom();
-		for (org.hl7.fhir.dstu3.model.ContactPoint item : items) {
-			wrappedItems
-					.add(new qicorepatientTelecomAdapter(
-							item));
-		}
-		return wrappedItems;
-	}
+      List<org.cqf.qicore.dstu3.qicorepatientTelecomAdapter> wrappedItems = new java.util.ArrayList<>();
+      List<org.hl7.fhir.dstu3.model.ContactPoint> items = adaptedClass
+              .getTelecom();
+      for (org.hl7.fhir.dstu3.model.ContactPoint item : items) {
+         wrappedItems
+                 .add(new org.cqf.qicore.dstu3.qicorepatientTelecomAdapter(
+                         item));
+      }
+      return wrappedItems;
+   }
 
    public Iqicorepatient setWrappedTelecom(
-			List<qicorepatientTelecomAdapter> param) {
-		List<org.hl7.fhir.dstu3.model.ContactPoint> items = new java.util.ArrayList<>();
-		for (qicorepatientTelecomAdapter item : param) {
-			items.add(item.getAdaptee());
-		}
-		adaptedClass.getTelecom().addAll(items);
-		return this;
-	}
+           List<qicorepatientTelecomAdapter> param) {
+      List<org.hl7.fhir.dstu3.model.ContactPoint> items = new java.util.ArrayList<>();
+      for (org.cqf.qicore.dstu3.qicorepatientTelecomAdapter item : param) {
+         items.add(item.getAdaptee());
+      }
+      adaptedClass.getTelecom().addAll(items);
+      return this;
+   }
 
    public Iqicorepatient addWrappedTelecom(qicorepatientTelecomAdapter param)
    {
@@ -201,8 +206,8 @@ public class qicorepatientAdapter implements Iqicorepatient
    {
       org.hl7.fhir.dstu3.model.ContactPoint item = new org.hl7.fhir.dstu3.model.ContactPoint();
       adaptedClass.addTelecom(item);
-      return new qicorepatientTelecomAdapter(
-            item);
+      return new org.cqf.qicore.dstu3.qicorepatientTelecomAdapter(
+              item);
    }
 
    public List<ContactPoint> getTelecom()
@@ -240,26 +245,26 @@ public class qicorepatientAdapter implements Iqicorepatient
    }
 
    public List<qicorepatientAddressAdapter> getWrappedAddress() {
-		List<qicorepatientAddressAdapter> wrappedItems = new java.util.ArrayList<>();
-		List<org.hl7.fhir.dstu3.model.Address> items = adaptedClass
-				.getAddress();
-		for (org.hl7.fhir.dstu3.model.Address item : items) {
-			wrappedItems
-					.add(new qicorepatientAddressAdapter(
-							item));
-		}
-		return wrappedItems;
-	}
+      List<org.cqf.qicore.dstu3.qicorepatientAddressAdapter> wrappedItems = new java.util.ArrayList<>();
+      List<org.hl7.fhir.dstu3.model.Address> items = adaptedClass
+              .getAddress();
+      for (org.hl7.fhir.dstu3.model.Address item : items) {
+         wrappedItems
+                 .add(new org.cqf.qicore.dstu3.qicorepatientAddressAdapter(
+                         item));
+      }
+      return wrappedItems;
+   }
 
    public Iqicorepatient setWrappedAddress(
-			List<qicorepatientAddressAdapter> param) {
-		List<org.hl7.fhir.dstu3.model.Address> items = new java.util.ArrayList<>();
-		for (qicorepatientAddressAdapter item : param) {
-			items.add(item.getAdaptee());
-		}
-		adaptedClass.getAddress().addAll(items);
-		return this;
-	}
+           List<qicorepatientAddressAdapter> param) {
+      List<org.hl7.fhir.dstu3.model.Address> items = new java.util.ArrayList<>();
+      for (org.cqf.qicore.dstu3.qicorepatientAddressAdapter item : param) {
+         items.add(item.getAdaptee());
+      }
+      adaptedClass.getAddress().addAll(items);
+      return this;
+   }
 
    public Iqicorepatient addWrappedAddress(qicorepatientAddressAdapter param)
    {
@@ -274,8 +279,8 @@ public class qicorepatientAdapter implements Iqicorepatient
    {
       org.hl7.fhir.dstu3.model.Address item = new org.hl7.fhir.dstu3.model.Address();
       adaptedClass.addAddress(item);
-      return new qicorepatientAddressAdapter(
-            item);
+      return new org.cqf.qicore.dstu3.qicorepatientAddressAdapter(
+              item);
    }
 
    public List<Address> getAddress()
@@ -312,28 +317,28 @@ public class qicorepatientAdapter implements Iqicorepatient
       return adaptedClass.addAddress();
    }
 
-   public List<qicorepatientClinicalTrialAdapter> getClinicalTrial() {
-		List<org.hl7.fhir.dstu3.model.Extension> extensions = adaptedClass
-				.getExtensionsByUrl("http://hl7.org/fhir/StructureDefinition/patient-clinicalTrial");
-		List<qicorepatientClinicalTrialAdapter> returnList = new java.util.ArrayList<>();
-		for (org.hl7.fhir.dstu3.model.Extension extension : extensions) {
-			qicorepatientClinicalTrialAdapter udt = new qicorepatientClinicalTrialAdapter();
-			udt.setRootObjectExtension(extension);
-			returnList.add(udt);
-		}
-		return returnList;
-	}
+   public List<org.cqf.qicore.dstu3.qicorepatientClinicalTrialAdapter> getClinicalTrial() {
+      List<org.hl7.fhir.dstu3.model.Extension> extensions = adaptedClass
+              .getExtensionsByUrl("http://hl7.org/fhir/StructureDefinition/patient-clinicalTrial");
+      List<org.cqf.qicore.dstu3.qicorepatientClinicalTrialAdapter> returnList = new java.util.ArrayList<>();
+      for (org.hl7.fhir.dstu3.model.Extension extension : extensions) {
+         org.cqf.qicore.dstu3.qicorepatientClinicalTrialAdapter udt = new org.cqf.qicore.dstu3.qicorepatientClinicalTrialAdapter();
+         udt.setRootObjectExtension(extension);
+         returnList.add(udt);
+      }
+      return returnList;
+   }
 
    public Iqicorepatient setClinicalTrial(
-         List<qicorepatientClinicalTrialAdapter> param)
+           List<org.cqf.qicore.dstu3.qicorepatientClinicalTrialAdapter> param)
    {
       if (param != null && param.size() > 0)
       {
-         for (int index = 0; index < ((List<qicorepatientClinicalTrialAdapter>) param)
-               .size(); index++)
+         for (int index = 0; index < ((List<org.cqf.qicore.dstu3.qicorepatientClinicalTrialAdapter>) param)
+                 .size(); index++)
          {
             adaptedClass.addExtension(param.get(index)
-                  .getRootObjectExtension());
+                    .getRootObjectExtension());
          }
       }
       return this;
@@ -417,7 +422,7 @@ public class qicorepatientAdapter implements Iqicorepatient
    public Organization getManagingOrganizationTarget()
    {
       return (org.hl7.fhir.dstu3.model.Organization) adaptedClass
-            .getManagingOrganizationTarget();
+              .getManagingOrganizationTarget();
    }
 
    public Iqicorepatient setManagingOrganizationTarget(Organization param)
@@ -426,14 +431,14 @@ public class qicorepatientAdapter implements Iqicorepatient
       return this;
    }
 
-   public qicoreorganizationAdapter getManagingOrganizationAdapterTarget()
+   public org.cqf.qicore.dstu3.qicoreorganizationAdapter getManagingOrganizationAdapterTarget()
    {
       if (adaptedClass.getManagingOrganization().getResource() instanceof org.hl7.fhir.dstu3.model.Organization)
       {
-         qicoreorganizationAdapter profiledType = new qicoreorganizationAdapter();
+         org.cqf.qicore.dstu3.qicoreorganizationAdapter profiledType = new org.cqf.qicore.dstu3.qicoreorganizationAdapter();
          profiledType
-               .setAdaptee((org.hl7.fhir.dstu3.model.Organization) adaptedClass
-                     .getManagingOrganization().getResource());
+                 .setAdaptee((org.hl7.fhir.dstu3.model.Organization) adaptedClass
+                         .getManagingOrganization().getResource());
          return profiledType;
       }
       else
@@ -443,7 +448,7 @@ public class qicorepatientAdapter implements Iqicorepatient
    }
 
    public Iqicorepatient setManagingOrganizationAdapterTarget(
-         qicoreorganizationAdapter param)
+           qicoreorganizationAdapter param)
    {
       adaptedClass.setManagingOrganizationTarget(param.getAdaptee());
       return this;
@@ -507,8 +512,8 @@ public class qicorepatientAdapter implements Iqicorepatient
       }
    }
 
-   public qicorepatientAdapter setCommunication(
-         List<Patient.PatientCommunicationComponent> param)
+   public org.cqf.qicore.dstu3.qicorepatientAdapter setCommunication(
+           List<Patient.PatientCommunicationComponent> param)
    {
       adaptedClass.setCommunication(param);
       return this;
@@ -519,8 +524,8 @@ public class qicorepatientAdapter implements Iqicorepatient
       return adaptedClass.hasCommunication();
    }
 
-   public qicorepatientAdapter addCommunication(
-         Patient.PatientCommunicationComponent param)
+   public org.cqf.qicore.dstu3.qicorepatientAdapter addCommunication(
+           Patient.PatientCommunicationComponent param)
    {
       adaptedClass.addCommunication(param);
       return this;
@@ -534,7 +539,7 @@ public class qicorepatientAdapter implements Iqicorepatient
    public DateTimeType getBirthTime()
    {
       List<org.hl7.fhir.dstu3.model.Extension> extensions = adaptedClass
-            .getExtensionsByUrl("http://hl7.org/fhir/StructureDefinition/patient-birthTime");
+              .getExtensionsByUrl("http://hl7.org/fhir/StructureDefinition/patient-birthTime");
       if (extensions == null || extensions.size() <= 0)
       {
          return null;
@@ -542,21 +547,21 @@ public class qicorepatientAdapter implements Iqicorepatient
       else if (extensions.size() == 1)
       {
          return (org.hl7.fhir.dstu3.model.DateTimeType) extensions.get(0)
-               .getValue();
+                 .getValue();
       }
       else
       {
          throw new RuntimeException(
-               "More than one extension exists for birthTime");
+                 "More than one extension exists for birthTime");
       }
    }
 
    public Iqicorepatient setBirthTime(DateTimeType param)
    {
       adaptedClass
-            .addExtension()
-            .setUrl("http://hl7.org/fhir/StructureDefinition/patient-birthTime")
-            .setValue(param);
+              .addExtension()
+              .setUrl("http://hl7.org/fhir/StructureDefinition/patient-birthTime")
+              .setValue(param);
       return this;
    }
 
@@ -594,17 +599,6 @@ public class qicorepatientAdapter implements Iqicorepatient
       return adaptedClass.addName();
    }
 
-   public List<CodeableConcept> getDisability() {
-		List<org.hl7.fhir.dstu3.model.Extension> extensions = adaptedClass
-				.getExtensionsByUrl("http://hl7.org/fhir/StructureDefinition/patient-disability");
-		List<org.hl7.fhir.dstu3.model.CodeableConcept> returnList = new java.util.ArrayList<>();
-		for (org.hl7.fhir.dstu3.model.Extension extension : extensions) {
-			returnList.add((org.hl7.fhir.dstu3.model.CodeableConcept) extension
-					.getValue());
-		}
-		return returnList;
-	}
-
    public Iqicorepatient setDisability(List<CodeableConcept> param)
    {
       if (param != null && param.size() > 0)
@@ -612,36 +606,36 @@ public class qicorepatientAdapter implements Iqicorepatient
          for (int index = 0; index < param.size(); index++)
          {
             adaptedClass
-                  .addExtension()
-                  .setUrl("http://hl7.org/fhir/StructureDefinition/patient-disability")
-                  .setValue(param.get(index));
+                    .addExtension()
+                    .setUrl("http://hl7.org/fhir/StructureDefinition/patient-disability")
+                    .setValue(param.get(index));
          }
       }
       return this;
    }
 
-   public List<qicorepatientNationalityAdapter> getNationality() {
-		List<org.hl7.fhir.dstu3.model.Extension> extensions = adaptedClass
-				.getExtensionsByUrl("http://hl7.org/fhir/StructureDefinition/patient-nationality");
-		List<qicorepatientNationalityAdapter> returnList = new java.util.ArrayList<>();
-		for (org.hl7.fhir.dstu3.model.Extension extension : extensions) {
-			qicorepatientNationalityAdapter udt = new qicorepatientNationalityAdapter();
-			udt.setRootObjectExtension(extension);
-			returnList.add(udt);
-		}
-		return returnList;
-	}
+   public List<org.cqf.qicore.dstu3.qicorepatientNationalityAdapter> getNationality() {
+      List<org.hl7.fhir.dstu3.model.Extension> extensions = adaptedClass
+              .getExtensionsByUrl("http://hl7.org/fhir/StructureDefinition/patient-nationality");
+      List<org.cqf.qicore.dstu3.qicorepatientNationalityAdapter> returnList = new java.util.ArrayList<>();
+      for (org.hl7.fhir.dstu3.model.Extension extension : extensions) {
+         org.cqf.qicore.dstu3.qicorepatientNationalityAdapter udt = new org.cqf.qicore.dstu3.qicorepatientNationalityAdapter();
+         udt.setRootObjectExtension(extension);
+         returnList.add(udt);
+      }
+      return returnList;
+   }
 
    public Iqicorepatient setNationality(
-         List<qicorepatientNationalityAdapter> param)
+           List<qicorepatientNationalityAdapter> param)
    {
       if (param != null && param.size() > 0)
       {
-         for (int index = 0; index < ((List<qicorepatientNationalityAdapter>) param)
-               .size(); index++)
+         for (int index = 0; index < ((List<org.cqf.qicore.dstu3.qicorepatientNationalityAdapter>) param)
+                 .size(); index++)
          {
             adaptedClass.addExtension(param.get(index)
-                  .getRootObjectExtension());
+                    .getRootObjectExtension());
          }
       }
       return this;
@@ -659,7 +653,7 @@ public class qicorepatientAdapter implements Iqicorepatient
       }
    }
 
-   public qicorepatientAdapter setLink(List<Patient.PatientLinkComponent> param)
+   public org.cqf.qicore.dstu3.qicorepatientAdapter setLink(List<Patient.PatientLinkComponent> param)
    {
       adaptedClass.setLink(param);
       return this;
@@ -670,7 +664,7 @@ public class qicorepatientAdapter implements Iqicorepatient
       return adaptedClass.hasLink();
    }
 
-   public qicorepatientAdapter addLink(Patient.PatientLinkComponent param)
+   public org.cqf.qicore.dstu3.qicorepatientAdapter addLink(Patient.PatientLinkComponent param)
    {
       adaptedClass.addLink(param);
       return this;
@@ -707,7 +701,7 @@ public class qicorepatientAdapter implements Iqicorepatient
    public BooleanType getCadavericDonor()
    {
       List<org.hl7.fhir.dstu3.model.Extension> extensions = adaptedClass
-            .getExtensionsByUrl("http://hl7.org/fhir/StructureDefinition/patient-cadavericDonor");
+              .getExtensionsByUrl("http://hl7.org/fhir/StructureDefinition/patient-cadavericDonor");
       if (extensions == null || extensions.size() <= 0)
       {
          return null;
@@ -715,21 +709,21 @@ public class qicorepatientAdapter implements Iqicorepatient
       else if (extensions.size() == 1)
       {
          return (org.hl7.fhir.dstu3.model.BooleanType) extensions.get(0)
-               .getValue();
+                 .getValue();
       }
       else
       {
          throw new RuntimeException(
-               "More than one extension exists for cadavericDonor");
+                 "More than one extension exists for cadavericDonor");
       }
    }
 
    public Iqicorepatient setCadavericDonor(BooleanType param)
    {
       adaptedClass
-            .addExtension()
-            .setUrl("http://hl7.org/fhir/StructureDefinition/patient-cadavericDonor")
-            .setValue(param);
+              .addExtension()
+              .setUrl("http://hl7.org/fhir/StructureDefinition/patient-cadavericDonor")
+              .setValue(param);
       return this;
    }
 
@@ -782,7 +776,7 @@ public class qicorepatientAdapter implements Iqicorepatient
    public CodeableConcept getRace()
    {
       List<org.hl7.fhir.dstu3.model.Extension> extensions = adaptedClass
-            .getExtensionsByUrl("http://hl7.org/fhir/StructureDefinition/us-core-race");
+              .getExtensionsByUrl("http://hl7.org/fhir/StructureDefinition/us-core-race");
       if (extensions == null || extensions.size() <= 0)
       {
          return null;
@@ -790,20 +784,20 @@ public class qicorepatientAdapter implements Iqicorepatient
       else if (extensions.size() == 1)
       {
          return (org.hl7.fhir.dstu3.model.CodeableConcept) extensions.get(0)
-               .getValue();
+                 .getValue();
       }
       else
       {
          throw new RuntimeException(
-               "More than one extension exists for race");
+                 "More than one extension exists for race");
       }
    }
 
    public Iqicorepatient setRace(CodeableConcept param)
    {
       adaptedClass.addExtension()
-            .setUrl("http://hl7.org/fhir/StructureDefinition/us-core-race")
-            .setValue(param);
+              .setUrl("http://hl7.org/fhir/StructureDefinition/us-core-race")
+              .setValue(param);
       return this;
    }
 
@@ -982,7 +976,7 @@ public class qicorepatientAdapter implements Iqicorepatient
    public Address getBirthPlace()
    {
       List<org.hl7.fhir.dstu3.model.Extension> extensions = adaptedClass
-            .getExtensionsByUrl("http://hl7.org/fhir/StructureDefinition/birthPlace");
+              .getExtensionsByUrl("http://hl7.org/fhir/StructureDefinition/birthPlace");
       if (extensions == null || extensions.size() <= 0)
       {
          return null;
@@ -990,20 +984,20 @@ public class qicorepatientAdapter implements Iqicorepatient
       else if (extensions.size() == 1)
       {
          return (org.hl7.fhir.dstu3.model.Address) extensions.get(0)
-               .getValue();
+                 .getValue();
       }
       else
       {
          throw new RuntimeException(
-               "More than one extension exists for birthPlace");
+                 "More than one extension exists for birthPlace");
       }
    }
 
    public Iqicorepatient setBirthPlace(Address param)
    {
       adaptedClass.addExtension()
-            .setUrl("http://hl7.org/fhir/StructureDefinition/birthPlace")
-            .setValue(param);
+              .setUrl("http://hl7.org/fhir/StructureDefinition/birthPlace")
+              .setValue(param);
       return this;
    }
 
@@ -1039,7 +1033,7 @@ public class qicorepatientAdapter implements Iqicorepatient
    public CodeableConcept getMilitaryService()
    {
       List<org.hl7.fhir.dstu3.model.Extension> extensions = adaptedClass
-            .getExtensionsByUrl("http://hl7.org/fhir/qicore/StructureDefinition/patient-militaryService");
+              .getExtensionsByUrl("http://hl7.org/fhir/qicore/StructureDefinition/patient-militaryService");
       if (extensions == null || extensions.size() <= 0)
       {
          return null;
@@ -1047,21 +1041,21 @@ public class qicorepatientAdapter implements Iqicorepatient
       else if (extensions.size() == 1)
       {
          return (org.hl7.fhir.dstu3.model.CodeableConcept) extensions.get(0)
-               .getValue();
+                 .getValue();
       }
       else
       {
          throw new RuntimeException(
-               "More than one extension exists for militaryService");
+                 "More than one extension exists for militaryService");
       }
    }
 
    public Iqicorepatient setMilitaryService(CodeableConcept param)
    {
       adaptedClass
-            .addExtension()
-            .setUrl("http://hl7.org/fhir/qicore/StructureDefinition/patient-militaryService")
-            .setValue(param);
+              .addExtension()
+              .setUrl("http://hl7.org/fhir/qicore/StructureDefinition/patient-militaryService")
+              .setValue(param);
       return this;
    }
 
@@ -1092,7 +1086,7 @@ public class qicorepatientAdapter implements Iqicorepatient
       catch (Exception e)
       {
          throw new RuntimeException(
-               "Error getting MultipleBirthBooleanType", e);
+                 "Error getting MultipleBirthBooleanType", e);
       }
    }
 
@@ -1110,7 +1104,7 @@ public class qicorepatientAdapter implements Iqicorepatient
       catch (Exception e)
       {
          throw new RuntimeException(
-               "Error getting MultipleBirthIntegerType", e);
+                 "Error getting MultipleBirthIntegerType", e);
       }
    }
 
@@ -1125,34 +1119,41 @@ public class qicorepatientAdapter implements Iqicorepatient
    }
 
    public List<Organization> getGeneralPractitionerOrganizationTarget() {
-		List<org.hl7.fhir.dstu3.model.Organization> items = new java.util.ArrayList<>();
-		List<org.hl7.fhir.dstu3.model.Resource> resources = adaptedClass
-				.getGeneralPractitionerTarget();
-		for (org.hl7.fhir.dstu3.model.Resource resource : resources) {
-			items.add((org.hl7.fhir.dstu3.model.Organization) resource);
-		}
-		return items;
-	}
+      List<org.hl7.fhir.dstu3.model.Organization> items = new java.util.ArrayList<>();
+      List<org.hl7.fhir.dstu3.model.Resource> resources = adaptedClass
+              .getGeneralPractitionerTarget();
+      for (org.hl7.fhir.dstu3.model.Resource resource : resources) {
+         items.add((org.hl7.fhir.dstu3.model.Organization) resource);
+      }
+      return items;
+   }
 
    public List<Reference> getGeneralPractitioner()
    {
-      return adaptedClass.getGeneralPractitioner();
+      try
+      {
+         return adaptedClass.getGeneralPractitioner();
+      }
+      catch (Exception e)
+      {
+         throw new RuntimeException("Error getting GeneralPractitioner", e);
+      }
    }
 
    public List<Practitioner> getGeneralPractitionerPractitionerTarget() {
-		List<org.hl7.fhir.dstu3.model.Practitioner> items = new java.util.ArrayList<>();
-		List<org.hl7.fhir.dstu3.model.Resource> resources = adaptedClass
-				.getGeneralPractitionerTarget();
-		for (org.hl7.fhir.dstu3.model.Resource resource : resources) {
-			items.add((org.hl7.fhir.dstu3.model.Practitioner) resource);
-		}
-		return items;
-	}
+      List<org.hl7.fhir.dstu3.model.Practitioner> items = new java.util.ArrayList<>();
+      List<org.hl7.fhir.dstu3.model.Resource> resources = adaptedClass
+              .getGeneralPractitionerTarget();
+      for (org.hl7.fhir.dstu3.model.Resource resource : resources) {
+         items.add((org.hl7.fhir.dstu3.model.Practitioner) resource);
+      }
+      return items;
+   }
 
    public CodeableConcept getEthnicity()
    {
       List<org.hl7.fhir.dstu3.model.Extension> extensions = adaptedClass
-            .getExtensionsByUrl("http://hl7.org/fhir/StructureDefinition/us-core-ethnicity");
+              .getExtensionsByUrl("http://hl7.org/fhir/StructureDefinition/us-core-ethnicity");
       if (extensions == null || extensions.size() <= 0)
       {
          return null;
@@ -1160,28 +1161,28 @@ public class qicorepatientAdapter implements Iqicorepatient
       else if (extensions.size() == 1)
       {
          return (org.hl7.fhir.dstu3.model.CodeableConcept) extensions.get(0)
-               .getValue();
+                 .getValue();
       }
       else
       {
          throw new RuntimeException(
-               "More than one extension exists for ethnicity");
+                 "More than one extension exists for ethnicity");
       }
    }
 
    public Iqicorepatient setEthnicity(CodeableConcept param)
    {
       adaptedClass
-            .addExtension()
-            .setUrl("http://hl7.org/fhir/StructureDefinition/us-core-ethnicity")
-            .setValue(param);
+              .addExtension()
+              .setUrl("http://hl7.org/fhir/StructureDefinition/us-core-ethnicity")
+              .setValue(param);
       return this;
    }
 
    public CodeableConcept getReligion()
    {
       List<org.hl7.fhir.dstu3.model.Extension> extensions = adaptedClass
-            .getExtensionsByUrl("http://hl7.org/fhir/StructureDefinition/us-core-religion");
+              .getExtensionsByUrl("http://hl7.org/fhir/StructureDefinition/us-core-religion");
       if (extensions == null || extensions.size() <= 0)
       {
          return null;
@@ -1189,21 +1190,21 @@ public class qicorepatientAdapter implements Iqicorepatient
       else if (extensions.size() == 1)
       {
          return (org.hl7.fhir.dstu3.model.CodeableConcept) extensions.get(0)
-               .getValue();
+                 .getValue();
       }
       else
       {
          throw new RuntimeException(
-               "More than one extension exists for religion");
+                 "More than one extension exists for religion");
       }
    }
 
    public Iqicorepatient setReligion(CodeableConcept param)
    {
       adaptedClass
-            .addExtension()
-            .setUrl("http://hl7.org/fhir/StructureDefinition/us-core-religion")
-            .setValue(param);
+              .addExtension()
+              .setUrl("http://hl7.org/fhir/StructureDefinition/us-core-religion")
+              .setValue(param);
       return this;
    }
 }

@@ -1,4 +1,4 @@
-package org.socraticgrid.fhir.dstu3.generated;
+package org.cqf.qicore.dstu3;
 
 import org.hl7.fhir.dstu3.model.Patient;
 import org.hl7.fhir.dstu3.model.*;
@@ -23,7 +23,7 @@ import org.hl7.fhir.dstu3.model.Enumeration;
 import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.dstu3.model.*;
-import org.socraticgrid.fhir.dstu3.generated.qicorepatientTelecomAdapter;
+import org.cqf.qicore.dstu3.qicorepatientTelecomAdapter;
 import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.dstu3.model.ContactPoint;
@@ -34,7 +34,7 @@ import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.dstu3.model.*;
-import org.socraticgrid.fhir.dstu3.generated.qicorepatientAddressAdapter;
+import org.cqf.qicore.dstu3.qicorepatientAddressAdapter;
 import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.dstu3.model.Address;
@@ -154,10 +154,10 @@ import org.hl7.fhir.dstu3.model.IntegerType;
 import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.dstu3.model.*;
-import org.socraticgrid.fhir.dstu3.generated.qicoreorganizationAdapter;
+import org.cqf.qicore.dstu3.qicoreorganizationAdapter;
 import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.dstu3.model.*;
-import org.socraticgrid.fhir.dstu3.generated.qicorepractitionerAdapter;
+import org.cqf.qicore.dstu3.qicorepractitionerAdapter;
 import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.dstu3.model.*;
@@ -311,8 +311,6 @@ public interface Iqicorepatient
    public Iqicorepatient addName(HumanName param);
 
    public HumanName addName();
-
-   public List<CodeableConcept> getDisability();
 
    public Iqicorepatient setDisability(List<CodeableConcept> param);
 
