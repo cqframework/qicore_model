@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>cqframework.info</groupId>
 	<artifactId>qicore</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>QI Core Interfaces and Adapters</name>
 	<description>Java logical interfaces and corresponding HAPI FHIR implementation adapters for the FHIR QI Core profile set</description>
 	<dependencies>
