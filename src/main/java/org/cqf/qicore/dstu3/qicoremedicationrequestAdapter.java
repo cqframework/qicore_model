@@ -1,6 +1,6 @@
 package org.cqf.qicore.dstu3;
 
-import org.hl7.fhir.dstu3.model.MedicationOrder;
+import org.hl7.fhir.dstu3.model.MedicationRequest;
 
 import java.util.List;
 import org.hl7.fhir.dstu3.model.Annotation;
@@ -10,7 +10,11 @@ import org.hl7.fhir.dstu3.model.Reference;
 import org.hl7.fhir.dstu3.model.Encounter;
 import org.hl7.fhir.dstu3.model.Resource;
 import org.hl7.fhir.dstu3.model.CodeableConcept;
+import org.hl7.fhir.dstu3.model.DosageInstruction;
 import org.hl7.fhir.dstu3.model.UriType;
+import org.hl7.fhir.dstu3.model.MedicationRequest.MedicationRequestDispenseRequestComponent;
+import org.hl7.fhir.dstu3.model.MedicationRequest.MedicationRequestStatus;
+import org.hl7.fhir.dstu3.model.MedicationRequest.MedicationRequestSubstitutionComponent;
 import org.hl7.fhir.dstu3.model.Enumeration;
 import org.hl7.fhir.dstu3.model.Practitioner;
 import org.hl7.fhir.dstu3.model.Patient;
@@ -19,55 +23,55 @@ import org.hl7.fhir.dstu3.model.Medication;
 import org.hl7.fhir.dstu3.model.IdType;
 import org.hl7.fhir.dstu3.model.Identifier;
 
-public class qicoremedicationorderAdapter implements Iqicoremedicationorder
+public class qicoremedicationrequestAdapter implements Iqicoremedicationrequest
 {
 
-   private MedicationOrder adaptedClass;
+   private MedicationRequest adaptedClass;
 
-   public qicoremedicationorderAdapter()
+   public qicoremedicationrequestAdapter()
    {
-      this.adaptedClass = new org.hl7.fhir.dstu3.model.MedicationOrder();
+      this.adaptedClass = new org.hl7.fhir.dstu3.model.MedicationRequest();
    }
 
-   public qicoremedicationorderAdapter(MedicationOrder adaptee)
+   public qicoremedicationrequestAdapter(MedicationRequest adaptee)
    {
       this.adaptedClass = adaptee;
    }
 
-   public MedicationOrder getAdaptee()
+   public MedicationRequest getAdaptee()
    {
       return adaptedClass;
    }
 
-   public void setAdaptee(MedicationOrder param)
+   public void setAdaptee(MedicationRequest param)
    {
       this.adaptedClass = param;
    }
 
-   public List<qicoremedicationorderDosageInstructionAdapter> getWrappedDosageInstruction() {
-		List<qicoremedicationorderDosageInstructionAdapter> wrappedItems = new java.util.ArrayList<>();
-		List<org.hl7.fhir.dstu3.model.MedicationOrder.MedicationOrderDosageInstructionComponent> items = adaptedClass
+   public List<qicoremedicationrequestDosageInstructionAdapter> getWrappedDosageInstruction() {
+		List<qicoremedicationrequestDosageInstructionAdapter> wrappedItems = new java.util.ArrayList<>();
+		List<org.hl7.fhir.dstu3.model.DosageInstruction> items = adaptedClass
 				.getDosageInstruction();
-		for (org.hl7.fhir.dstu3.model.MedicationOrder.MedicationOrderDosageInstructionComponent item : items) {
+		for (org.hl7.fhir.dstu3.model.DosageInstruction item : items) {
 			wrappedItems
-					.add(new qicoremedicationorderDosageInstructionAdapter(
+					.add(new qicoremedicationrequestDosageInstructionAdapter(
 							item));
 		}
 		return wrappedItems;
 	}
 
-   public Iqicoremedicationorder setWrappedDosageInstruction(
-			List<qicoremedicationorderDosageInstructionAdapter> param) {
-		List<org.hl7.fhir.dstu3.model.MedicationOrder.MedicationOrderDosageInstructionComponent> items = new java.util.ArrayList<>();
-		for (qicoremedicationorderDosageInstructionAdapter item : param) {
+   public Iqicoremedicationrequest setWrappedDosageInstruction(
+			List<qicoremedicationrequestDosageInstructionAdapter> param) {
+		List<org.hl7.fhir.dstu3.model.DosageInstruction> items = new java.util.ArrayList<>();
+		for (qicoremedicationrequestDosageInstructionAdapter item : param) {
 			items.add(item.getAdaptee());
 		}
 		adaptedClass.getDosageInstruction().addAll(items);
 		return this;
 	}
 
-   public Iqicoremedicationorder addWrappedDosageInstruction(
-         qicoremedicationorderDosageInstructionAdapter param)
+   public Iqicoremedicationrequest addWrappedDosageInstruction(
+         qicoremedicationrequestDosageInstructionAdapter param)
    {
       if (param != null)
       {
@@ -76,15 +80,15 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       return this;
    }
 
-   public qicoremedicationorderDosageInstructionAdapter addWrappedDosageInstruction()
+   public qicoremedicationrequestDosageInstructionAdapter addWrappedDosageInstruction()
    {
-      org.hl7.fhir.dstu3.model.MedicationOrder.MedicationOrderDosageInstructionComponent item = new org.hl7.fhir.dstu3.model.MedicationOrder.MedicationOrderDosageInstructionComponent();
+      org.hl7.fhir.dstu3.model.DosageInstruction item = new org.hl7.fhir.dstu3.model.DosageInstruction();
       adaptedClass.addDosageInstruction(item);
-      return new qicoremedicationorderDosageInstructionAdapter(
+      return new qicoremedicationrequestDosageInstructionAdapter(
             item);
    }
 
-   public List<MedicationOrder.MedicationOrderDosageInstructionComponent> getDosageInstruction()
+   public List<DosageInstruction> getDosageInstruction()
    {
       try
       {
@@ -96,8 +100,8 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       }
    }
 
-   public Iqicoremedicationorder setDosageInstruction(
-         List<MedicationOrder.MedicationOrderDosageInstructionComponent> param)
+   public Iqicoremedicationrequest setDosageInstruction(
+         List<DosageInstruction> param)
    {
       adaptedClass.setDosageInstruction(param);
       return this;
@@ -108,14 +112,14 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       return adaptedClass.hasDosageInstruction();
    }
 
-   public Iqicoremedicationorder addDosageInstruction(
-         MedicationOrder.MedicationOrderDosageInstructionComponent param)
+   public Iqicoremedicationrequest addDosageInstruction(
+         DosageInstruction param)
    {
       adaptedClass.addDosageInstruction(param);
       return this;
    }
 
-   public MedicationOrder.MedicationOrderDosageInstructionComponent addDosageInstruction()
+   public DosageInstruction addDosageInstruction()
    {
       return adaptedClass.addDosageInstruction();
    }
@@ -132,7 +136,7 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       }
    }
 
-   public Iqicoremedicationorder setNote(List<Annotation> param)
+   public Iqicoremedicationrequest setNote(List<Annotation> param)
    {
       adaptedClass.setNote(param);
       return this;
@@ -143,7 +147,7 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       return adaptedClass.hasNote();
    }
 
-   public Iqicoremedicationorder addNote(Annotation param)
+   public Iqicoremedicationrequest addNote(Annotation param)
    {
       adaptedClass.addNote(param);
       return this;
@@ -154,7 +158,7 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       return adaptedClass.addNote();
    }
 
-   public MedicationOrder.MedicationOrderSubstitutionComponent getSubstitution()
+   public MedicationRequest.MedicationRequestSubstitutionComponent getSubstitution()
    {
       try
       {
@@ -166,8 +170,8 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       }
    }
 
-   public qicoremedicationorderAdapter setSubstitution(
-         MedicationOrder.MedicationOrderSubstitutionComponent param)
+   public qicoremedicationrequestAdapter setSubstitution(
+		   MedicationRequestSubstitutionComponent param)
    {
       adaptedClass.setSubstitution(param);
       return this;
@@ -178,7 +182,7 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       return adaptedClass.hasSubstitution();
    }
 
-   public List<MedicationOrder.MedicationOrderEventHistoryComponent> getEventHistory()
+   public List<Reference> getEventHistory()
    {
       try
       {
@@ -190,8 +194,8 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       }
    }
 
-   public qicoremedicationorderAdapter setEventHistory(
-         List<MedicationOrder.MedicationOrderEventHistoryComponent> param)
+   public qicoremedicationrequestAdapter setEventHistory(
+         List<Reference> param)
    {
       adaptedClass.setEventHistory(param);
       return this;
@@ -202,14 +206,14 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       return adaptedClass.hasEventHistory();
    }
 
-   public qicoremedicationorderAdapter addEventHistory(
-         MedicationOrder.MedicationOrderEventHistoryComponent param)
+   public qicoremedicationrequestAdapter addEventHistory(
+         Reference param)
    {
       adaptedClass.addEventHistory(param);
       return this;
    }
 
-   public MedicationOrder.MedicationOrderEventHistoryComponent addEventHistory()
+   public Reference addEventHistory()
    {
       return adaptedClass.addEventHistory();
    }
@@ -248,28 +252,28 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       }
    }
 
-   public Iqicoremedicationorder setLanguageElement(CodeType param)
+   public Iqicoremedicationrequest setLanguageElement(CodeType param)
    {
       adaptedClass.setLanguageElement(param);
       return this;
    }
 
-   public Iqicoremedicationorder setLanguage(String param)
+   public Iqicoremedicationrequest setLanguage(String param)
    {
       adaptedClass.setLanguage(param);
       return this;
    }
 
-   public boolean hasEncounter()
+   public boolean hasContext()
    {
-      return adaptedClass.hasEncounter();
+      return adaptedClass.hasContext();
    }
 
-   public Reference getEncounter()
+   public Reference getContext()
    {
       try
       {
-         return adaptedClass.getEncounter();
+         return adaptedClass.getContext();
       }
       catch (Exception e)
       {
@@ -277,32 +281,32 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       }
    }
 
-   public Iqicoremedicationorder setEncounter(Reference param)
+   public Iqicoremedicationrequest setContext(Reference param)
    {
-      adaptedClass.setEncounter(param);
+      adaptedClass.setContext(param);
       return this;
    }
 
-   public Encounter getEncounterTarget()
+   public Resource getContextTarget()
    {
       return (org.hl7.fhir.dstu3.model.Encounter) adaptedClass
-            .getEncounterTarget();
+            .getContextTarget();
    }
 
-   public Iqicoremedicationorder setEncounterTarget(Encounter param)
+   public Iqicoremedicationrequest setContextTarget(Encounter param)
    {
-      adaptedClass.setEncounterTarget(param);
+      adaptedClass.setContextTarget(param);
       return this;
    }
 
    public qicoreencounterAdapter getEncounterAdapterTarget()
    {
-      if (adaptedClass.getEncounter().getResource() instanceof org.hl7.fhir.dstu3.model.Encounter)
+      if (adaptedClass.getContext().getResource() instanceof org.hl7.fhir.dstu3.model.Encounter)
       {
          qicoreencounterAdapter profiledType = new qicoreencounterAdapter();
          profiledType
                .setAdaptee((org.hl7.fhir.dstu3.model.Encounter) adaptedClass
-                     .getEncounter().getResource());
+                     .getContext().getResource());
          return profiledType;
       }
       else
@@ -311,14 +315,14 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       }
    }
 
-   public Iqicoremedicationorder setEncounterAdapterTarget(
+   public Iqicoremedicationrequest setEncounterAdapterTarget(
          qicoreencounterAdapter param)
    {
-      adaptedClass.setEncounterTarget(param.getAdaptee());
+      adaptedClass.setContextTarget(param.getAdaptee());
       return this;
    }
 
-   public MedicationOrder.MedicationOrderDispenseRequestComponent getDispenseRequest()
+   public MedicationRequestDispenseRequestComponent getDispenseRequest()
    {
       try
       {
@@ -330,8 +334,8 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       }
    }
 
-   public qicoremedicationorderAdapter setDispenseRequest(
-         MedicationOrder.MedicationOrderDispenseRequestComponent param)
+   public qicoremedicationrequestAdapter setDispenseRequest(
+		   MedicationRequestDispenseRequestComponent param)
    {
       adaptedClass.setDispenseRequest(param);
       return this;
@@ -354,7 +358,7 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       }
    }
 
-   public Iqicoremedicationorder setContained(List<Resource> param)
+   public Iqicoremedicationrequest setContained(List<Resource> param)
    {
       adaptedClass.setContained(param);
       return this;
@@ -365,7 +369,7 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       return adaptedClass.hasContained();
    }
 
-   public Iqicoremedicationorder addContained(Resource param)
+   public Iqicoremedicationrequest addContained(Resource param)
    {
       adaptedClass.addContained(param);
       return this;
@@ -383,7 +387,7 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       }
    }
 
-   public Iqicoremedicationorder setReasonCode(List<CodeableConcept> param)
+   public Iqicoremedicationrequest setReasonCode(List<CodeableConcept> param)
    {
       adaptedClass.setReasonCode(param);
       return this;
@@ -394,7 +398,7 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       return adaptedClass.hasReasonCode();
    }
 
-   public Iqicoremedicationorder addReasonCode(CodeableConcept param)
+   public Iqicoremedicationrequest addReasonCode(CodeableConcept param)
    {
       adaptedClass.addReasonCode(param);
       return this;
@@ -439,13 +443,13 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       }
    }
 
-   public Iqicoremedicationorder setImplicitRulesElement(UriType param)
+   public Iqicoremedicationrequest setImplicitRulesElement(UriType param)
    {
       adaptedClass.setImplicitRulesElement(param);
       return this;
    }
 
-   public Iqicoremedicationorder setImplicitRules(String param)
+   public Iqicoremedicationrequest setImplicitRules(String param)
    {
       adaptedClass.setImplicitRules(param);
       return this;
@@ -461,7 +465,7 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       return adaptedClass.hasStatusElement();
    }
 
-   public MedicationOrder.MedicationOrderStatus getStatus()
+   public MedicationRequestStatus getStatus()
    {
       try
       {
@@ -473,7 +477,7 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       }
    }
 
-   public Enumeration<MedicationOrder.MedicationOrderStatus> getStatusElement()
+   public Enumeration<MedicationRequestStatus> getStatusElement()
    {
       try
       {
@@ -485,30 +489,30 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       }
    }
 
-   public Iqicoremedicationorder setStatus(
-         MedicationOrder.MedicationOrderStatus param)
+   public Iqicoremedicationrequest setStatus(
+		   MedicationRequestStatus param)
    {
       adaptedClass.setStatus(param);
       return this;
    }
 
-   public Iqicoremedicationorder setStatusElement(
-         Enumeration<MedicationOrder.MedicationOrderStatus> param)
+   public Iqicoremedicationrequest setStatusElement(
+		   Enumeration<MedicationRequestStatus> param)
    {
       adaptedClass.setStatusElement(param);
       return this;
    }
 
-   public boolean hasPrescriber()
+   public boolean hasRequester()
    {
-      return adaptedClass.hasPrescriber();
+      return adaptedClass.hasRequester();
    }
 
-   public Reference getPrescriber()
+   public Reference getRequester()
    {
       try
       {
-         return adaptedClass.getPrescriber();
+         return adaptedClass.getRequester();
       }
       catch (Exception e)
       {
@@ -516,32 +520,32 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       }
    }
 
-   public Iqicoremedicationorder setPrescriber(Reference param)
+   public Iqicoremedicationrequest setRequester(Reference param)
    {
-      adaptedClass.setPrescriber(param);
+      adaptedClass.setRequester(param);
       return this;
    }
 
-   public Practitioner getPrescriberTarget()
+   public Practitioner getRequesterTarget()
    {
       return (org.hl7.fhir.dstu3.model.Practitioner) adaptedClass
-            .getPrescriberTarget();
+            .getRequesterTarget();
    }
 
-   public Iqicoremedicationorder setPrescriberTarget(Practitioner param)
+   public Iqicoremedicationrequest setRequesterTarget(Practitioner param)
    {
-      adaptedClass.setPrescriberTarget(param);
+      adaptedClass.setRequesterTarget(param);
       return this;
    }
 
-   public qicorepractitionerAdapter getPrescriberAdapterTarget()
+   public qicorepractitionerAdapter getRequesterAdapterTarget()
    {
-      if (adaptedClass.getPrescriber().getResource() instanceof org.hl7.fhir.dstu3.model.Practitioner)
+      if (adaptedClass.getRequester().getResource() instanceof org.hl7.fhir.dstu3.model.Practitioner)
       {
          qicorepractitionerAdapter profiledType = new qicorepractitionerAdapter();
          profiledType
                .setAdaptee((org.hl7.fhir.dstu3.model.Practitioner) adaptedClass
-                     .getPrescriber().getResource());
+                     .getRequester().getResource());
          return profiledType;
       }
       else
@@ -550,10 +554,10 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       }
    }
 
-   public Iqicoremedicationorder setPrescriberAdapterTarget(
+   public Iqicoremedicationrequest setRequesterAdapterTarget(
          qicorepractitionerAdapter param)
    {
-      adaptedClass.setPrescriberTarget(param.getAdaptee());
+      adaptedClass.setRequesterTarget(param.getAdaptee());
       return this;
    }
 
@@ -584,7 +588,7 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       }
    }
 
-   public Iqicoremedicationorder setPatient(Reference param)
+   public Iqicoremedicationrequest setPatient(Reference param)
    {
       adaptedClass.setPatient(param);
       return this;
@@ -596,7 +600,7 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
             .getPatientTarget();
    }
 
-   public Iqicoremedicationorder setPatientTarget(Patient param)
+   public Iqicoremedicationrequest setPatientTarget(Patient param)
    {
       adaptedClass.setPatientTarget(param);
       return this;
@@ -618,7 +622,7 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       }
    }
 
-   public Iqicoremedicationorder setPatientAdapterTarget(
+   public Iqicoremedicationrequest setPatientAdapterTarget(
          qicorepatientAdapter param)
    {
       adaptedClass.setPatientTarget(param.getAdaptee());
@@ -630,12 +634,12 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       return adaptedClass.hasCategory();
    }
 
-   public boolean hasCategoryElement()
-   {
-      return adaptedClass.hasCategoryElement();
-   }
+//   public boolean hasCategoryElement()
+//   {
+//      return adaptedClass.hasCategoryElement();
+//   }
 
-   public MedicationOrder.MedicationOrderCategory getCategory()
+   public CodeableConcept getCategory()
    {
       try
       {
@@ -647,31 +651,31 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       }
    }
 
-   public Enumeration<MedicationOrder.MedicationOrderCategory> getCategoryElement()
-   {
-      try
-      {
-         return adaptedClass.getCategoryElement();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting CategoryElement", e);
-      }
-   }
+//   public Enumeration<MedicationOrder.MedicationOrderCategory> getCategoryElement()
+//   {
+//      try
+//      {
+//         return adaptedClass.getCategoryElement();
+//      }
+//      catch (Exception e)
+//      {
+//         throw new RuntimeException("Error getting CategoryElement", e);
+//      }
+//   }
 
-   public Iqicoremedicationorder setCategory(
-         MedicationOrder.MedicationOrderCategory param)
+   public Iqicoremedicationrequest setCategory(
+		   CodeableConcept param)
    {
       adaptedClass.setCategory(param);
       return this;
    }
 
-   public Iqicoremedicationorder setCategoryElement(
-         Enumeration<MedicationOrder.MedicationOrderCategory> param)
-   {
-      adaptedClass.setCategoryElement(param);
-      return this;
-   }
+//   public Iqicoremedicationrequest setCategoryElement(
+//         Enumeration<MedicationOrder.MedicationOrderCategory> param)
+//   {
+//      adaptedClass.setCategoryElement(param);
+//      return this;
+//   }
 
    public Type getMedication()
    {
@@ -685,7 +689,7 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       }
    }
 
-   public Iqicoremedicationorder setMedication(Type param)
+   public Iqicoremedicationrequest setMedication(Type param)
    {
       adaptedClass.setMedication(param);
       return this;
@@ -732,13 +736,13 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
             .getMedication()).getResource();
    }
 
-   public Iqicoremedicationorder setMedication(Reference param)
+   public Iqicoremedicationrequest setMedication(Reference param)
    {
       adaptedClass.setMedication(param);
       return this;
    }
 
-   public Iqicoremedicationorder setMedicationTarget(Medication param)
+   public Iqicoremedicationrequest setMedicationTarget(Medication param)
    {
       Reference reference = new Reference(param);
       adaptedClass.setMedication(reference);
@@ -779,13 +783,13 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       }
    }
 
-   public Iqicoremedicationorder setIdElement(IdType param)
+   public Iqicoremedicationrequest setIdElement(IdType param)
    {
       adaptedClass.setIdElement(param);
       return this;
    }
 
-   public Iqicoremedicationorder setId(String param)
+   public Iqicoremedicationrequest setId(String param)
    {
       adaptedClass.setId(param);
       return this;
@@ -808,20 +812,20 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       }
    }
 
-   public Iqicoremedicationorder setPriorPrescription(Reference param)
+   public Iqicoremedicationrequest setPriorPrescription(Reference param)
    {
       adaptedClass.setPriorPrescription(param);
       return this;
    }
 
-   public MedicationOrder getPriorPrescriptionTarget()
+   public MedicationRequest getPriorPrescriptionTarget()
    {
-      return (org.hl7.fhir.dstu3.model.MedicationOrder) adaptedClass
+      return (org.hl7.fhir.dstu3.model.MedicationRequest) adaptedClass
             .getPriorPrescriptionTarget();
    }
 
-   public Iqicoremedicationorder setPriorPrescriptionTarget(
-         MedicationOrder param)
+   public Iqicoremedicationrequest setPriorPrescriptionTarget(
+		   MedicationRequest param)
    {
       adaptedClass.setPriorPrescriptionTarget(param);
       return this;
@@ -839,7 +843,7 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       }
    }
 
-   public Iqicoremedicationorder setIdentifier(List<Identifier> param)
+   public Iqicoremedicationrequest setIdentifier(List<Identifier> param)
    {
       adaptedClass.setIdentifier(param);
       return this;
@@ -850,7 +854,7 @@ public class qicoremedicationorderAdapter implements Iqicoremedicationorder
       return adaptedClass.hasIdentifier();
    }
 
-   public Iqicoremedicationorder addIdentifier(Identifier param)
+   public Iqicoremedicationrequest addIdentifier(Identifier param)
    {
       adaptedClass.addIdentifier(param);
       return this;

@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.hl7.fhir.dstu3.model.Identifier;
 import org.hl7.fhir.dstu3.model.UriType;
+import org.hl7.fhir.dstu3.model.AllergyIntolerance.AllergyIntoleranceCategory;
 
 import java.lang.String;
 
@@ -128,17 +129,17 @@ public interface Iqicoreallergyintolerance
 
    public boolean hasCategory();
 
-   public boolean hasCategoryElement();
+//   public boolean hasCategoryElement();
 
-   public AllergyIntolerance.AllergyIntoleranceCategory getCategory();
+   public List<Enumeration<AllergyIntoleranceCategory>> getCategory();
 
-   public Enumeration<AllergyIntolerance.AllergyIntoleranceCategory> getCategoryElement();
+//   public Enumeration<AllergyIntolerance.AllergyIntoleranceCategory> getCategoryElement();
 
    public Iqicoreallergyintolerance setCategory(
-         AllergyIntolerance.AllergyIntoleranceCategory param);
+		   List<Enumeration<AllergyIntoleranceCategory>> param);
 
-   public Iqicoreallergyintolerance setCategoryElement(
-         Enumeration<AllergyIntolerance.AllergyIntoleranceCategory> param);
+   public Iqicoreallergyintolerance addCategoryElement(
+		   AllergyIntolerance. AllergyIntoleranceCategory param);
 
    public Age getResolutionAge();
 
@@ -148,19 +149,19 @@ public interface Iqicoreallergyintolerance
 
    public Iqicoreallergyintolerance setReasonRefuted(CodeableConcept param);
 
-   public boolean hasStatus();
+   public boolean hasClinicalStatus();
 
-   public boolean hasStatusElement();
+   public boolean hasClinicalStatusElement();
 
-   public AllergyIntolerance.AllergyIntoleranceStatus getStatus();
+   public AllergyIntolerance.AllergyIntoleranceClinicalStatus getClinicalStatus();
 
-   public Enumeration<AllergyIntolerance.AllergyIntoleranceStatus> getStatusElement();
+   public Enumeration<AllergyIntolerance.AllergyIntoleranceClinicalStatus> getClinicalStatusElement();
 
-   public Iqicoreallergyintolerance setStatus(
-         AllergyIntolerance.AllergyIntoleranceStatus param);
+   public Iqicoreallergyintolerance setClinicalStatus(
+         AllergyIntolerance.AllergyIntoleranceClinicalStatus param);
 
-   public Iqicoreallergyintolerance setStatusElement(
-         Enumeration<AllergyIntolerance.AllergyIntoleranceStatus> param);
+   public Iqicoreallergyintolerance setClinicalStatusElement(
+         Enumeration<AllergyIntolerance.AllergyIntoleranceClinicalStatus> param);
 
    public List<Annotation> getNote();
 

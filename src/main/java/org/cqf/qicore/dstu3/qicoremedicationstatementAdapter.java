@@ -1,6 +1,7 @@
 package org.cqf.qicore.dstu3;
 
 import org.hl7.fhir.dstu3.model.MedicationStatement;
+import org.hl7.fhir.dstu3.model.MedicationStatement.MedicationStatementNotTaken;
 import org.hl7.fhir.dstu3.model.UriType;
 import java.lang.String;
 import org.hl7.fhir.dstu3.model.Identifier;
@@ -17,6 +18,7 @@ import org.hl7.fhir.dstu3.model.RelatedPerson;
 import org.hl7.fhir.dstu3.model.CodeType;
 import org.hl7.fhir.dstu3.model.Type;
 import org.hl7.fhir.dstu3.model.DateTimeType;
+import org.hl7.fhir.dstu3.model.DosageInstruction;
 import org.hl7.fhir.dstu3.model.Period;
 import org.hl7.fhir.dstu3.model.Medication;
 import org.hl7.fhir.dstu3.model.BooleanType;
@@ -171,7 +173,7 @@ public class qicoremedicationstatementAdapter implements Iqicoremedicationstatem
       return adaptedClass.addNote();
    }
 
-   public List<MedicationStatement.MedicationStatementDosageComponent> getDosage()
+   public List<DosageInstruction> getDosage()
    {
       try
       {
@@ -184,7 +186,7 @@ public class qicoremedicationstatementAdapter implements Iqicoremedicationstatem
    }
 
    public qicoremedicationstatementAdapter setDosage(
-         List<MedicationStatement.MedicationStatementDosageComponent> param)
+         List<DosageInstruction> param)
    {
       adaptedClass.setDosage(param);
       return this;
@@ -196,13 +198,13 @@ public class qicoremedicationstatementAdapter implements Iqicoremedicationstatem
    }
 
    public qicoremedicationstatementAdapter addDosage(
-         MedicationStatement.MedicationStatementDosageComponent param)
+		   DosageInstruction param)
    {
       adaptedClass.addDosage(param);
       return this;
    }
 
-   public MedicationStatement.MedicationStatementDosageComponent addDosage()
+   public DosageInstruction addDosage()
    {
       return adaptedClass.addDosage();
    }
@@ -255,11 +257,11 @@ public class qicoremedicationstatementAdapter implements Iqicoremedicationstatem
       return this;
    }
 
-   public List<CodeableConcept> getReasonForUseCode()
+   public List<CodeableConcept> getReasonForUseCodeableConcept()
    {
       try
       {
-         return adaptedClass.getReasonForUseCode();
+         return adaptedClass.getReasonForUseCodeableConcept();
       }
       catch (Exception e)
       {
@@ -267,27 +269,27 @@ public class qicoremedicationstatementAdapter implements Iqicoremedicationstatem
       }
    }
 
-   public Iqicoremedicationstatement setReasonForUseCode(
+   public Iqicoremedicationstatement setReasonForUseCodeableConcept(
          List<CodeableConcept> param)
    {
-      adaptedClass.setReasonForUseCode(param);
+      adaptedClass.setReasonForUseCodeableConcept(param);
       return this;
    }
 
-   public boolean hasReasonForUseCode()
+   public boolean hasReasonForUseCodeableConcept()
    {
-      return adaptedClass.hasReasonForUseCode();
+      return adaptedClass.hasReasonForUseCodeableConcept();
    }
 
-   public Iqicoremedicationstatement addReasonForUseCode(CodeableConcept param)
+   public Iqicoremedicationstatement addReasonForUseCodeableConcept(CodeableConcept param)
    {
-      adaptedClass.addReasonForUseCode(param);
+      adaptedClass.addReasonForUseCodeableConcept(param);
       return this;
    }
 
-   public CodeableConcept addReasonForUseCode()
+   public CodeableConcept addReasonForUseCodeableConcept()
    {
-      return adaptedClass.addReasonForUseCode();
+      return adaptedClass.addReasonForUseCodeableConcept();
    }
 
    public boolean hasId()
@@ -561,16 +563,16 @@ public class qicoremedicationstatementAdapter implements Iqicoremedicationstatem
       return this;
    }
 
-   public boolean hasPatient()
+   public boolean hasSubject()
    {
-      return adaptedClass.hasPatient();
+      return adaptedClass.hasSubject();
    }
 
-   public Reference getPatient()
+   public Reference getSubject()
    {
       try
       {
-         return adaptedClass.getPatient();
+         return adaptedClass.getSubject();
       }
       catch (Exception e)
       {
@@ -578,32 +580,32 @@ public class qicoremedicationstatementAdapter implements Iqicoremedicationstatem
       }
    }
 
-   public Iqicoremedicationstatement setPatient(Reference param)
+   public Iqicoremedicationstatement setSubject(Reference param)
    {
-      adaptedClass.setPatient(param);
+      adaptedClass.setSubject(param);
       return this;
    }
 
-   public Patient getPatientTarget()
+   public Patient getSubjectTarget()
    {
       return (org.hl7.fhir.dstu3.model.Patient) adaptedClass
-            .getPatientTarget();
+            .getSubjectTarget();
    }
 
-   public Iqicoremedicationstatement setPatientTarget(Patient param)
+   public Iqicoremedicationstatement setSubjectTarget(Resource param)
    {
-      adaptedClass.setPatientTarget(param);
+      adaptedClass.setSubjectTarget(param);
       return this;
    }
 
-   public qicorepatientAdapter getPatientAdapterTarget()
+   public qicorepatientAdapter getSubjectAdapterTarget()
    {
-      if (adaptedClass.getPatient().getResource() instanceof org.hl7.fhir.dstu3.model.Patient)
+      if (adaptedClass.getSubject().getResource() instanceof org.hl7.fhir.dstu3.model.Patient)
       {
          qicorepatientAdapter profiledType = new qicorepatientAdapter();
          profiledType
                .setAdaptee((org.hl7.fhir.dstu3.model.Patient) adaptedClass
-                     .getPatient().getResource());
+                     .getSubject().getResource());
          return profiledType;
       }
       else
@@ -612,10 +614,10 @@ public class qicoremedicationstatementAdapter implements Iqicoremedicationstatem
       }
    }
 
-   public Iqicoremedicationstatement setPatientAdapterTarget(
+   public Iqicoremedicationstatement setSubjectAdapterTarget(
          qicorepatientAdapter param)
    {
-      adaptedClass.setPatientTarget(param.getAdaptee());
+      adaptedClass.setSubjectTarget(param.getAdaptee());
       return this;
    }
 
@@ -855,14 +857,14 @@ public class qicoremedicationstatementAdapter implements Iqicoremedicationstatem
       return this;
    }
 
-   public boolean hasSupportingInformation()
+   public boolean hasDerivedFrom()
    {
-      return adaptedClass.hasSupportingInformation();
+      return adaptedClass.hasDerivedFrom();
    }
 
-   public List<Reference> getSupportingInformation()
+   public List<Reference> getDerivedFrom()
    {
-      return adaptedClass.getSupportingInformation();
+      return adaptedClass.getDerivedFrom();
    }
 
    public boolean hasNotTaken()
@@ -875,7 +877,7 @@ public class qicoremedicationstatementAdapter implements Iqicoremedicationstatem
       return adaptedClass.hasNotTakenElement();
    }
 
-   public BooleanType getNotTakenElement()
+   public Enumeration<MedicationStatementNotTaken> getNotTakenElement()
    {
       try
       {
@@ -887,7 +889,7 @@ public class qicoremedicationstatementAdapter implements Iqicoremedicationstatem
       }
    }
 
-   public Boolean getNotTaken()
+   public MedicationStatementNotTaken getNotTaken()
    {
       try
       {
@@ -899,13 +901,13 @@ public class qicoremedicationstatementAdapter implements Iqicoremedicationstatem
       }
    }
 
-   public Iqicoremedicationstatement setNotTakenElement(BooleanType param)
+   public Iqicoremedicationstatement setNotTakenElement(Enumeration<MedicationStatementNotTaken>  param)
    {
       adaptedClass.setNotTakenElement(param);
       return this;
    }
 
-   public Iqicoremedicationstatement setNotTaken(Boolean param)
+   public Iqicoremedicationstatement setNotTaken(MedicationStatementNotTaken  param)
    {
       adaptedClass.setNotTaken(param);
       return this;

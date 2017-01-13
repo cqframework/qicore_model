@@ -353,21 +353,21 @@ public class qicoreimmunizationAdapter implements Iqicoreimmunization
       return adaptedClass.addReaction();
    }
 
-   public boolean hasReported()
+   public boolean hasPrimarySource()
    {
-      return adaptedClass.hasReported();
+      return adaptedClass.hasPrimarySource();
    }
 
-   public boolean hasReportedElement()
+   public boolean hasPrimarySourceElement()
    {
-      return adaptedClass.hasReportedElement();
+      return adaptedClass.hasPrimarySourceElement();
    }
 
-   public BooleanType getReportedElement()
+   public BooleanType getPrimarySourceElement()
    {
       try
       {
-         return adaptedClass.getReportedElement();
+         return adaptedClass.getPrimarySourceElement();
       }
       catch (Exception e)
       {
@@ -375,11 +375,11 @@ public class qicoreimmunizationAdapter implements Iqicoreimmunization
       }
    }
 
-   public Boolean getReported()
+   public Boolean getPrimarySource()
    {
       try
       {
-         return adaptedClass.getReported();
+         return adaptedClass.getPrimarySource();
       }
       catch (Exception e)
       {
@@ -387,15 +387,15 @@ public class qicoreimmunizationAdapter implements Iqicoreimmunization
       }
    }
 
-   public Iqicoreimmunization setReportedElement(BooleanType param)
+   public Iqicoreimmunization setPrimarySourceElement(BooleanType param)
    {
-      adaptedClass.setReportedElement(param);
+      adaptedClass.setPrimarySourceElement(param);
       return this;
    }
 
-   public Iqicoreimmunization setReported(Boolean param)
+   public Iqicoreimmunization setPrimarySource(Boolean param)
    {
-      adaptedClass.setReported(param);
+      adaptedClass.setPrimarySource(param);
       return this;
    }
 

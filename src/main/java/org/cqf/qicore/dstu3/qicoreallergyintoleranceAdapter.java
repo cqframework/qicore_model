@@ -4,6 +4,8 @@ import org.hl7.fhir.dstu3.model.AllergyIntolerance;
 import org.hl7.fhir.dstu3.model.Identifier;
 import java.util.List;
 import org.hl7.fhir.dstu3.model.UriType;
+import org.hl7.fhir.dstu3.model.AllergyIntolerance.AllergyIntoleranceCategory;
+
 import java.lang.String;
 import org.hl7.fhir.dstu3.model.Enumeration;
 import org.hl7.fhir.dstu3.model.Reference;
@@ -174,7 +176,7 @@ public class qicoreallergyintoleranceAdapter implements Iqicoreallergyintoleranc
    {
       try
       {
-         return adaptedClass.getReporter();
+         return adaptedClass.getAsserter();
       }
       catch (Exception e)
       {
@@ -186,7 +188,7 @@ public class qicoreallergyintoleranceAdapter implements Iqicoreallergyintoleranc
    {
       try
       {
-         return adaptedClass.getReporterTarget();
+         return adaptedClass.getAsserterTarget();
       }
       catch (Exception e)
       {
@@ -196,14 +198,14 @@ public class qicoreallergyintoleranceAdapter implements Iqicoreallergyintoleranc
 
    public boolean hasReporter()
    {
-      return adaptedClass.hasReporter();
+      return adaptedClass.hasAsserter();
    }
 
    public Reference getReporterPatient()
    {
       try
       {
-         return adaptedClass.getReporter();
+         return adaptedClass.getAsserter();
       }
       catch (Exception e)
       {
@@ -213,19 +215,19 @@ public class qicoreallergyintoleranceAdapter implements Iqicoreallergyintoleranc
 
    public Iqicoreallergyintolerance setReporter(Reference param)
    {
-      adaptedClass.setReporter(param);
+      adaptedClass.setAsserter(param);
       return this;
    }
 
    public Patient getReporterPatientTarget()
    {
       return (org.hl7.fhir.dstu3.model.Patient) adaptedClass
-            .getReporterTarget();
+            .getAsserterTarget();
    }
 
    public Iqicoreallergyintolerance setReporterTarget(Patient param)
    {
-      adaptedClass.setReporterTarget(param);
+      adaptedClass.setAsserterTarget(param);
       return this;
    }
 
@@ -233,7 +235,7 @@ public class qicoreallergyintoleranceAdapter implements Iqicoreallergyintoleranc
    {
       try
       {
-         return adaptedClass.getReporter();
+         return adaptedClass.getAsserter();
       }
       catch (Exception e)
       {
@@ -244,12 +246,12 @@ public class qicoreallergyintoleranceAdapter implements Iqicoreallergyintoleranc
    public RelatedPerson getReporterRelatedPersonTarget()
    {
       return (org.hl7.fhir.dstu3.model.RelatedPerson) adaptedClass
-            .getReporterTarget();
+            .getAsserterTarget();
    }
 
    public Iqicoreallergyintolerance setReporterTarget(RelatedPerson param)
    {
-      adaptedClass.setReporterTarget(param);
+      adaptedClass.setAsserterTarget(param);
       return this;
    }
 
@@ -257,7 +259,7 @@ public class qicoreallergyintoleranceAdapter implements Iqicoreallergyintoleranc
    {
       try
       {
-         return adaptedClass.getReporter();
+         return adaptedClass.getAsserter();
       }
       catch (Exception e)
       {
@@ -268,12 +270,12 @@ public class qicoreallergyintoleranceAdapter implements Iqicoreallergyintoleranc
    public Practitioner getReporterPractitionerTarget()
    {
       return (org.hl7.fhir.dstu3.model.Practitioner) adaptedClass
-            .getReporterTarget();
+            .getAsserterTarget();
    }
 
    public Iqicoreallergyintolerance setReporterTarget(Practitioner param)
    {
-      adaptedClass.setReporterTarget(param);
+      adaptedClass.setAsserterTarget(param);
       return this;
    }
 
@@ -406,12 +408,12 @@ public class qicoreallergyintoleranceAdapter implements Iqicoreallergyintoleranc
       return adaptedClass.hasCategory();
    }
 
-   public boolean hasCategoryElement()
-   {
-      return adaptedClass.hasCategoryElement();
-   }
+//   public boolean hasCategoryElement()
+//   {
+//      return adaptedClass.hasCategoryElement();
+//   }
 
-   public AllergyIntolerance.AllergyIntoleranceCategory getCategory()
+   public  List<Enumeration<AllergyIntoleranceCategory>> getCategory()
    {
       try
       {
@@ -423,29 +425,29 @@ public class qicoreallergyintoleranceAdapter implements Iqicoreallergyintoleranc
       }
    }
 
-   public Enumeration<AllergyIntolerance.AllergyIntoleranceCategory> getCategoryElement()
-   {
-      try
-      {
-         return adaptedClass.getCategoryElement();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting CategoryElement", e);
-      }
-   }
+//   public Enumeration<AllergyIntolerance.AllergyIntoleranceCategory> getCategoryElement()
+//   {
+//      try
+//      {
+//         return adaptedClass.getCategoryElement();
+//      }
+//      catch (Exception e)
+//      {
+//         throw new RuntimeException("Error getting CategoryElement", e);
+//      }
+//   }
 
    public Iqicoreallergyintolerance setCategory(
-         AllergyIntolerance.AllergyIntoleranceCategory param)
+		   List<Enumeration<AllergyIntoleranceCategory>> param)
    {
       adaptedClass.setCategory(param);
       return this;
    }
 
-   public Iqicoreallergyintolerance setCategoryElement(
-         Enumeration<AllergyIntolerance.AllergyIntoleranceCategory> param)
+   public Iqicoreallergyintolerance addCategoryElement(
+         AllergyIntolerance.AllergyIntoleranceCategory param)
    {
-      adaptedClass.setCategoryElement(param);
+      adaptedClass.addCategory(param);
       return this;
    }
 
@@ -506,21 +508,21 @@ public class qicoreallergyintoleranceAdapter implements Iqicoreallergyintoleranc
       return this;
    }
 
-   public boolean hasStatus()
+   public boolean hasClinicalStatus()
    {
-      return adaptedClass.hasStatus();
+      return adaptedClass.hasClinicalStatus();
    }
 
-   public boolean hasStatusElement()
+   public boolean hasClinicalStatusElement()
    {
-      return adaptedClass.hasStatusElement();
+      return adaptedClass.hasClinicalStatusElement();
    }
 
-   public AllergyIntolerance.AllergyIntoleranceStatus getStatus()
+   public AllergyIntolerance.AllergyIntoleranceClinicalStatus getClinicalStatus()
    {
       try
       {
-         return adaptedClass.getStatus();
+         return adaptedClass.getClinicalStatus();
       }
       catch (Exception e)
       {
@@ -528,11 +530,11 @@ public class qicoreallergyintoleranceAdapter implements Iqicoreallergyintoleranc
       }
    }
 
-   public Enumeration<AllergyIntolerance.AllergyIntoleranceStatus> getStatusElement()
+   public Enumeration<AllergyIntolerance.AllergyIntoleranceClinicalStatus> getClinicalStatusElement()
    {
       try
       {
-         return adaptedClass.getStatusElement();
+         return adaptedClass.getClinicalStatusElement();
       }
       catch (Exception e)
       {
@@ -540,17 +542,17 @@ public class qicoreallergyintoleranceAdapter implements Iqicoreallergyintoleranc
       }
    }
 
-   public Iqicoreallergyintolerance setStatus(
-         AllergyIntolerance.AllergyIntoleranceStatus param)
+   public Iqicoreallergyintolerance setClinicalStatus(
+         AllergyIntolerance.AllergyIntoleranceClinicalStatus param)
    {
-      adaptedClass.setStatus(param);
+      adaptedClass.setClinicalStatus(param);
       return this;
    }
 
-   public Iqicoreallergyintolerance setStatusElement(
-         Enumeration<AllergyIntolerance.AllergyIntoleranceStatus> param)
+   public Iqicoreallergyintolerance setClinicalStatusElement(
+         Enumeration<AllergyIntolerance.AllergyIntoleranceClinicalStatus> param)
    {
-      adaptedClass.setStatusElement(param);
+      adaptedClass.setClinicalStatusElement(param);
       return this;
    }
 

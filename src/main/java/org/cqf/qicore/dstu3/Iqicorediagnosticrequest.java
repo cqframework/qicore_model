@@ -1,6 +1,7 @@
 package org.cqf.qicore.dstu3;
 
 import org.hl7.fhir.dstu3.model.DiagnosticRequest;
+import org.hl7.fhir.dstu3.model.DiagnosticRequest.DiagnosticRequestIntent;
 import org.hl7.fhir.dstu3.model.*;
 
 import java.util.List;
@@ -110,15 +111,15 @@ public interface Iqicorediagnosticrequest
 
    public List<Reference> getRelevantHistory();
 
-   public List<CodeableConcept> getReason();
+   public List<CodeableConcept> getReasonCode();
 
-   public Iqicorediagnosticrequest setReason(List<CodeableConcept> param);
+   public Iqicorediagnosticrequest setReasonCode(List<CodeableConcept> param);
 
-   public boolean hasReason();
+   public boolean hasReasonCode();
 
-   public Iqicorediagnosticrequest addReason(CodeableConcept param);
+   public Iqicorediagnosticrequest addReasonCode(CodeableConcept param);
 
-   public CodeableConcept addReason();
+   public CodeableConcept addReasonCode();
 
    public boolean hasId();
 
@@ -195,11 +196,11 @@ public interface Iqicorediagnosticrequest
 
    public Iqicorediagnosticrequest setPerformerTarget(RelatedPerson param);
 
-   public CodeableConcept getStage();
+   public Enumeration<DiagnosticRequestIntent> getIntentElement();
 
-   public Iqicorediagnosticrequest setStage(CodeableConcept param);
+   public Iqicorediagnosticrequest setIntentElement(Enumeration<DiagnosticRequestIntent> param);
 
-   public boolean hasStage();
+   public boolean hasIntent();
 
    public Identifier getRequisition();
 

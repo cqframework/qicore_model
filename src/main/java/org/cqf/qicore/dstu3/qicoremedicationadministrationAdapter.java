@@ -21,7 +21,7 @@ import org.hl7.fhir.dstu3.model.IdType;
 import org.hl7.fhir.dstu3.model.Identifier;
 import org.hl7.fhir.dstu3.model.Encounter;
 import org.hl7.fhir.dstu3.model.Enumeration;
-import org.hl7.fhir.dstu3.model.MedicationOrder;
+import org.hl7.fhir.dstu3.model.MedicationRequest;
 import org.hl7.fhir.dstu3.model.UriType;
 
 public class qicoremedicationadministrationAdapter implements Iqicoremedicationadministration
@@ -297,7 +297,7 @@ public class qicoremedicationadministrationAdapter implements Iqicoremedicationa
       return this;
    }
 
-   public List<MedicationAdministration.MedicationAdministrationEventHistoryComponent> getEventHistory()
+   public List<Reference> getEventHistory()
    {
       try
       {
@@ -310,7 +310,7 @@ public class qicoremedicationadministrationAdapter implements Iqicoremedicationa
    }
 
    public qicoremedicationadministrationAdapter setEventHistory(
-         List<MedicationAdministration.MedicationAdministrationEventHistoryComponent> param)
+         List<Reference> param)
    {
       adaptedClass.setEventHistory(param);
       return this;
@@ -322,13 +322,13 @@ public class qicoremedicationadministrationAdapter implements Iqicoremedicationa
    }
 
    public qicoremedicationadministrationAdapter addEventHistory(
-         MedicationAdministration.MedicationAdministrationEventHistoryComponent param)
+         Reference param)
    {
       adaptedClass.addEventHistory(param);
       return this;
    }
 
-   public MedicationAdministration.MedicationAdministrationEventHistoryComponent addEventHistory()
+   public Reference addEventHistory()
    {
       return adaptedClass.addEventHistory();
    }
@@ -568,11 +568,11 @@ public class qicoremedicationadministrationAdapter implements Iqicoremedicationa
       return this;
    }
 
-   public Type getEffectiveTime()
+   public Type getEffective()
    {
       try
       {
-         return adaptedClass.getEffectiveTime();
+         return adaptedClass.getEffective();
       }
       catch (Exception e)
       {
@@ -580,17 +580,17 @@ public class qicoremedicationadministrationAdapter implements Iqicoremedicationa
       }
    }
 
-   public Iqicoremedicationadministration setEffectiveTime(Type param)
+   public Iqicoremedicationadministration setEffective(Type param)
    {
-      adaptedClass.setEffectiveTime(param);
+      adaptedClass.setEffective(param);
       return this;
    }
 
-   public DateTimeType getEffectiveTimeDateTimeType()
+   public DateTimeType getEffectiveDateTimeType()
    {
       try
       {
-         return adaptedClass.getEffectiveTimeDateTimeType();
+         return adaptedClass.getEffectiveDateTimeType();
       }
       catch (Exception e)
       {
@@ -599,16 +599,16 @@ public class qicoremedicationadministrationAdapter implements Iqicoremedicationa
       }
    }
 
-   public boolean hasEffectiveTimeDateTimeType()
+   public boolean hasEffectiveDateTimeType()
    {
-      return adaptedClass.hasEffectiveTimeDateTimeType();
+      return adaptedClass.hasEffectiveDateTimeType();
    }
 
-   public Period getEffectiveTimePeriod()
+   public Period getEffectivePeriod()
    {
       try
       {
-         return adaptedClass.getEffectiveTimePeriod();
+         return adaptedClass.getEffectivePeriod();
       }
       catch (Exception e)
       {
@@ -616,26 +616,26 @@ public class qicoremedicationadministrationAdapter implements Iqicoremedicationa
       }
    }
 
-   public boolean hasEffectiveTimePeriod()
+   public boolean hasEffectivePeriod()
    {
-      return adaptedClass.hasEffectiveTimePeriod();
+      return adaptedClass.hasEffectivePeriod();
    }
 
-   public boolean hasWasNotGiven()
+   public boolean hasNotGiven()
    {
-      return adaptedClass.hasWasNotGiven();
+      return adaptedClass.hasNotGiven();
    }
 
-   public boolean hasWasNotGivenElement()
+   public boolean hasNotGivenElement()
    {
-      return adaptedClass.hasWasNotGivenElement();
+      return adaptedClass.hasNotGivenElement();
    }
 
-   public BooleanType getWasNotGivenElement()
+   public BooleanType getNotGivenElement()
    {
       try
       {
-         return adaptedClass.getWasNotGivenElement();
+         return adaptedClass.getNotGivenElement();
       }
       catch (Exception e)
       {
@@ -643,11 +643,11 @@ public class qicoremedicationadministrationAdapter implements Iqicoremedicationa
       }
    }
 
-   public Boolean getWasNotGiven()
+   public Boolean getNotGiven()
    {
       try
       {
-         return adaptedClass.getWasNotGiven();
+         return adaptedClass.getNotGiven();
       }
       catch (Exception e)
       {
@@ -655,16 +655,16 @@ public class qicoremedicationadministrationAdapter implements Iqicoremedicationa
       }
    }
 
-   public Iqicoremedicationadministration setWasNotGivenElement(
+   public Iqicoremedicationadministration setNotGivenElement(
          BooleanType param)
    {
-      adaptedClass.setWasNotGivenElement(param);
+      adaptedClass.setNotGivenElement(param);
       return this;
    }
 
-   public Iqicoremedicationadministration setWasNotGiven(Boolean param)
+   public Iqicoremedicationadministration setNotGiven(Boolean param)
    {
-      adaptedClass.setWasNotGiven(param);
+      adaptedClass.setNotGiven(param);
       return this;
    }
 
@@ -916,26 +916,26 @@ public class qicoremedicationadministrationAdapter implements Iqicoremedicationa
       return this;
    }
 
-   public MedicationOrder getPrescriptionTarget()
+   public MedicationRequest getPrescriptionTarget()
    {
-      return (org.hl7.fhir.dstu3.model.MedicationOrder) adaptedClass
+      return (org.hl7.fhir.dstu3.model.MedicationRequest) adaptedClass
             .getPrescriptionTarget();
    }
 
    public Iqicoremedicationadministration setPrescriptionTarget(
-         MedicationOrder param)
+         MedicationRequest param)
    {
       adaptedClass.setPrescriptionTarget(param);
       return this;
    }
 
-   public qicoremedicationorderAdapter getPrescriptionAdapterTarget()
+   public qicoremedicationrequestAdapter getPrescriptionAdapterTarget()
    {
-      if (adaptedClass.getPrescription().getResource() instanceof org.hl7.fhir.dstu3.model.MedicationOrder)
+      if (adaptedClass.getPrescription().getResource() instanceof org.hl7.fhir.dstu3.model.MedicationRequest)
       {
-         qicoremedicationorderAdapter profiledType = new qicoremedicationorderAdapter();
+         qicoremedicationrequestAdapter profiledType = new qicoremedicationrequestAdapter();
          profiledType
-               .setAdaptee((org.hl7.fhir.dstu3.model.MedicationOrder) adaptedClass
+               .setAdaptee((org.hl7.fhir.dstu3.model.MedicationRequest) adaptedClass
                      .getPrescription().getResource());
          return profiledType;
       }
@@ -946,7 +946,7 @@ public class qicoremedicationadministrationAdapter implements Iqicoremedicationa
    }
 
    public Iqicoremedicationadministration setPrescriptionAdapterTarget(
-         qicoremedicationorderAdapter param)
+         qicoremedicationrequestAdapter param)
    {
       adaptedClass.setPrescriptionTarget(param.getAdaptee());
       return this;

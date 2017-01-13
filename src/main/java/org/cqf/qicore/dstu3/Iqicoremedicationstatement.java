@@ -1,6 +1,7 @@
 package org.cqf.qicore.dstu3;
 
 import org.hl7.fhir.dstu3.model.MedicationStatement;
+import org.hl7.fhir.dstu3.model.MedicationStatement.MedicationStatementNotTaken;
 
 import java.util.List;
 
@@ -21,6 +22,7 @@ import org.hl7.fhir.dstu3.model.RelatedPerson;
 import org.hl7.fhir.dstu3.model.CodeType;
 import org.hl7.fhir.dstu3.model.Type;
 import org.hl7.fhir.dstu3.model.DateTimeType;
+import org.hl7.fhir.dstu3.model.DosageInstruction;
 import org.hl7.fhir.dstu3.model.Period;
 import org.hl7.fhir.dstu3.model.Medication;
 import org.hl7.fhir.dstu3.model.BooleanType;
@@ -70,17 +72,17 @@ public interface Iqicoremedicationstatement
 
    public Annotation addNote();
 
-   public List<MedicationStatement.MedicationStatementDosageComponent> getDosage();
+   public List<DosageInstruction> getDosage();
 
    public qicoremedicationstatementAdapter setDosage(
-         List<MedicationStatement.MedicationStatementDosageComponent> param);
+         List<DosageInstruction> param);
 
    public boolean hasDosage();
 
    public qicoremedicationstatementAdapter addDosage(
-         MedicationStatement.MedicationStatementDosageComponent param);
+		   DosageInstruction param);
 
-   public MedicationStatement.MedicationStatementDosageComponent addDosage();
+   public DosageInstruction addDosage();
 
    public boolean hasCategory();
 
@@ -96,16 +98,16 @@ public interface Iqicoremedicationstatement
    public Iqicoremedicationstatement setCategoryElement(
          Enumeration<MedicationStatement.MedicationStatementCategory> param);
 
-   public List<CodeableConcept> getReasonForUseCode();
+   public List<CodeableConcept> getReasonForUseCodeableConcept();
 
-   public Iqicoremedicationstatement setReasonForUseCode(
+   public Iqicoremedicationstatement setReasonForUseCodeableConcept(
          List<CodeableConcept> param);
 
-   public boolean hasReasonForUseCode();
+   public boolean hasReasonForUseCodeableConcept();
 
-   public Iqicoremedicationstatement addReasonForUseCode(CodeableConcept param);
+   public Iqicoremedicationstatement addReasonForUseCodeableConcept(CodeableConcept param);
 
-   public CodeableConcept addReasonForUseCode();
+   public CodeableConcept addReasonForUseCodeableConcept();
 
    public boolean hasId();
 
@@ -174,19 +176,19 @@ public interface Iqicoremedicationstatement
 
    public Iqicoremedicationstatement setLanguage(String param);
 
-   public boolean hasPatient();
+   public boolean hasSubject();
 
-   public Reference getPatient();
+   public Reference getSubject();
 
-   public Iqicoremedicationstatement setPatient(Reference param);
+   public Iqicoremedicationstatement setSubject(Reference param);
 
-   public Patient getPatientTarget();
+   public Patient getSubjectTarget();
 
-   public Iqicoremedicationstatement setPatientTarget(Patient param);
+   public Iqicoremedicationstatement setSubjectTarget(Resource param);
 
-   public qicorepatientAdapter getPatientAdapterTarget();
+   public qicorepatientAdapter getSubjectAdapterTarget();
 
-   public Iqicoremedicationstatement setPatientAdapterTarget(
+   public Iqicoremedicationstatement setSubjectAdapterTarget(
          qicorepatientAdapter param);
 
    public boolean hasStatus();
@@ -252,19 +254,19 @@ public interface Iqicoremedicationstatement
 
    public Iqicoremedicationstatement setMedicationTarget(Medication param);
 
-   public boolean hasSupportingInformation();
+   public boolean hasDerivedFrom();
 
-   public List<Reference> getSupportingInformation();
+   public List<Reference> getDerivedFrom();
 
    public boolean hasNotTaken();
 
    public boolean hasNotTakenElement();
 
-   public BooleanType getNotTakenElement();
+   public Enumeration<MedicationStatementNotTaken> getNotTakenElement();
 
-   public Boolean getNotTaken();
+   public MedicationStatementNotTaken getNotTaken();
 
-   public Iqicoremedicationstatement setNotTakenElement(BooleanType param);
+   public Iqicoremedicationstatement setNotTakenElement(Enumeration<MedicationStatementNotTaken> param);
 
-   public Iqicoremedicationstatement setNotTaken(Boolean param);
+   public Iqicoremedicationstatement setNotTaken(MedicationStatementNotTaken  param);
 }

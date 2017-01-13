@@ -1,6 +1,8 @@
 package org.cqf.qicore.dstu3;
 
 import org.hl7.fhir.dstu3.model.ImagingStudy;
+
+import java.util.ArrayList;
 import java.util.List;
 import org.hl7.fhir.dstu3.model.Reference;
 import org.hl7.fhir.dstu3.model.Patient;
@@ -787,7 +789,7 @@ public class qicoreimagingstudyAdapter implements Iqicoreimagingstudy
       return adaptedClass.hasInterpreter();
    }
 
-   public Reference getInterpreter()
+   public List<Reference> getInterpreter()
    {
       try
       {
@@ -799,7 +801,7 @@ public class qicoreimagingstudyAdapter implements Iqicoreimagingstudy
       }
    }
 
-   public Iqicoreimagingstudy setInterpreter(Reference param)
+   public Iqicoreimagingstudy setInterpreter(List<Reference> param)
    {
       adaptedClass.setInterpreter(param);
       return this;
@@ -811,34 +813,36 @@ public class qicoreimagingstudyAdapter implements Iqicoreimagingstudy
             .getInterpreterTarget();
    }
 
-   public Iqicoreimagingstudy setInterpreterTarget(Practitioner param)
+//   public Iqicoreimagingstudy setInterpreterTarget(Practitioner param)
+//   {
+//      adaptedClass.setInterpreterTarget(param);
+//      return this;
+//   }
+
+   public List<qicorepractitionerAdapter> getInterpreterAdapterTarget()
    {
-      adaptedClass.setInterpreterTarget(param);
-      return this;
+	   List<Reference> interpreter = adaptedClass.getInterpreter();
+	   List<qicorepractitionerAdapter> list = new ArrayList<qicorepractitionerAdapter>();
+	   if ( !interpreter.isEmpty() ){
+		   for (Reference reference : interpreter){
+			   qicorepractitionerAdapter profiledType = new qicorepractitionerAdapter();
+		       profiledType.setAdaptee((org.hl7.fhir.dstu3.model.Practitioner) reference.getResource());
+		       list.add(profiledType);
+		   }
+		   return list;
+	   }
+       else
+       {
+    	   return null;
+       }
    }
 
-   public qicorepractitionerAdapter getInterpreterAdapterTarget()
-   {
-      if (adaptedClass.getInterpreter().getResource() instanceof org.hl7.fhir.dstu3.model.Practitioner)
-      {
-         qicorepractitionerAdapter profiledType = new qicorepractitionerAdapter();
-         profiledType
-               .setAdaptee((org.hl7.fhir.dstu3.model.Practitioner) adaptedClass
-                     .getInterpreter().getResource());
-         return profiledType;
-      }
-      else
-      {
-         return null;
-      }
-   }
-
-   public Iqicoreimagingstudy setInterpreterAdapterTarget(
-         qicorepractitionerAdapter param)
-   {
-      adaptedClass.setInterpreterTarget(param.getAdaptee());
-      return this;
-   }
+//   public Iqicoreimagingstudy setInterpreterAdapterTarget(
+//         qicorepractitionerAdapter param)
+//   {
+//      adaptedClass.setInterpreterTarget(param.getAdaptee());
+//      return this;
+//   }
 
    public List<Coding> getModalityList()
    {

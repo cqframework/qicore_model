@@ -19,8 +19,10 @@ import java.lang.String;
 import org.hl7.fhir.dstu3.model.Patient;
 import org.hl7.fhir.dstu3.model.IdType;
 import org.hl7.fhir.dstu3.model.UriType;
+import org.hl7.fhir.dstu3.model.MedicationDispense.MedicationDispenseSubstitutionComponent;
 import org.hl7.fhir.dstu3.model.Period;
 import org.hl7.fhir.dstu3.model.CodeableConcept;
+import org.hl7.fhir.dstu3.model.DosageInstruction;
 import org.hl7.fhir.dstu3.model.Identifier;
 import org.hl7.fhir.dstu3.model.Location;
 import org.hl7.fhir.dstu3.model.Type;
@@ -72,17 +74,17 @@ public interface Iqicoremedicationdispense
 
    public qicoremedicationdispenseDosageInstructionAdapter addWrappedDosageInstruction();
 
-   public List<MedicationDispense.MedicationDispenseDosageInstructionComponent> getDosageInstruction();
+   public List<DosageInstruction> getDosageInstruction();
 
    public Iqicoremedicationdispense setDosageInstruction(
-         List<MedicationDispense.MedicationDispenseDosageInstructionComponent> param);
+         List<DosageInstruction> param);
 
    public boolean hasDosageInstruction();
 
    public Iqicoremedicationdispense addDosageInstruction(
-         MedicationDispense.MedicationDispenseDosageInstructionComponent param);
+		   DosageInstruction param);
 
-   public MedicationDispense.MedicationDispenseDosageInstructionComponent addDosageInstruction();
+   public DosageInstruction addDosageInstruction();
 
    public List<Resource> getContained();
 
@@ -96,17 +98,17 @@ public interface Iqicoremedicationdispense
 
    public List<Reference> getAuthorizingPrescription();
 
-   public List<MedicationDispense.MedicationDispenseEventHistoryComponent> getEventHistory();
+   public List<Reference> getEventHistory();
 
    public qicoremedicationdispenseAdapter setEventHistory(
-         List<MedicationDispense.MedicationDispenseEventHistoryComponent> param);
+		   List<Reference> param);
 
    public boolean hasEventHistory();
 
    public qicoremedicationdispenseAdapter addEventHistory(
-         MedicationDispense.MedicationDispenseEventHistoryComponent param);
+         Reference param);
 
-   public MedicationDispense.MedicationDispenseEventHistoryComponent addEventHistory();
+   public Reference addEventHistory();
 
    public boolean hasStatus();
 
@@ -128,10 +130,10 @@ public interface Iqicoremedicationdispense
 
    public boolean hasDaysSupply();
 
-   public MedicationDispense.MedicationDispenseSubstitutionComponent getSubstitution();
+   public MedicationDispenseSubstitutionComponent getSubstitution();
 
    public qicoremedicationdispenseAdapter setSubstitution(
-         MedicationDispense.MedicationDispenseSubstitutionComponent param);
+		   MedicationDispenseSubstitutionComponent param);
 
    public boolean hasSubstitution();
 
