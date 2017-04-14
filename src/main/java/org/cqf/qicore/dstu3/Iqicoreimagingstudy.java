@@ -228,18 +228,18 @@ public interface Iqicoreimagingstudy
 
    public boolean hasInterpreter();
 
-   public Reference getInterpreter();
+   public List<Reference> getInterpreter();
 
-   public Iqicoreimagingstudy setInterpreter(Reference param);
+   public Iqicoreimagingstudy setInterpreter(List<Reference> param);
 
    public Practitioner getInterpreterTarget();
 
-   public Iqicoreimagingstudy setInterpreterTarget(Practitioner param);
+//   public Iqicoreimagingstudy setInterpreterTarget(Practitioner param);
 
-   public qicorepractitionerAdapter getInterpreterAdapterTarget();
+   public List<qicorepractitionerAdapter> getInterpreterAdapterTarget();
 
-   public Iqicoreimagingstudy setInterpreterAdapterTarget(
-         qicorepractitionerAdapter param);
+//   public Iqicoreimagingstudy setInterpreterAdapterTarget(
+//         qicorepractitionerAdapter param);
 
    public List<Coding> getModalityList();
 

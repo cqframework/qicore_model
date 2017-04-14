@@ -465,16 +465,16 @@ public class qicorecommunicationrequestAdapter implements Iqicorecommunicationre
       return adaptedClass.hasPriority();
    }
 
-   public boolean hasEncounter()
+   public boolean hasContext()
    {
-      return adaptedClass.hasEncounter();
+      return adaptedClass.hasContext();
    }
 
-   public Reference getEncounter()
+   public Reference getContext()
    {
       try
       {
-         return adaptedClass.getEncounter();
+         return adaptedClass.getContext();
       }
       catch (Exception e)
       {
@@ -482,32 +482,32 @@ public class qicorecommunicationrequestAdapter implements Iqicorecommunicationre
       }
    }
 
-   public Iqicorecommunicationrequest setEncounter(Reference param)
+   public Iqicorecommunicationrequest setContext (Reference param)
    {
-      adaptedClass.setEncounter(param);
+      adaptedClass.setContext(param);
       return this;
    }
 
-   public Encounter getEncounterTarget()
+   public Encounter getContextTarget()
    {
       return (org.hl7.fhir.dstu3.model.Encounter) adaptedClass
-            .getEncounterTarget();
+            .getContextTarget();
    }
 
-   public Iqicorecommunicationrequest setEncounterTarget(Encounter param)
+   public Iqicorecommunicationrequest setContextTarget(Resource param)
    {
-      adaptedClass.setEncounterTarget(param);
+      adaptedClass.setContextTarget(param);
       return this;
    }
 
-   public qicoreencounterAdapter getEncounterAdapterTarget()
+   public qicoreencounterAdapter getContextAdapterTarget()
    {
-      if (adaptedClass.getEncounter().getResource() instanceof org.hl7.fhir.dstu3.model.Encounter)
+      if (adaptedClass.getContext().getResource() instanceof org.hl7.fhir.dstu3.model.Encounter)
       {
          qicoreencounterAdapter profiledType = new qicoreencounterAdapter();
          profiledType
                .setAdaptee((org.hl7.fhir.dstu3.model.Encounter) adaptedClass
-                     .getEncounter().getResource());
+                     .getContext().getResource());
          return profiledType;
       }
       else
@@ -516,10 +516,10 @@ public class qicorecommunicationrequestAdapter implements Iqicorecommunicationre
       }
    }
 
-   public Iqicorecommunicationrequest setEncounterAdapterTarget(
+   public Iqicorecommunicationrequest setContextAdapterTarget(
          qicoreencounterAdapter param)
    {
-      adaptedClass.setEncounterTarget(param.getAdaptee());
+      adaptedClass.setContextTarget(param.getAdaptee());
       return this;
    }
 

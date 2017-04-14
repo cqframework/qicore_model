@@ -86,7 +86,7 @@ public class qicoreconditionAdapter implements Iqicorecondition
       return adaptedClass.addEvidence();
    }
 
-   public CodeableConcept getCategory()
+   public List<CodeableConcept> getCategory()
    {
       try
       {
@@ -98,7 +98,7 @@ public class qicoreconditionAdapter implements Iqicorecondition
       }
    }
 
-   public Iqicorecondition setCategory(CodeableConcept param)
+   public Iqicorecondition setCategory(List<CodeableConcept> param)
    {
       adaptedClass.setCategory(param);
       return this;
@@ -887,21 +887,21 @@ public class qicoreconditionAdapter implements Iqicorecondition
       return adaptedClass.hasSeverity();
    }
 
-   public boolean hasDateRecorded()
+   public boolean hasAssertedDate()
    {
-      return adaptedClass.hasDateRecorded();
+      return adaptedClass.hasAssertedDate();
    }
 
-   public boolean hasDateRecordedElement()
+   public boolean hasAssertedDateElement()
    {
-      return adaptedClass.hasDateRecordedElement();
+      return adaptedClass.hasAssertedDateElement();
    }
 
-   public DateType getDateRecordedElement()
+   public DateType getAssertedDateElement()
    {
       try
       {
-         return adaptedClass.getDateRecordedElement();
+         return adaptedClass.getAssertedDateElement();
       }
       catch (Exception e)
       {
@@ -909,11 +909,11 @@ public class qicoreconditionAdapter implements Iqicorecondition
       }
    }
 
-   public Date getDateRecorded()
+   public Date getAssertedDate()
    {
       try
       {
-         return adaptedClass.getDateRecorded();
+         return adaptedClass.getAssertedDate();
       }
       catch (Exception e)
       {
@@ -921,15 +921,15 @@ public class qicoreconditionAdapter implements Iqicorecondition
       }
    }
 
-   public Iqicorecondition setDateRecordedElement(DateType param)
+   public Iqicorecondition setAssertedDateElement(DateType param)
    {
-      adaptedClass.setDateRecordedElement(param);
+      adaptedClass.setAssertedDateElement(param);
       return this;
    }
 
-   public Iqicorecondition setDateRecorded(Date param)
+   public Iqicorecondition setAssertedDate(Date param)
    {
-      adaptedClass.setDateRecorded(param);
+      adaptedClass.setAssertedDate(param);
       return this;
    }
 

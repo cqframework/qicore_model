@@ -137,19 +137,19 @@ public interface Iqicorecommunicationrequest
 
    public boolean hasPriority();
 
-   public boolean hasEncounter();
+   public boolean hasContext();
 
-   public Reference getEncounter();
+   public Reference getContext();
 
-   public Iqicorecommunicationrequest setEncounter(Reference param);
+   public Iqicorecommunicationrequest setContext(Reference param);
 
-   public Encounter getEncounterTarget();
+   public Encounter getContextTarget();
 
-   public Iqicorecommunicationrequest setEncounterTarget(Encounter param);
+   public Iqicorecommunicationrequest setContextTarget(Resource param);
 
-   public qicoreencounterAdapter getEncounterAdapterTarget();
+   public qicoreencounterAdapter getContextAdapterTarget();
 
-   public Iqicorecommunicationrequest setEncounterAdapterTarget(
+   public Iqicorecommunicationrequest setContextAdapterTarget(
          qicoreencounterAdapter param);
 
    public boolean hasStatus();

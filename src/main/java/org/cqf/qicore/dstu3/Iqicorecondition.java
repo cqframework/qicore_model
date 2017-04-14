@@ -49,9 +49,9 @@ public interface Iqicorecondition
 
    public Condition.ConditionEvidenceComponent addEvidence();
 
-   public CodeableConcept getCategory();
+   public List<CodeableConcept> getCategory();
 
-   public Iqicorecondition setCategory(CodeableConcept param);
+   public Iqicorecondition setCategory(List<CodeableConcept> param);
 
    public boolean hasCategory();
 
@@ -251,17 +251,17 @@ public interface Iqicorecondition
 
    public boolean hasSeverity();
 
-   public boolean hasDateRecorded();
+   public boolean hasAssertedDate();
 
-   public boolean hasDateRecordedElement();
+   public boolean hasAssertedDateElement();
 
-   public DateType getDateRecordedElement();
+   public DateType getAssertedDateElement();
 
-   public Date getDateRecorded();
+   public Date getAssertedDate();
 
-   public Iqicorecondition setDateRecordedElement(DateType param);
+   public Iqicorecondition setAssertedDateElement(DateType param);
 
-   public Iqicorecondition setDateRecorded(Date param);
+   public Iqicorecondition setAssertedDate(Date param);
 
    public boolean hasVerificationStatus();
 

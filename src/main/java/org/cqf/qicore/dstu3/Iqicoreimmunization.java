@@ -124,17 +124,17 @@ public interface Iqicoreimmunization
 
    public Immunization.ImmunizationReactionComponent addReaction();
 
-   public boolean hasReported();
+   public boolean hasPrimarySource();
 
-   public boolean hasReportedElement();
+   public boolean hasPrimarySourceElement();
 
-   public BooleanType getReportedElement();
+   public BooleanType getPrimarySourceElement();
 
-   public Boolean getReported();
+   public Boolean getPrimarySource();
 
-   public Iqicoreimmunization setReportedElement(BooleanType param);
+   public Iqicoreimmunization setPrimarySourceElement(BooleanType param);
 
-   public Iqicoreimmunization setReported(Boolean param);
+   public Iqicoreimmunization setPrimarySource(Boolean param);
 
    public SimpleQuantity getDoseQuantity();
 

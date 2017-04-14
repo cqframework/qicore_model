@@ -19,26 +19,26 @@ import org.hl7.fhir.dstu3.model.*;
 public class qicoremedicationdispenseDosageInstructionAdapter
 {
 
-   private MedicationDispense.MedicationDispenseDosageInstructionComponent adaptedClass;
+   private DosageInstruction adaptedClass;
 
    public qicoremedicationdispenseDosageInstructionAdapter()
    {
-      this.adaptedClass = new org.hl7.fhir.dstu3.model.MedicationDispense.MedicationDispenseDosageInstructionComponent();
+      this.adaptedClass = new org.hl7.fhir.dstu3.model.DosageInstruction();
    }
 
    public qicoremedicationdispenseDosageInstructionAdapter(
-         MedicationDispense.MedicationDispenseDosageInstructionComponent adaptee)
+		   DosageInstruction adaptee)
    {
       this.adaptedClass = adaptee;
    }
 
-   public MedicationDispense.MedicationDispenseDosageInstructionComponent getAdaptee()
+   public DosageInstruction getAdaptee()
    {
       return adaptedClass;
    }
 
    public void setAdaptee(
-         MedicationDispense.MedicationDispenseDosageInstructionComponent param)
+		   DosageInstruction param)
    {
       this.adaptedClass = param;
    }
@@ -328,102 +328,102 @@ public class qicoremedicationdispenseDosageInstructionAdapter
       return this;
    }
 
-   public Timing getTiming()
-   {
-      try
-      {
-         return adaptedClass.getTiming();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting Timing", e);
-      }
-   }
+//   public Timing getTiming()
+//   {
+//      try
+//      {
+//         return adaptedClass.getTiming();
+//      }
+//      catch (Exception e)
+//      {
+//         throw new RuntimeException("Error getting Timing", e);
+//      }
+//   }
 
-   public qicoremedicationdispenseDosageInstructionAdapter setTiming(
-         Timing param)
-   {
-      adaptedClass.setTiming(param);
-      return this;
-   }
+//   public qicoremedicationdispenseDosageInstructionAdapter setTiming(
+//         Timing param)
+//   {
+//      adaptedClass.setTiming(param);
+//      return this;
+//   }
 
-   public boolean hasTiming()
-   {
-      return adaptedClass.hasTiming();
-   }
+//   public boolean hasTiming()
+//   {
+//      return adaptedClass.hasTiming();
+//   }
 
-   public Type getSite()
-   {
-      try
-      {
-         return adaptedClass.getSite();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting Site", e);
-      }
-   }
+//   public Type getSite()
+//   {
+//      try
+//      {
+//         return adaptedClass.getSite();
+//      }
+//      catch (Exception e)
+//      {
+//         throw new RuntimeException("Error getting Site", e);
+//      }
+//   }
 
-   public qicoremedicationdispenseDosageInstructionAdapter setSite(Type param)
-   {
-      adaptedClass.setSite(param);
-      return this;
-   }
+//   public qicoremedicationdispenseDosageInstructionAdapter setSite(Type param)
+//   {
+//      adaptedClass.setSite(param);
+//      return this;
+//   }
 
-   public CodeableConcept getSiteCodeableConcept()
-   {
-      try
-      {
-         return adaptedClass.getSiteCodeableConcept();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting SiteCodeableConcept", e);
-      }
-   }
+//   public CodeableConcept getSiteCodeableConcept()
+//   {
+//      try
+//      {
+//         return adaptedClass.getSiteCodeableConcept();
+//      }
+//      catch (Exception e)
+//      {
+//         throw new RuntimeException("Error getting SiteCodeableConcept", e);
+//      }
+//   }
 
-   public boolean hasSiteCodeableConcept()
-   {
-      return adaptedClass.hasSiteCodeableConcept();
-   }
+//   public boolean hasSiteCodeableConcept()
+//   {
+//      return adaptedClass.hasSiteCodeableConcept();
+//   }
 
-   public boolean hasSite()
-   {
-      return adaptedClass.hasSite();
-   }
+//   public boolean hasSite()
+//   {
+//      return adaptedClass.hasSite();
+//   }
+//
+//   public Reference getSiteReference()
+//   {
+//      try
+//      {
+//         return adaptedClass.getSiteReference();
+//      }
+//      catch (Exception e)
+//      {
+//         throw new RuntimeException("Error getting SiteReference", e);
+//      }
+//   }
 
-   public Reference getSiteReference()
-   {
-      try
-      {
-         return adaptedClass.getSiteReference();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting SiteReference", e);
-      }
-   }
+//   public BodySite getSiteTarget()
+//   {
+//      return (org.hl7.fhir.dstu3.model.BodySite) ((org.hl7.fhir.dstu3.model.Reference) adaptedClass
+//            .getSite()).getResource();
+//   }
+//
+//   public qicoremedicationdispenseDosageInstructionAdapter setSite(
+//         Reference param)
+//   {
+//      adaptedClass.setSite(param);
+//      return this;
+//   }
 
-   public BodySite getSiteTarget()
-   {
-      return (org.hl7.fhir.dstu3.model.BodySite) ((org.hl7.fhir.dstu3.model.Reference) adaptedClass
-            .getSite()).getResource();
-   }
-
-   public qicoremedicationdispenseDosageInstructionAdapter setSite(
-         Reference param)
-   {
-      adaptedClass.setSite(param);
-      return this;
-   }
-
-   public qicoremedicationdispenseDosageInstructionAdapter setSiteTarget(
-         BodySite param)
-   {
-      Reference reference = new Reference(param);
-      adaptedClass.setSite(reference);
-      return this;
-   }
+//   public qicoremedicationdispenseDosageInstructionAdapter setSiteTarget(
+//         BodySite param)
+//   {
+//      Reference reference = new Reference(param);
+//      adaptedClass.setSite(reference);
+//      return this;
+//   }
 
    public Ratio getRateGoal()
    {
@@ -515,74 +515,74 @@ public class qicoremedicationdispenseDosageInstructionAdapter
       return this;
    }
 
-   public Type getRate()
-   {
-      try
-      {
-         return adaptedClass.getRate();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting Rate", e);
-      }
-   }
+//   public Type getRate()
+//   {
+//      try
+//      {
+//         return adaptedClass.getRate();
+//      }
+//      catch (Exception e)
+//      {
+//         throw new RuntimeException("Error getting Rate", e);
+//      }
+//   }
 
-   public qicoremedicationdispenseDosageInstructionAdapter setRate(Type param)
-   {
-      adaptedClass.setRate(param);
-      return this;
-   }
+//   public qicoremedicationdispenseDosageInstructionAdapter setRate(Type param)
+//   {
+//      adaptedClass.setRate(param);
+//      return this;
+//   }
+//
+//   public Ratio getRateRatio()
+//   {
+//      try
+//      {
+//         return adaptedClass.getRateRatio();
+//      }
+//      catch (Exception e)
+//      {
+//         throw new RuntimeException("Error getting RateRatio", e);
+//      }
+//   }
 
-   public Ratio getRateRatio()
-   {
-      try
-      {
-         return adaptedClass.getRateRatio();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting RateRatio", e);
-      }
-   }
+//   public boolean hasRateRatio()
+//   {
+//      return adaptedClass.hasRateRatio();
+//   }
+//
+//   public Range getRateRange()
+//   {
+//      try
+//      {
+//         return adaptedClass.getRateRange();
+//      }
+//      catch (Exception e)
+//      {
+//         throw new RuntimeException("Error getting RateRange", e);
+//      }
+//   }
 
-   public boolean hasRateRatio()
-   {
-      return adaptedClass.hasRateRatio();
-   }
+//   public boolean hasRateRange()
+//   {
+//      return adaptedClass.hasRateRange();
+//   }
+//
+//   public SimpleQuantity getRateSimpleQuantity()
+//   {
+//      try
+//      {
+//         return adaptedClass.getRateSimpleQuantity();
+//      }
+//      catch (Exception e)
+//      {
+//         throw new RuntimeException("Error getting RateSimpleQuantity", e);
+//      }
+//   }
 
-   public Range getRateRange()
-   {
-      try
-      {
-         return adaptedClass.getRateRange();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting RateRange", e);
-      }
-   }
-
-   public boolean hasRateRange()
-   {
-      return adaptedClass.hasRateRange();
-   }
-
-   public SimpleQuantity getRateSimpleQuantity()
-   {
-      try
-      {
-         return adaptedClass.getRateSimpleQuantity();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting RateSimpleQuantity", e);
-      }
-   }
-
-   public boolean hasRateSimpleQuantity()
-   {
-      return adaptedClass.hasRateSimpleQuantity();
-   }
+//   public boolean hasRateSimpleQuantity()
+//   {
+//      return adaptedClass.hasRateSimpleQuantity();
+//   }
 
    public Duration getRateIncrementInterval()
    {
@@ -614,42 +614,42 @@ public class qicoremedicationdispenseDosageInstructionAdapter
       return this;
    }
 
-   public List<CodeableConcept> getAdditionalInstructions()
-   {
-      try
-      {
-         return adaptedClass.getAdditionalInstructions();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting AdditionalInstructions",
-               e);
-      }
-   }
+//   public List<CodeableConcept> getAdditionalInstructions()
+//   {
+//      try
+//      {
+//         return adaptedClass.getAdditionalInstructions();
+//      }
+//      catch (Exception e)
+//      {
+//         throw new RuntimeException("Error getting AdditionalInstructions",
+//               e);
+//      }
+//   }
 
-   public qicoremedicationdispenseDosageInstructionAdapter setAdditionalInstructions(
-         List<CodeableConcept> param)
-   {
-      adaptedClass.setAdditionalInstructions(param);
-      return this;
-   }
+//   public qicoremedicationdispenseDosageInstructionAdapter setAdditionalInstructions(
+//         List<CodeableConcept> param)
+//   {
+//      adaptedClass.setAdditionalInstructions(param);
+//      return this;
+//   }
+//
+//   public boolean hasAdditionalInstructions()
+//   {
+//      return adaptedClass.hasAdditionalInstructions();
+//   }
 
-   public boolean hasAdditionalInstructions()
-   {
-      return adaptedClass.hasAdditionalInstructions();
-   }
-
-   public qicoremedicationdispenseDosageInstructionAdapter addAdditionalInstructions(
-         CodeableConcept param)
-   {
-      adaptedClass.addAdditionalInstructions(param);
-      return this;
-   }
-
-   public CodeableConcept addAdditionalInstructions()
-   {
-      return adaptedClass.addAdditionalInstructions();
-   }
+//   public qicoremedicationdispenseDosageInstructionAdapter addAdditionalInstructions(
+//         CodeableConcept param)
+//   {
+//      adaptedClass.addAdditionalInstructions(param);
+//      return this;
+//   }
+//
+//   public CodeableConcept addAdditionalInstructions()
+//   {
+//      return adaptedClass.addAdditionalInstructions();
+//   }
 
    public Quantity getMaxDeliveryVolume()
    {
@@ -711,50 +711,50 @@ public class qicoremedicationdispenseDosageInstructionAdapter
       return this;
    }
 
-   public boolean hasText()
-   {
-      return adaptedClass.hasText();
-   }
+//   public boolean hasText()
+//   {
+//      return adaptedClass.hasText();
+//   }
+//
+//   public boolean hasTextElement()
+//   {
+//      return adaptedClass.hasTextElement();
+//   }
 
-   public boolean hasTextElement()
-   {
-      return adaptedClass.hasTextElement();
-   }
+//   public StringType getTextElement()
+//   {
+//      try
+//      {
+//         return adaptedClass.getTextElement();
+//      }
+//      catch (Exception e)
+//      {
+//         throw new RuntimeException("Error getting TextElement", e);
+//      }
+//   }
 
-   public StringType getTextElement()
-   {
-      try
-      {
-         return adaptedClass.getTextElement();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting TextElement", e);
-      }
-   }
+//   public String getText()
+//   {
+//      try
+//      {
+//         return adaptedClass.getText();
+//      }
+//      catch (Exception e)
+//      {
+//         throw new RuntimeException("Error getting Text", e);
+//      }
+//   }
 
-   public String getText()
-   {
-      try
-      {
-         return adaptedClass.getText();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting Text", e);
-      }
-   }
+//   public qicoremedicationdispenseDosageInstructionAdapter setTextElement(
+//         StringType param)
+//   {
+//      adaptedClass.setTextElement(param);
+//      return this;
+//   }
 
-   public qicoremedicationdispenseDosageInstructionAdapter setTextElement(
-         StringType param)
-   {
-      adaptedClass.setTextElement(param);
-      return this;
-   }
-
-   public qicoremedicationdispenseDosageInstructionAdapter setText(String param)
-   {
-      adaptedClass.setText(param);
-      return this;
-   }
+//   public qicoremedicationdispenseDosageInstructionAdapter setText(String param)
+//   {
+//      adaptedClass.setText(param);
+//      return this;
+//   }
 }

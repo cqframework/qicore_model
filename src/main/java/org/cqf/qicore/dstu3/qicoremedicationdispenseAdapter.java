@@ -15,8 +15,10 @@ import java.lang.String;
 import org.hl7.fhir.dstu3.model.Patient;
 import org.hl7.fhir.dstu3.model.IdType;
 import org.hl7.fhir.dstu3.model.UriType;
+import org.hl7.fhir.dstu3.model.MedicationDispense.MedicationDispenseSubstitutionComponent;
 import org.hl7.fhir.dstu3.model.Period;
 import org.hl7.fhir.dstu3.model.CodeableConcept;
+import org.hl7.fhir.dstu3.model.DosageInstruction;
 import org.hl7.fhir.dstu3.model.Identifier;
 import org.hl7.fhir.dstu3.model.Location;
 import org.hl7.fhir.dstu3.model.Type;
@@ -170,19 +172,18 @@ public class qicoremedicationdispenseAdapter implements Iqicoremedicationdispens
 
    public List<qicoremedicationdispenseDosageInstructionAdapter> getWrappedDosageInstruction() {
 		List<qicoremedicationdispenseDosageInstructionAdapter> wrappedItems = new java.util.ArrayList<>();
-		List<org.hl7.fhir.dstu3.model.MedicationDispense.MedicationDispenseDosageInstructionComponent> items = adaptedClass
+		List<org.hl7.fhir.dstu3.model.DosageInstruction> items = adaptedClass
 				.getDosageInstruction();
-		for (org.hl7.fhir.dstu3.model.MedicationDispense.MedicationDispenseDosageInstructionComponent item : items) {
+		for (org.hl7.fhir.dstu3.model.DosageInstruction item : items) {
 			wrappedItems
-					.add(new qicoremedicationdispenseDosageInstructionAdapter(
-							item));
+					.add(new qicoremedicationdispenseDosageInstructionAdapter(item));
 		}
 		return wrappedItems;
 	}
 
    public Iqicoremedicationdispense setWrappedDosageInstruction(
 			List<qicoremedicationdispenseDosageInstructionAdapter> param) {
-		List<org.hl7.fhir.dstu3.model.MedicationDispense.MedicationDispenseDosageInstructionComponent> items = new java.util.ArrayList<>();
+		List<org.hl7.fhir.dstu3.model.DosageInstruction> items = new java.util.ArrayList<>();
 		for (qicoremedicationdispenseDosageInstructionAdapter item : param) {
 			items.add(item.getAdaptee());
 		}
@@ -202,13 +203,13 @@ public class qicoremedicationdispenseAdapter implements Iqicoremedicationdispens
 
    public qicoremedicationdispenseDosageInstructionAdapter addWrappedDosageInstruction()
    {
-      org.hl7.fhir.dstu3.model.MedicationDispense.MedicationDispenseDosageInstructionComponent item = new org.hl7.fhir.dstu3.model.MedicationDispense.MedicationDispenseDosageInstructionComponent();
+      org.hl7.fhir.dstu3.model.DosageInstruction item = new org.hl7.fhir.dstu3.model.DosageInstruction();
       adaptedClass.addDosageInstruction(item);
       return new qicoremedicationdispenseDosageInstructionAdapter(
             item);
    }
 
-   public List<MedicationDispense.MedicationDispenseDosageInstructionComponent> getDosageInstruction()
+   public List<DosageInstruction> getDosageInstruction()
    {
       try
       {
@@ -221,7 +222,7 @@ public class qicoremedicationdispenseAdapter implements Iqicoremedicationdispens
    }
 
    public Iqicoremedicationdispense setDosageInstruction(
-         List<MedicationDispense.MedicationDispenseDosageInstructionComponent> param)
+         List<DosageInstruction> param)
    {
       adaptedClass.setDosageInstruction(param);
       return this;
@@ -233,13 +234,13 @@ public class qicoremedicationdispenseAdapter implements Iqicoremedicationdispens
    }
 
    public Iqicoremedicationdispense addDosageInstruction(
-         MedicationDispense.MedicationDispenseDosageInstructionComponent param)
+		   DosageInstruction param)
    {
       adaptedClass.addDosageInstruction(param);
       return this;
    }
 
-   public MedicationDispense.MedicationDispenseDosageInstructionComponent addDosageInstruction()
+   public DosageInstruction addDosageInstruction()
    {
       return adaptedClass.addDosageInstruction();
    }
@@ -283,7 +284,7 @@ public class qicoremedicationdispenseAdapter implements Iqicoremedicationdispens
       return adaptedClass.getAuthorizingPrescription();
    }
 
-   public List<MedicationDispense.MedicationDispenseEventHistoryComponent> getEventHistory()
+   public List<Reference> getEventHistory()
    {
       try
       {
@@ -296,7 +297,7 @@ public class qicoremedicationdispenseAdapter implements Iqicoremedicationdispens
    }
 
    public qicoremedicationdispenseAdapter setEventHistory(
-         List<MedicationDispense.MedicationDispenseEventHistoryComponent> param)
+		   List<Reference> param)
    {
       adaptedClass.setEventHistory(param);
       return this;
@@ -308,13 +309,13 @@ public class qicoremedicationdispenseAdapter implements Iqicoremedicationdispens
    }
 
    public qicoremedicationdispenseAdapter addEventHistory(
-         MedicationDispense.MedicationDispenseEventHistoryComponent param)
+         Reference param)
    {
       adaptedClass.addEventHistory(param);
       return this;
    }
 
-   public MedicationDispense.MedicationDispenseEventHistoryComponent addEventHistory()
+   public  Reference addEventHistory()
    {
       return adaptedClass.addEventHistory();
    }
@@ -390,7 +391,7 @@ public class qicoremedicationdispenseAdapter implements Iqicoremedicationdispens
       return adaptedClass.hasDaysSupply();
    }
 
-   public MedicationDispense.MedicationDispenseSubstitutionComponent getSubstitution()
+   public MedicationDispenseSubstitutionComponent getSubstitution()
    {
       try
       {
@@ -403,7 +404,7 @@ public class qicoremedicationdispenseAdapter implements Iqicoremedicationdispens
    }
 
    public qicoremedicationdispenseAdapter setSubstitution(
-         MedicationDispense.MedicationDispenseSubstitutionComponent param)
+		   MedicationDispenseSubstitutionComponent param)
    {
       adaptedClass.setSubstitution(param);
       return this;

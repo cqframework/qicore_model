@@ -1,6 +1,7 @@
 package org.cqf.qicore.dstu3;
 
 import org.hl7.fhir.dstu3.model.DiagnosticRequest;
+import org.hl7.fhir.dstu3.model.DiagnosticRequest.DiagnosticRequestIntent;
 import org.hl7.fhir.dstu3.model.CodeableConcept;
 import org.hl7.fhir.dstu3.model.Reference;
 import org.hl7.fhir.dstu3.model.Resource;
@@ -340,11 +341,11 @@ public class qicorediagnosticrequestAdapter implements Iqicorediagnosticrequest
       return adaptedClass.getRelevantHistory();
    }
 
-   public List<CodeableConcept> getReason()
+   public List<CodeableConcept> getReasonCode()
    {
       try
       {
-         return adaptedClass.getReason();
+         return adaptedClass.getReasonCode();
       }
       catch (Exception e)
       {
@@ -352,26 +353,26 @@ public class qicorediagnosticrequestAdapter implements Iqicorediagnosticrequest
       }
    }
 
-   public Iqicorediagnosticrequest setReason(List<CodeableConcept> param)
+   public Iqicorediagnosticrequest setReasonCode(List<CodeableConcept> param)
    {
-      adaptedClass.setReason(param);
+      adaptedClass.setReasonCode(param);
       return this;
    }
 
-   public boolean hasReason()
+   public boolean hasReasonCode()
    {
-      return adaptedClass.hasReason();
+      return adaptedClass.hasReasonCode();
    }
 
-   public Iqicorediagnosticrequest addReason(CodeableConcept param)
+   public Iqicorediagnosticrequest addReasonCode(CodeableConcept param)
    {
-      adaptedClass.addReason(param);
+      adaptedClass.addReasonCode(param);
       return this;
    }
 
-   public CodeableConcept addReason()
+   public CodeableConcept addReasonCode()
    {
-      return adaptedClass.addReason();
+      return adaptedClass.addReasonCode();
    }
 
    public boolean hasId()
@@ -667,11 +668,11 @@ public class qicorediagnosticrequestAdapter implements Iqicorediagnosticrequest
       return this;
    }
 
-   public CodeableConcept getStage()
+   public  Enumeration<DiagnosticRequestIntent> getIntentElement()
    {
       try
       {
-         return adaptedClass.getStage();
+         return adaptedClass.getIntentElement();
       }
       catch (Exception e)
       {
@@ -679,15 +680,15 @@ public class qicorediagnosticrequestAdapter implements Iqicorediagnosticrequest
       }
    }
 
-   public Iqicorediagnosticrequest setStage(CodeableConcept param)
+   public Iqicorediagnosticrequest setIntentElement(Enumeration<DiagnosticRequestIntent> param)
    {
-      adaptedClass.setStage(param);
+      adaptedClass.setIntentElement(param);
       return this;
    }
 
-   public boolean hasStage()
+   public boolean hasIntent()
    {
-      return adaptedClass.hasStage();
+      return adaptedClass.hasIntent();
    }
 
    public Identifier getRequisition()

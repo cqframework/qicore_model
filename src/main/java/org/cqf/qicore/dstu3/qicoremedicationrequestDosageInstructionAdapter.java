@@ -16,29 +16,29 @@ import org.hl7.fhir.dstu3.model.Quantity;
 import org.hl7.fhir.dstu3.model.BooleanType;
 import org.hl7.fhir.dstu3.model.*;
 
-public class qicoremedicationorderDosageInstructionAdapter
+public class qicoremedicationrequestDosageInstructionAdapter
 {
 
-   private MedicationOrder.MedicationOrderDosageInstructionComponent adaptedClass;
+   private DosageInstruction adaptedClass;
 
-   public qicoremedicationorderDosageInstructionAdapter()
+   public qicoremedicationrequestDosageInstructionAdapter()
    {
-      this.adaptedClass = new org.hl7.fhir.dstu3.model.MedicationOrder.MedicationOrderDosageInstructionComponent();
+      this.adaptedClass = new org.hl7.fhir.dstu3.model.DosageInstruction();
    }
 
-   public qicoremedicationorderDosageInstructionAdapter(
-         MedicationOrder.MedicationOrderDosageInstructionComponent adaptee)
+   public qicoremedicationrequestDosageInstructionAdapter(
+         DosageInstruction adaptee)
    {
       this.adaptedClass = adaptee;
    }
 
-   public MedicationOrder.MedicationOrderDosageInstructionComponent getAdaptee()
+   public DosageInstruction getAdaptee()
    {
       return adaptedClass;
    }
 
    public void setAdaptee(
-         MedicationOrder.MedicationOrderDosageInstructionComponent param)
+         DosageInstruction param)
    {
       this.adaptedClass = param;
    }
@@ -55,7 +55,7 @@ public class qicoremedicationorderDosageInstructionAdapter
       }
    }
 
-   public qicoremedicationorderDosageInstructionAdapter setDose(Type param)
+   public qicoremedicationrequestDosageInstructionAdapter setDose(Type param)
    {
       adaptedClass.setDose(param);
       return this;
@@ -90,9 +90,9 @@ public class qicoremedicationorderDosageInstructionAdapter
       }
    }
 
-   public boolean hasDoseSimpleQuantity()
+   public boolean hasDose()
    {
-      return adaptedClass.hasDoseSimpleQuantity();
+      return adaptedClass.hasDose();
    }
 
    public CodeableConcept getRoute()
@@ -107,7 +107,7 @@ public class qicoremedicationorderDosageInstructionAdapter
       }
    }
 
-   public qicoremedicationorderDosageInstructionAdapter setRoute(
+   public qicoremedicationrequestDosageInstructionAdapter setRoute(
          CodeableConcept param)
    {
       adaptedClass.setRoute(param);
@@ -131,7 +131,7 @@ public class qicoremedicationorderDosageInstructionAdapter
       }
    }
 
-   public qicoremedicationorderDosageInstructionAdapter setMaxDosePerPeriod(
+   public qicoremedicationrequestDosageInstructionAdapter setMaxDosePerPeriod(
          Ratio param)
    {
       adaptedClass.setMaxDosePerPeriod(param);
@@ -177,14 +177,14 @@ public class qicoremedicationorderDosageInstructionAdapter
       }
    }
 
-   public qicoremedicationorderDosageInstructionAdapter setTextElement(
+   public qicoremedicationrequestDosageInstructionAdapter setTextElement(
          StringType param)
    {
       adaptedClass.setTextElement(param);
       return this;
    }
 
-   public qicoremedicationorderDosageInstructionAdapter setText(String param)
+   public qicoremedicationrequestDosageInstructionAdapter setText(String param)
    {
       adaptedClass.setText(param);
       return this;
@@ -202,7 +202,7 @@ public class qicoremedicationorderDosageInstructionAdapter
       }
    }
 
-   public qicoremedicationorderDosageInstructionAdapter setMethod(
+   public qicoremedicationrequestDosageInstructionAdapter setMethod(
          CodeableConcept param)
    {
       adaptedClass.setMethod(param);
@@ -248,14 +248,14 @@ public class qicoremedicationorderDosageInstructionAdapter
       }
    }
 
-   public qicoremedicationorderDosageInstructionAdapter setIdElement(
+   public qicoremedicationrequestDosageInstructionAdapter setIdElement(
          StringType param)
    {
       adaptedClass.setIdElement(param);
       return this;
    }
 
-   public qicoremedicationorderDosageInstructionAdapter setId(String param)
+   public qicoremedicationrequestDosageInstructionAdapter setId(String param)
    {
       adaptedClass.setId(param);
       return this;
@@ -274,7 +274,7 @@ public class qicoremedicationorderDosageInstructionAdapter
       }
    }
 
-   public qicoremedicationorderDosageInstructionAdapter setAdditionalInstructions(
+   public qicoremedicationrequestDosageInstructionAdapter setAdditionalInstructions(
          List<CodeableConcept> param)
    {
       adaptedClass.setAdditionalInstructions(param);
@@ -286,7 +286,7 @@ public class qicoremedicationorderDosageInstructionAdapter
       return adaptedClass.hasAdditionalInstructions();
    }
 
-   public qicoremedicationorderDosageInstructionAdapter addAdditionalInstructions(
+   public qicoremedicationrequestDosageInstructionAdapter addAdditionalInstructions(
          CodeableConcept param)
    {
       adaptedClass.addAdditionalInstructions(param);
@@ -310,7 +310,7 @@ public class qicoremedicationorderDosageInstructionAdapter
       }
    }
 
-   public qicoremedicationorderDosageInstructionAdapter setTiming(Timing param)
+   public qicoremedicationrequestDosageInstructionAdapter setTiming(Timing param)
    {
       adaptedClass.setTiming(param);
       return this;
@@ -333,7 +333,7 @@ public class qicoremedicationorderDosageInstructionAdapter
       }
    }
 
-   public qicoremedicationorderDosageInstructionAdapter setRate(Type param)
+   public qicoremedicationrequestDosageInstructionAdapter setRate(Type param)
    {
       adaptedClass.setRate(param);
       return this;
@@ -410,7 +410,7 @@ public class qicoremedicationorderDosageInstructionAdapter
       }
    }
 
-   public qicoremedicationorderDosageInstructionAdapter setDoseType(
+   public qicoremedicationrequestDosageInstructionAdapter setDoseType(
          CodeableConcept param)
    {
       adaptedClass
@@ -440,7 +440,7 @@ public class qicoremedicationorderDosageInstructionAdapter
       }
    }
 
-   public qicoremedicationorderDosageInstructionAdapter setMinDosePerPeriod(
+   public qicoremedicationrequestDosageInstructionAdapter setMinDosePerPeriod(
          Ratio param)
    {
       adaptedClass
@@ -462,65 +462,65 @@ public class qicoremedicationorderDosageInstructionAdapter
       }
    }
 
-   public qicoremedicationorderDosageInstructionAdapter setSite(Type param)
+   public qicoremedicationrequestDosageInstructionAdapter setSite(CodeableConcept param)
    {
       adaptedClass.setSite(param);
       return this;
    }
 
-   public CodeableConcept getSiteCodeableConcept()
-   {
-      try
-      {
-         return adaptedClass.getSiteCodeableConcept();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting SiteCodeableConcept", e);
-      }
-   }
+//   public CodeableConcept getSiteCodeableConcept()
+//   {
+//      try
+//      {
+//         return adaptedClass.getSiteCodeableConcept();
+//      }
+//      catch (Exception e)
+//      {
+//         throw new RuntimeException("Error getting SiteCodeableConcept", e);
+//      }
+//   }
 
-   public boolean hasSiteCodeableConcept()
-   {
-      return adaptedClass.hasSiteCodeableConcept();
-   }
+//   public boolean hasSiteCodeableConcept()
+//   {
+//      return adaptedClass.hasSiteCodeableConcept();
+//   }
 
    public boolean hasSite()
    {
       return adaptedClass.hasSite();
    }
 
-   public Reference getSiteReference()
-   {
-      try
-      {
-         return adaptedClass.getSiteReference();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting SiteReference", e);
-      }
-   }
+//   public Reference getSiteReference()
+//   {
+//      try
+//      {
+//         return adaptedClass.getSiteReference();
+//      }
+//      catch (Exception e)
+//      {
+//         throw new RuntimeException("Error getting SiteReference", e);
+//      }
+//   }
 
-   public BodySite getSiteTarget()
-   {
-      return (org.hl7.fhir.dstu3.model.BodySite) ((org.hl7.fhir.dstu3.model.Reference) adaptedClass
-            .getSite()).getResource();
-   }
+//   public BodySite getSiteTarget()
+//   {
+//      return (org.hl7.fhir.dstu3.model.BodySite) ((org.hl7.fhir.dstu3.model.Reference) adaptedClass
+//            .getSite()).getResource();
+//   }
 
-   public qicoremedicationorderDosageInstructionAdapter setSite(Reference param)
-   {
-      adaptedClass.setSite(param);
-      return this;
-   }
+//   public qicoremedicationrequestDosageInstructionAdapter setSite(Reference param)
+//   {
+//      adaptedClass.setSite(param);
+//      return this;
+//   }
 
-   public qicoremedicationorderDosageInstructionAdapter setSiteTarget(
-         BodySite param)
-   {
-      Reference reference = new Reference(param);
-      adaptedClass.setSite(reference);
-      return this;
-   }
+//   public qicoremedicationrequestDosageInstructionAdapter setSiteTarget(
+//         BodySite param)
+//   {
+//      Reference reference = new Reference(param);
+//      adaptedClass.setSite(reference);
+//      return this;
+//   }
 
    public Ratio getMaxDeliveryRate()
    {
@@ -542,7 +542,7 @@ public class qicoremedicationorderDosageInstructionAdapter
       }
    }
 
-   public qicoremedicationorderDosageInstructionAdapter setMaxDeliveryRate(
+   public qicoremedicationrequestDosageInstructionAdapter setMaxDeliveryRate(
          Ratio param)
    {
       adaptedClass
@@ -572,7 +572,7 @@ public class qicoremedicationorderDosageInstructionAdapter
       }
    }
 
-   public qicoremedicationorderDosageInstructionAdapter setRateGoal(Ratio param)
+   public qicoremedicationrequestDosageInstructionAdapter setRateGoal(Ratio param)
    {
       adaptedClass
             .addExtension()
@@ -601,7 +601,7 @@ public class qicoremedicationorderDosageInstructionAdapter
       }
    }
 
-   public qicoremedicationorderDosageInstructionAdapter setInfuseOver(
+   public qicoremedicationrequestDosageInstructionAdapter setInfuseOver(
          Duration param)
    {
       adaptedClass
@@ -624,7 +624,7 @@ public class qicoremedicationorderDosageInstructionAdapter
       }
    }
 
-   public qicoremedicationorderDosageInstructionAdapter setMaxDosePerAdministration(
+   public qicoremedicationrequestDosageInstructionAdapter setMaxDosePerAdministration(
          SimpleQuantity param)
    {
       adaptedClass.setMaxDosePerAdministration(param);
@@ -656,7 +656,7 @@ public class qicoremedicationorderDosageInstructionAdapter
       }
    }
 
-   public qicoremedicationorderDosageInstructionAdapter setRateIncrementInterval(
+   public qicoremedicationrequestDosageInstructionAdapter setRateIncrementInterval(
          Duration param)
    {
       adaptedClass
@@ -678,7 +678,7 @@ public class qicoremedicationorderDosageInstructionAdapter
       }
    }
 
-   public qicoremedicationorderDosageInstructionAdapter setMaxDosePerLifetime(
+   public qicoremedicationrequestDosageInstructionAdapter setMaxDosePerLifetime(
          SimpleQuantity param)
    {
       adaptedClass.setMaxDosePerLifetime(param);
@@ -710,7 +710,7 @@ public class qicoremedicationorderDosageInstructionAdapter
       }
    }
 
-   public qicoremedicationorderDosageInstructionAdapter setMaxDeliveryVolume(
+   public qicoremedicationrequestDosageInstructionAdapter setMaxDeliveryVolume(
          Quantity param)
    {
       adaptedClass
@@ -740,7 +740,7 @@ public class qicoremedicationorderDosageInstructionAdapter
       }
    }
 
-   public qicoremedicationorderDosageInstructionAdapter setRateIncrement(
+   public qicoremedicationrequestDosageInstructionAdapter setRateIncrement(
          Ratio param)
    {
       adaptedClass
@@ -762,7 +762,7 @@ public class qicoremedicationorderDosageInstructionAdapter
       }
    }
 
-   public qicoremedicationorderDosageInstructionAdapter setAsNeeded(Type param)
+   public qicoremedicationrequestDosageInstructionAdapter setAsNeeded(Type param)
    {
       adaptedClass.setAsNeeded(param);
       return this;

@@ -1,6 +1,7 @@
 package org.cqf.qicore.dstu3;
 
 import org.hl7.fhir.dstu3.model.MedicationAdministration;
+import org.hl7.fhir.dstu3.model.MedicationRequest;
 
 import java.util.List;
 
@@ -27,7 +28,7 @@ import org.hl7.fhir.dstu3.model.IdType;
 import org.hl7.fhir.dstu3.model.Identifier;
 import org.hl7.fhir.dstu3.model.Encounter;
 import org.hl7.fhir.dstu3.model.Enumeration;
-import org.hl7.fhir.dstu3.model.MedicationOrder;
+//import org.hl7.fhir.dstu3.model.MedicationOrder;
 import org.hl7.fhir.dstu3.model.UriType;
 
 public interface Iqicoremedicationadministration
@@ -98,18 +99,18 @@ public interface Iqicoremedicationadministration
    public Iqicoremedicationadministration setPerformerAdapterTarget(
          qicorerelatedpersonAdapter param);
 
-   public List<MedicationAdministration.MedicationAdministrationEventHistoryComponent> getEventHistory();
-
+   public List<Reference> getEventHistory();
+   
    public qicoremedicationadministrationAdapter setEventHistory(
-         List<MedicationAdministration.MedicationAdministrationEventHistoryComponent> param);
-
+		   List<Reference> param);
+   
    public boolean hasEventHistory();
 
    public qicoremedicationadministrationAdapter addEventHistory(
-         MedicationAdministration.MedicationAdministrationEventHistoryComponent param);
-
-   public MedicationAdministration.MedicationAdministrationEventHistoryComponent addEventHistory();
-
+		   Reference param);
+   
+   public Reference addEventHistory();
+   
    public boolean hasPatient();
 
    public Reference getPatient();
@@ -176,30 +177,30 @@ public interface Iqicoremedicationadministration
 
    public Iqicoremedicationadministration setMedicationTarget(Medication param);
 
-   public Type getEffectiveTime();
+   public Type getEffective();
 
-   public Iqicoremedicationadministration setEffectiveTime(Type param);
+   public Iqicoremedicationadministration setEffective(Type param);
 
-   public DateTimeType getEffectiveTimeDateTimeType();
+   public DateTimeType getEffectiveDateTimeType();
 
-   public boolean hasEffectiveTimeDateTimeType();
+   public boolean hasEffectiveDateTimeType();
 
-   public Period getEffectiveTimePeriod();
+   public Period getEffectivePeriod();
 
-   public boolean hasEffectiveTimePeriod();
+   public boolean hasEffectivePeriod();
 
-   public boolean hasWasNotGiven();
+   public boolean hasNotGiven();
 
-   public boolean hasWasNotGivenElement();
+   public boolean hasNotGivenElement();
 
-   public BooleanType getWasNotGivenElement();
+   public BooleanType getNotGivenElement();
 
-   public Boolean getWasNotGiven();
+   public Boolean getNotGiven();
 
-   public Iqicoremedicationadministration setWasNotGivenElement(
+   public Iqicoremedicationadministration setNotGivenElement(
          BooleanType param);
 
-   public Iqicoremedicationadministration setWasNotGiven(Boolean param);
+   public Iqicoremedicationadministration setNotGiven(Boolean param);
 
    public boolean hasId();
 
@@ -270,15 +271,15 @@ public interface Iqicoremedicationadministration
 
    public Iqicoremedicationadministration setPrescription(Reference param);
 
-   public MedicationOrder getPrescriptionTarget();
+   public MedicationRequest getPrescriptionTarget();
 
    public Iqicoremedicationadministration setPrescriptionTarget(
-         MedicationOrder param);
+	         MedicationRequest param);
 
-   public qicoremedicationorderAdapter getPrescriptionAdapterTarget();
+   public qicoremedicationrequestAdapter getPrescriptionAdapterTarget();
 
    public Iqicoremedicationadministration setPrescriptionAdapterTarget(
-         qicoremedicationorderAdapter param);
+         qicoremedicationrequestAdapter param);
 
    public boolean hasImplicitRules();
 
