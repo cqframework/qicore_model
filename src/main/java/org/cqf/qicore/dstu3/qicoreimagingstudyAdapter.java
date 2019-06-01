@@ -48,42 +48,6 @@ public class qicoreimagingstudyAdapter implements Iqicoreimagingstudy
       this.adaptedClass = param;
    }
 
-   public List<ImagingStudy.StudyBaseLocationComponent> getBaseLocation()
-   {
-      try
-      {
-         return adaptedClass.getBaseLocation();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting BaseLocation", e);
-      }
-   }
-
-   public qicoreimagingstudyAdapter setBaseLocation(
-         List<ImagingStudy.StudyBaseLocationComponent> param)
-   {
-      adaptedClass.setBaseLocation(param);
-      return this;
-   }
-
-   public boolean hasBaseLocation()
-   {
-      return adaptedClass.hasBaseLocation();
-   }
-
-   public qicoreimagingstudyAdapter addBaseLocation(
-         ImagingStudy.StudyBaseLocationComponent param)
-   {
-      adaptedClass.addBaseLocation(param);
-      return this;
-   }
-
-   public ImagingStudy.StudyBaseLocationComponent addBaseLocation()
-   {
-      return adaptedClass.addBaseLocation();
-   }
-
    public boolean hasPatient()
    {
       return adaptedClass.hasPatient();
@@ -537,16 +501,6 @@ public class qicoreimagingstudyAdapter implements Iqicoreimagingstudy
    public boolean hasAccession()
    {
       return adaptedClass.hasAccession();
-   }
-
-   public boolean hasProcedure()
-   {
-      return adaptedClass.hasProcedure();
-   }
-
-   public List<Reference> getProcedure()
-   {
-      return adaptedClass.getProcedure();
    }
 
    public Range getRadiationDose()
