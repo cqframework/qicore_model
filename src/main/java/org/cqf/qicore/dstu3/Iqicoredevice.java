@@ -161,13 +161,13 @@ public interface Iqicoredevice
 
    public boolean hasStatusElement();
 
-   public Device.DeviceStatus getStatus();
+   public Device.FHIRDeviceStatus getStatus();
 
-   public Enumeration<Device.DeviceStatus> getStatusElement();
+   public Enumeration<Device.FHIRDeviceStatus> getStatusElement();
 
-   public Iqicoredevice setStatus(Device.DeviceStatus param);
+   public Iqicoredevice setStatus(Device.FHIRDeviceStatus param);
 
-   public Iqicoredevice setStatusElement(Enumeration<Device.DeviceStatus> param);
+   public Iqicoredevice setStatusElement(Enumeration<Device.FHIRDeviceStatus> param);
 
    public CodeableConcept getType();
 
