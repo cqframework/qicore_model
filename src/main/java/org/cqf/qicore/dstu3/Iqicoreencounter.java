@@ -40,13 +40,7 @@ public interface Iqicoreencounter
 
    public List<Reference> getIncomingReferral();
 
-   public boolean hasIndication();
-
-   public List<Condition> getIndicationConditionTarget();
-
-   public List<Reference> getIndication();
-
-   public List<Procedure> getIndicationProcedureTarget();
+   public boolean hasDiagnosis();
 
    public boolean hasEpisodeOfCare();
 

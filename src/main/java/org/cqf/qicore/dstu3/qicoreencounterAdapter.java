@@ -77,35 +77,10 @@ public class qicoreencounterAdapter implements Iqicoreencounter
       return adaptedClass.getIncomingReferral();
    }
 
-   public boolean hasIndication()
+   public boolean hasDiagnosis()
    {
-      return adaptedClass.hasIndication();
+      return adaptedClass.hasDiagnosis();
    }
-
-   public List<Condition> getIndicationConditionTarget() {
-		List<org.hl7.fhir.dstu3.model.Condition> items = new java.util.ArrayList<>();
-		List<org.hl7.fhir.dstu3.model.Resource> resources = adaptedClass
-				.getIndicationTarget();
-		for (org.hl7.fhir.dstu3.model.Resource resource : resources) {
-			items.add((org.hl7.fhir.dstu3.model.Condition) resource);
-		}
-		return items;
-	}
-
-   public List<Reference> getIndication()
-   {
-      return adaptedClass.getIndication();
-   }
-
-   public List<Procedure> getIndicationProcedureTarget() {
-		List<org.hl7.fhir.dstu3.model.Procedure> items = new java.util.ArrayList<>();
-		List<org.hl7.fhir.dstu3.model.Resource> resources = adaptedClass
-				.getIndicationTarget();
-		for (org.hl7.fhir.dstu3.model.Resource resource : resources) {
-			items.add((org.hl7.fhir.dstu3.model.Procedure) resource);
-		}
-		return items;
-	}
 
    public boolean hasEpisodeOfCare()
    {
