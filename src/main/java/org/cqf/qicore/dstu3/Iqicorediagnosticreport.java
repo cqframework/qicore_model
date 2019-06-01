@@ -88,21 +88,6 @@ public interface Iqicorediagnosticreport
 
    public DiagnosticReport.DiagnosticReportImageComponent addImage();
 
-   public boolean hasEncounter();
-
-   public Reference getEncounter();
-
-   public Iqicorediagnosticreport setEncounter(Reference param);
-
-   public Encounter getEncounterTarget();
-
-   public Iqicorediagnosticreport setEncounterTarget(Encounter param);
-
-   public qicoreencounterAdapter getEncounterAdapterTarget();
-
-   public Iqicorediagnosticreport setEncounterAdapterTarget(
-         qicoreencounterAdapter param);
-
    public List<Attachment> getPresentedForm();
 
    public Iqicorediagnosticreport setPresentedForm(List<Attachment> param);
@@ -232,11 +217,9 @@ public interface Iqicorediagnosticreport
 
    public boolean hasPerformer();
 
-   public List<Practitioner> getPerformerPractitionerTarget();
+   public List<DiagnosticReport.DiagnosticReportPerformerComponent> getPerformer();
 
-   public List<Reference> getPerformer();
-
-   public List<Organization> getPerformerOrganizationTarget();
+   public Resource getContextTarget();
 
    public boolean hasResult();
 
