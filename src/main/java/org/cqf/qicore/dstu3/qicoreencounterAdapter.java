@@ -301,7 +301,7 @@ public class qicoreencounterAdapter implements Iqicoreencounter
       return adaptedClass.addParticipant();
    }
 
-   public List<Encounter.EncounterStatusHistoryComponent> getStatusHistory()
+   public List<Encounter.StatusHistoryComponent> getStatusHistory()
    {
       try
       {
@@ -314,7 +314,7 @@ public class qicoreencounterAdapter implements Iqicoreencounter
    }
 
    public qicoreencounterAdapter setStatusHistory(
-         List<Encounter.EncounterStatusHistoryComponent> param)
+         List<Encounter.StatusHistoryComponent> param)
    {
       adaptedClass.setStatusHistory(param);
       return this;
@@ -326,13 +326,13 @@ public class qicoreencounterAdapter implements Iqicoreencounter
    }
 
    public qicoreencounterAdapter addStatusHistory(
-         Encounter.EncounterStatusHistoryComponent param)
+         Encounter.StatusHistoryComponent param)
    {
       adaptedClass.addStatusHistory(param);
       return this;
    }
 
-   public Encounter.EncounterStatusHistoryComponent addStatusHistory()
+   public Encounter.StatusHistoryComponent addStatusHistory()
    {
       return adaptedClass.addStatusHistory();
    }
@@ -759,14 +759,14 @@ public class qicoreencounterAdapter implements Iqicoreencounter
 
    public boolean hasPatient()
    {
-      return adaptedClass.hasPatient();
+      return adaptedClass.hasSubject();
    }
 
    public Reference getPatient()
    {
       try
       {
-         return adaptedClass.getPatient();
+         return adaptedClass.getSubject();
       }
       catch (Exception e)
       {
@@ -776,30 +776,30 @@ public class qicoreencounterAdapter implements Iqicoreencounter
 
    public Iqicoreencounter setPatient(Reference param)
    {
-      adaptedClass.setPatient(param);
+      adaptedClass.setSubject(param);
       return this;
    }
 
    public Patient getPatientTarget()
    {
       return (org.hl7.fhir.dstu3.model.Patient) adaptedClass
-            .getPatientTarget();
+            .getSubjectTarget();
    }
 
    public Iqicoreencounter setPatientTarget(Patient param)
    {
-      adaptedClass.setPatientTarget(param);
+      adaptedClass.setSubjectTarget(param);
       return this;
    }
 
    public qicorepatientAdapter getPatientAdapterTarget()
    {
-      if (adaptedClass.getPatient().getResource() instanceof org.hl7.fhir.dstu3.model.Patient)
+      if (adaptedClass.getSubject().getResource() instanceof org.hl7.fhir.dstu3.model.Patient)
       {
          qicorepatientAdapter profiledType = new qicorepatientAdapter();
          profiledType
                .setAdaptee((org.hl7.fhir.dstu3.model.Patient) adaptedClass
-                     .getPatient().getResource());
+                     .getSubject().getResource());
          return profiledType;
       }
       else
@@ -810,7 +810,7 @@ public class qicoreencounterAdapter implements Iqicoreencounter
 
    public Iqicoreencounter setPatientAdapterTarget(qicorepatientAdapter param)
    {
-      adaptedClass.setPatientTarget(param.getAdaptee());
+      adaptedClass.setSubjectTarget(param.getAdaptee());
       return this;
    }
 
