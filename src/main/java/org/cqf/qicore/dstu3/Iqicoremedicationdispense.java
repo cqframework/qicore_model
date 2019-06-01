@@ -1,32 +1,13 @@
 package org.cqf.qicore.dstu3;
 
-import org.hl7.fhir.dstu3.model.MedicationDispense;
+import org.hl7.fhir.dstu3.model.*;
 
 import java.util.List;
 
-import org.hl7.fhir.dstu3.model.IntegerType;
-import org.hl7.fhir.dstu3.model.Reference;
-import org.hl7.fhir.dstu3.model.Practitioner;
-import org.hl7.fhir.dstu3.model.Annotation;
-import org.hl7.fhir.dstu3.model.Resource;
-import org.hl7.fhir.dstu3.model.Enumeration;
-import org.hl7.fhir.dstu3.model.SimpleQuantity;
-import org.hl7.fhir.dstu3.model.Organization;
-import org.hl7.fhir.dstu3.model.CodeType;
-
 import java.lang.String;
 
-import org.hl7.fhir.dstu3.model.Patient;
-import org.hl7.fhir.dstu3.model.IdType;
-import org.hl7.fhir.dstu3.model.UriType;
 import org.hl7.fhir.dstu3.model.MedicationDispense.MedicationDispenseSubstitutionComponent;
-import org.hl7.fhir.dstu3.model.Period;
-import org.hl7.fhir.dstu3.model.CodeableConcept;
-import org.hl7.fhir.dstu3.model.DosageInstruction;
-import org.hl7.fhir.dstu3.model.Identifier;
-import org.hl7.fhir.dstu3.model.Location;
-import org.hl7.fhir.dstu3.model.Type;
-import org.hl7.fhir.dstu3.model.Medication;
+import org.hl7.fhir.dstu3.model.Dosage;
 
 public interface Iqicoremedicationdispense
 {
@@ -39,20 +20,11 @@ public interface Iqicoremedicationdispense
 
    public Iqicoremedicationdispense setRefillsRemaining(IntegerType param);
 
-   public boolean hasDispenser();
+   public boolean hasPerformer();
 
-   public Reference getDispenser();
+   public List<MedicationDispense.MedicationDispensePerformerComponent> getPerformer();
 
-   public Iqicoremedicationdispense setDispenser(Reference param);
-
-   public Practitioner getDispenserTarget();
-
-   public Iqicoremedicationdispense setDispenserTarget(Practitioner param);
-
-   public qicorepractitionerAdapter getDispenserAdapterTarget();
-
-   public Iqicoremedicationdispense setDispenserAdapterTarget(
-         qicorepractitionerAdapter param);
+   public Iqicoremedicationdispense setPerformer(List<MedicationDispense.MedicationDispensePerformerComponent> param);
 
    public List<Annotation> getNote();
 
@@ -74,17 +46,17 @@ public interface Iqicoremedicationdispense
 
    public qicoremedicationdispenseDosageInstructionAdapter addWrappedDosageInstruction();
 
-   public List<DosageInstruction> getDosageInstruction();
+   public List<Dosage> getDosageInstruction();
 
    public Iqicoremedicationdispense setDosageInstruction(
-         List<DosageInstruction> param);
+         List<Dosage> param);
 
    public boolean hasDosageInstruction();
 
    public Iqicoremedicationdispense addDosageInstruction(
-		   DosageInstruction param);
+		   Dosage param);
 
-   public DosageInstruction addDosageInstruction();
+   public Dosage addDosageInstruction();
 
    public List<Resource> getContained();
 
@@ -136,17 +108,6 @@ public interface Iqicoremedicationdispense
 		   MedicationDispenseSubstitutionComponent param);
 
    public boolean hasSubstitution();
-
-   public boolean hasDispensingOrganization();
-
-   public Reference getDispensingOrganization();
-
-   public Iqicoremedicationdispense setDispensingOrganization(Reference param);
-
-   public Organization getDispensingOrganizationTarget();
-
-   public Iqicoremedicationdispense setDispensingOrganizationTarget(
-         Organization param);
 
    public boolean hasLanguage();
 
@@ -223,9 +184,9 @@ public interface Iqicoremedicationdispense
 
    public boolean hasType();
 
-   public Identifier getIdentifier();
+   public List<Identifier> getIdentifier();
 
-   public Iqicoremedicationdispense setIdentifier(Identifier param);
+   public Iqicoremedicationdispense setIdentifier(List<Identifier> param);
 
    public boolean hasIdentifier();
 

@@ -19,26 +19,26 @@ import org.hl7.fhir.dstu3.model.*;
 public class qicoremedicationdispenseDosageInstructionAdapter
 {
 
-   private DosageInstruction adaptedClass;
+   private Dosage adaptedClass;
 
    public qicoremedicationdispenseDosageInstructionAdapter()
    {
-      this.adaptedClass = new org.hl7.fhir.dstu3.model.DosageInstruction();
+      this.adaptedClass = new org.hl7.fhir.dstu3.model.Dosage();
    }
 
    public qicoremedicationdispenseDosageInstructionAdapter(
-		   DosageInstruction adaptee)
+		   Dosage adaptee)
    {
       this.adaptedClass = adaptee;
    }
 
-   public DosageInstruction getAdaptee()
+   public Dosage getAdaptee()
    {
       return adaptedClass;
    }
 
    public void setAdaptee(
-		   DosageInstruction param)
+		   Dosage param)
    {
       this.adaptedClass = param;
    }
