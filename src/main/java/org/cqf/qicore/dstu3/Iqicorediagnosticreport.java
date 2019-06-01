@@ -254,15 +254,21 @@ public interface Iqicorediagnosticreport
 
    public Iqicorediagnosticreport setImplicitRules(String param);
 
-   public boolean hasRequest();
+   public boolean hasBasedOn();
 
-   public List<DiagnosticRequest> getRequestDiagnosticRequestTarget();
+   public List<CarePlan> getBasedOnCarePlanTarget();
 
-   public List<Reference> getRequest();
+   public List<Reference> getBasedOn();
 
-   public List<ProcedureRequest> getRequestProcedureRequestTarget();
+   public List<ImmunizationRecommendation> getBasedOnImmunizationRecommendationTarget();
 
-   public List<ReferralRequest> getRequestReferralRequestTarget();
+   public List<MedicationRequest> getBasedOnMedicationRequestTarget();
+
+   public List<NutritionOrder> getBasedOnNutritionOrderTarget();
+
+   public List<ProcedureRequest> getBasedOnProcedureRequestTarget();
+
+   public List<ReferralRequest> getBasedOnReferralRequestTarget();
 
    public Type getEffective();
 
