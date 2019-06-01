@@ -10,7 +10,7 @@ import org.hl7.fhir.dstu3.model.Reference;
 import org.hl7.fhir.dstu3.model.Encounter;
 import org.hl7.fhir.dstu3.model.Resource;
 import org.hl7.fhir.dstu3.model.CodeableConcept;
-import org.hl7.fhir.dstu3.model.DosageInstruction;
+import org.hl7.fhir.dstu3.model.Dosage;
 import org.hl7.fhir.dstu3.model.UriType;
 import org.hl7.fhir.dstu3.model.MedicationRequest.MedicationRequestDispenseRequestComponent;
 import org.hl7.fhir.dstu3.model.MedicationRequest.MedicationRequestStatus;
@@ -48,11 +48,11 @@ public class qicoremedicationrequestAdapter implements Iqicoremedicationrequest
       this.adaptedClass = param;
    }
 
-   public List<qicoremedicationrequestDosageInstructionAdapter> getWrappedDosageInstruction() {
+   public List<qicoremedicationrequestDosageInstructionAdapter> getWrappedDosage() {
 		List<qicoremedicationrequestDosageInstructionAdapter> wrappedItems = new java.util.ArrayList<>();
-		List<org.hl7.fhir.dstu3.model.DosageInstruction> items = adaptedClass
+		List<org.hl7.fhir.dstu3.model.Dosage> items = adaptedClass
 				.getDosageInstruction();
-		for (org.hl7.fhir.dstu3.model.DosageInstruction item : items) {
+		for (org.hl7.fhir.dstu3.model.Dosage item : items) {
 			wrappedItems
 					.add(new qicoremedicationrequestDosageInstructionAdapter(
 							item));
@@ -60,9 +60,9 @@ public class qicoremedicationrequestAdapter implements Iqicoremedicationrequest
 		return wrappedItems;
 	}
 
-   public Iqicoremedicationrequest setWrappedDosageInstruction(
+   public Iqicoremedicationrequest setWrappedDosage(
 			List<qicoremedicationrequestDosageInstructionAdapter> param) {
-		List<org.hl7.fhir.dstu3.model.DosageInstruction> items = new java.util.ArrayList<>();
+		List<org.hl7.fhir.dstu3.model.Dosage> items = new java.util.ArrayList<>();
 		for (qicoremedicationrequestDosageInstructionAdapter item : param) {
 			items.add(item.getAdaptee());
 		}
