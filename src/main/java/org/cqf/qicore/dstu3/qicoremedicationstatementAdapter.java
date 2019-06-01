@@ -1,28 +1,11 @@
 package org.cqf.qicore.dstu3;
 
-import org.hl7.fhir.dstu3.model.MedicationStatement;
-import org.hl7.fhir.dstu3.model.MedicationStatement.MedicationStatementNotTaken;
-import org.hl7.fhir.dstu3.model.UriType;
+import org.hl7.fhir.dstu3.model.*;
+
 import java.lang.String;
-import org.hl7.fhir.dstu3.model.Identifier;
 import java.util.List;
-import org.hl7.fhir.dstu3.model.Reference;
-import org.hl7.fhir.dstu3.model.Annotation;
-import org.hl7.fhir.dstu3.model.Enumeration;
-import org.hl7.fhir.dstu3.model.CodeableConcept;
-import org.hl7.fhir.dstu3.model.IdType;
-import org.hl7.fhir.dstu3.model.Resource;
-import org.hl7.fhir.dstu3.model.Patient;
-import org.hl7.fhir.dstu3.model.Practitioner;
-import org.hl7.fhir.dstu3.model.RelatedPerson;
-import org.hl7.fhir.dstu3.model.CodeType;
-import org.hl7.fhir.dstu3.model.Type;
-import org.hl7.fhir.dstu3.model.DateTimeType;
-import org.hl7.fhir.dstu3.model.DosageInstruction;
-import org.hl7.fhir.dstu3.model.Period;
-import org.hl7.fhir.dstu3.model.Medication;
-import org.hl7.fhir.dstu3.model.BooleanType;
-import java.lang.Boolean;
+
+import org.hl7.fhir.dstu3.model.Dosage;
 
 public class qicoremedicationstatementAdapter implements Iqicoremedicationstatement
 {
@@ -129,16 +112,6 @@ public class qicoremedicationstatementAdapter implements Iqicoremedicationstatem
       return adaptedClass.addIdentifier();
    }
 
-   public boolean hasReasonForUseReference()
-   {
-      return adaptedClass.hasReasonForUseReference();
-   }
-
-   public List<Reference> getReasonForUseReference()
-   {
-      return adaptedClass.getReasonForUseReference();
-   }
-
    public List<Annotation> getNote()
    {
       try
@@ -173,7 +146,7 @@ public class qicoremedicationstatementAdapter implements Iqicoremedicationstatem
       return adaptedClass.addNote();
    }
 
-   public List<DosageInstruction> getDosage()
+   public List<Dosage> getDosage()
    {
       try
       {
@@ -186,7 +159,7 @@ public class qicoremedicationstatementAdapter implements Iqicoremedicationstatem
    }
 
    public qicoremedicationstatementAdapter setDosage(
-         List<DosageInstruction> param)
+         List<Dosage> param)
    {
       adaptedClass.setDosage(param);
       return this;
@@ -198,13 +171,13 @@ public class qicoremedicationstatementAdapter implements Iqicoremedicationstatem
    }
 
    public qicoremedicationstatementAdapter addDosage(
-		   DosageInstruction param)
+		   Dosage param)
    {
       adaptedClass.addDosage(param);
       return this;
    }
 
-   public DosageInstruction addDosage()
+   public Dosage addDosage()
    {
       return adaptedClass.addDosage();
    }
@@ -214,12 +187,7 @@ public class qicoremedicationstatementAdapter implements Iqicoremedicationstatem
       return adaptedClass.hasCategory();
    }
 
-   public boolean hasCategoryElement()
-   {
-      return adaptedClass.hasCategoryElement();
-   }
-
-   public MedicationStatement.MedicationStatementCategory getCategory()
+   public CodeableConcept getCategory()
    {
       try
       {
@@ -231,65 +199,10 @@ public class qicoremedicationstatementAdapter implements Iqicoremedicationstatem
       }
    }
 
-   public Enumeration<MedicationStatement.MedicationStatementCategory> getCategoryElement()
-   {
-      try
-      {
-         return adaptedClass.getCategoryElement();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting CategoryElement", e);
-      }
-   }
-
-   public Iqicoremedicationstatement setCategory(
-         MedicationStatement.MedicationStatementCategory param)
+   public Iqicoremedicationstatement setCategory(CodeableConcept param)
    {
       adaptedClass.setCategory(param);
       return this;
-   }
-
-   public Iqicoremedicationstatement setCategoryElement(
-         Enumeration<MedicationStatement.MedicationStatementCategory> param)
-   {
-      adaptedClass.setCategoryElement(param);
-      return this;
-   }
-
-   public List<CodeableConcept> getReasonForUseCodeableConcept()
-   {
-      try
-      {
-         return adaptedClass.getReasonForUseCodeableConcept();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting ReasonForUseCode", e);
-      }
-   }
-
-   public Iqicoremedicationstatement setReasonForUseCodeableConcept(
-         List<CodeableConcept> param)
-   {
-      adaptedClass.setReasonForUseCodeableConcept(param);
-      return this;
-   }
-
-   public boolean hasReasonForUseCodeableConcept()
-   {
-      return adaptedClass.hasReasonForUseCodeableConcept();
-   }
-
-   public Iqicoremedicationstatement addReasonForUseCodeableConcept(CodeableConcept param)
-   {
-      adaptedClass.addReasonForUseCodeableConcept(param);
-      return this;
-   }
-
-   public CodeableConcept addReasonForUseCodeableConcept()
-   {
-      return adaptedClass.addReasonForUseCodeableConcept();
    }
 
    public boolean hasId()
@@ -867,49 +780,4 @@ public class qicoremedicationstatementAdapter implements Iqicoremedicationstatem
       return adaptedClass.getDerivedFrom();
    }
 
-   public boolean hasNotTaken()
-   {
-      return adaptedClass.hasNotTaken();
-   }
-
-   public boolean hasNotTakenElement()
-   {
-      return adaptedClass.hasNotTakenElement();
-   }
-
-   public Enumeration<MedicationStatementNotTaken> getNotTakenElement()
-   {
-      try
-      {
-         return adaptedClass.getNotTakenElement();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting NotTakenElement", e);
-      }
-   }
-
-   public MedicationStatementNotTaken getNotTaken()
-   {
-      try
-      {
-         return adaptedClass.getNotTaken();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting NotTaken", e);
-      }
-   }
-
-   public Iqicoremedicationstatement setNotTakenElement(Enumeration<MedicationStatementNotTaken>  param)
-   {
-      adaptedClass.setNotTakenElement(param);
-      return this;
-   }
-
-   public Iqicoremedicationstatement setNotTaken(MedicationStatementNotTaken  param)
-   {
-      adaptedClass.setNotTaken(param);
-      return this;
-   }
 }

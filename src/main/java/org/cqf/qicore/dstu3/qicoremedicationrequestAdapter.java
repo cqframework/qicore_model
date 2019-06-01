@@ -634,11 +634,6 @@ public class qicoremedicationrequestAdapter implements Iqicoremedicationrequest
       return adaptedClass.hasCategory();
    }
 
-//   public boolean hasCategoryElement()
-//   {
-//      return adaptedClass.hasCategoryElement();
-//   }
-
    public CodeableConcept getCategory()
    {
       try
@@ -651,31 +646,12 @@ public class qicoremedicationrequestAdapter implements Iqicoremedicationrequest
       }
    }
 
-//   public Enumeration<MedicationOrder.MedicationOrderCategory> getCategoryElement()
-//   {
-//      try
-//      {
-//         return adaptedClass.getCategoryElement();
-//      }
-//      catch (Exception e)
-//      {
-//         throw new RuntimeException("Error getting CategoryElement", e);
-//      }
-//   }
-
    public Iqicoremedicationrequest setCategory(
 		   CodeableConcept param)
    {
       adaptedClass.setCategory(param);
       return this;
    }
-
-//   public Iqicoremedicationrequest setCategoryElement(
-//         Enumeration<MedicationOrder.MedicationOrderCategory> param)
-//   {
-//      adaptedClass.setCategoryElement(param);
-//      return this;
-//   }
 
    public Type getMedication()
    {

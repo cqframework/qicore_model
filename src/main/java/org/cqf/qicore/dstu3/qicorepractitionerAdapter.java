@@ -45,42 +45,6 @@ public class qicorepractitionerAdapter implements Iqicorepractitioner
       this.adaptedClass = param;
    }
 
-   public List<Practitioner.PractitionerRoleComponent> getRole()
-   {
-      try
-      {
-         return adaptedClass.getRole();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting Role", e);
-      }
-   }
-
-   public qicorepractitionerAdapter setRole(
-         List<Practitioner.PractitionerRoleComponent> param)
-   {
-      adaptedClass.setRole(param);
-      return this;
-   }
-
-   public boolean hasRole()
-   {
-      return adaptedClass.hasRole();
-   }
-
-   public qicorepractitionerAdapter addRole(
-         Practitioner.PractitionerRoleComponent param)
-   {
-      adaptedClass.addRole(param);
-      return this;
-   }
-
-   public Practitioner.PractitionerRoleComponent addRole()
-   {
-      return adaptedClass.addRole();
-   }
-
    public boolean hasActive()
    {
       return adaptedClass.hasActive();

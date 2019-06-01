@@ -1,7 +1,6 @@
 package org.cqf.qicore.dstu3;
 
 import org.hl7.fhir.dstu3.model.MedicationStatement;
-import org.hl7.fhir.dstu3.model.MedicationStatement.MedicationStatementNotTaken;
 
 import java.util.List;
 
@@ -22,12 +21,9 @@ import org.hl7.fhir.dstu3.model.RelatedPerson;
 import org.hl7.fhir.dstu3.model.CodeType;
 import org.hl7.fhir.dstu3.model.Type;
 import org.hl7.fhir.dstu3.model.DateTimeType;
-import org.hl7.fhir.dstu3.model.DosageInstruction;
+import org.hl7.fhir.dstu3.model.Dosage;
 import org.hl7.fhir.dstu3.model.Period;
 import org.hl7.fhir.dstu3.model.Medication;
-import org.hl7.fhir.dstu3.model.BooleanType;
-
-import java.lang.Boolean;
 
 public interface Iqicoremedicationstatement
 {
@@ -58,10 +54,6 @@ public interface Iqicoremedicationstatement
 
    public Identifier addIdentifier();
 
-   public boolean hasReasonForUseReference();
-
-   public List<Reference> getReasonForUseReference();
-
    public List<Annotation> getNote();
 
    public Iqicoremedicationstatement setNote(List<Annotation> param);
@@ -72,42 +64,21 @@ public interface Iqicoremedicationstatement
 
    public Annotation addNote();
 
-   public List<DosageInstruction> getDosage();
+   public List<Dosage> getDosage();
 
    public qicoremedicationstatementAdapter setDosage(
-         List<DosageInstruction> param);
+         List<Dosage> param);
 
    public boolean hasDosage();
 
    public qicoremedicationstatementAdapter addDosage(
-		   DosageInstruction param);
+		   Dosage param);
 
-   public DosageInstruction addDosage();
+   public Dosage addDosage();
 
    public boolean hasCategory();
 
-   public boolean hasCategoryElement();
-
-   public MedicationStatement.MedicationStatementCategory getCategory();
-
-   public Enumeration<MedicationStatement.MedicationStatementCategory> getCategoryElement();
-
-   public Iqicoremedicationstatement setCategory(
-         MedicationStatement.MedicationStatementCategory param);
-
-   public Iqicoremedicationstatement setCategoryElement(
-         Enumeration<MedicationStatement.MedicationStatementCategory> param);
-
-   public List<CodeableConcept> getReasonForUseCodeableConcept();
-
-   public Iqicoremedicationstatement setReasonForUseCodeableConcept(
-         List<CodeableConcept> param);
-
-   public boolean hasReasonForUseCodeableConcept();
-
-   public Iqicoremedicationstatement addReasonForUseCodeableConcept(CodeableConcept param);
-
-   public CodeableConcept addReasonForUseCodeableConcept();
+   public CodeableConcept getCategory();
 
    public boolean hasId();
 
@@ -258,15 +229,4 @@ public interface Iqicoremedicationstatement
 
    public List<Reference> getDerivedFrom();
 
-   public boolean hasNotTaken();
-
-   public boolean hasNotTakenElement();
-
-   public Enumeration<MedicationStatementNotTaken> getNotTakenElement();
-
-   public MedicationStatementNotTaken getNotTaken();
-
-   public Iqicoremedicationstatement setNotTakenElement(Enumeration<MedicationStatementNotTaken> param);
-
-   public Iqicoremedicationstatement setNotTaken(MedicationStatementNotTaken  param);
 }

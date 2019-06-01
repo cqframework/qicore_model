@@ -195,17 +195,10 @@ public interface Iqicoremedicationrequest
 
    public boolean hasCategory();
 
-//   public boolean hasCategoryElement();
-
    public CodeableConcept getCategory();
-
- //  public Enumeration<MedicationOrder.MedicationOrderCategory> getCategoryElement();
 
    public Iqicoremedicationrequest setCategory(
 		   CodeableConcept param);
-
- //  public Iqicoremedicationorder setCategoryElement(
- //        Enumeration<MedicationOrder.MedicationOrderCategory> param);
 
    public Type getMedication();
 
