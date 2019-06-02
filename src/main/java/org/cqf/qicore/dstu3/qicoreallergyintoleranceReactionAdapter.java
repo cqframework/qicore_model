@@ -36,54 +36,6 @@ public class qicoreallergyintoleranceReactionAdapter
       this.adaptedClass = param;
    }
 
-   public boolean hasCertainty()
-   {
-      return adaptedClass.hasCertainty();
-   }
-
-   public boolean hasCertaintyElement()
-   {
-      return adaptedClass.hasCertaintyElement();
-   }
-
-   public AllergyIntolerance.AllergyIntoleranceCertainty getCertainty()
-   {
-      try
-      {
-         return adaptedClass.getCertainty();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting Certainty", e);
-      }
-   }
-
-   public Enumeration<AllergyIntolerance.AllergyIntoleranceCertainty> getCertaintyElement()
-   {
-      try
-      {
-         return adaptedClass.getCertaintyElement();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting CertaintyElement", e);
-      }
-   }
-
-   public qicoreallergyintoleranceReactionAdapter setCertainty(
-         AllergyIntolerance.AllergyIntoleranceCertainty param)
-   {
-      adaptedClass.setCertainty(param);
-      return this;
-   }
-
-   public qicoreallergyintoleranceReactionAdapter setCertaintyElement(
-         Enumeration<AllergyIntolerance.AllergyIntoleranceCertainty> param)
-   {
-      adaptedClass.setCertaintyElement(param);
-      return this;
-   }
-
    public Duration getDuration()
    {
       List<org.hl7.fhir.dstu3.model.Extension> extensions = adaptedClass
