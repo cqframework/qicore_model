@@ -54,21 +54,19 @@ public interface Iqicorereferralrequest
 
    public List<CarePlan> getBasedOnCarePlanTarget();
 
-   public List<DiagnosticRequest> getBasedOnDiagnosticRequestTarget();
+    public List<ProcedureRequest> getBasedOnProcedureRequestTarget();
 
-   public List<ProcedureRequest> getBasedOnProcedureRequestTarget();
+   public ReferralRequest.ReferralPriority getPriority();
 
-   public CodeableConcept getPriority();
-
-   public Iqicorereferralrequest setPriority(CodeableConcept param);
+   public Iqicorereferralrequest setPriority(ReferralRequest.ReferralPriority param);
 
    public boolean hasPriority();
 
-   public Identifier getParent();
+   public Reference getSubject();
 
-   public Iqicorereferralrequest setParent(Identifier param);
+   public Iqicorereferralrequest setSubject(Reference param);
 
-   public boolean hasParent();
+   public boolean hasSubject();
 
    public boolean hasImplicitRules();
 
@@ -121,14 +119,14 @@ public interface Iqicorereferralrequest
 
    public boolean hasStatusElement();
 
-   public ReferralRequest.ReferralStatus getStatus();
+   public ReferralRequest.ReferralRequestStatus getStatus();
 
-   public Enumeration<ReferralRequest.ReferralStatus> getStatusElement();
+   public Enumeration<ReferralRequest.ReferralRequestStatus> getStatusElement();
 
-   public Iqicorereferralrequest setStatus(ReferralRequest.ReferralStatus param);
+   public Iqicorereferralrequest setStatus(ReferralRequest.ReferralRequestStatus param);
 
    public Iqicorereferralrequest setStatusElement(
-         Enumeration<ReferralRequest.ReferralStatus> param);
+           Enumeration<ReferralRequest.ReferralRequestStatus> param);
 
    public List<CodeableConcept> getServiceRequested();
 
@@ -162,13 +160,13 @@ public interface Iqicorereferralrequest
 
    public boolean hasSpecialty();
 
-   public Period getFulfillmentTime();
+   public Period getOccurrencePeriod();
 
    public Iqicorereferralrequest setFulfillmentTime(Period param);
 
-   public boolean hasFulfillmentTime();
+   public boolean hasOccurrencePeriod();
 
-   public Reference getRequester();
+   public ReferralRequest.ReferralRequestRequesterComponent getRequester();
 
    public Resource getRequesterTarget();
 
@@ -209,18 +207,18 @@ public interface Iqicorereferralrequest
    public Iqicorereferralrequest setRequesterAdapterTarget(
          qicorepatientAdapter param);
 
-   public boolean hasCategory();
+   public boolean hasIntent();
 
-   public boolean hasCategoryElement();
+   public boolean hasIntentElement();
 
-   public ReferralRequest.ReferralCategory getCategory();
+   public ReferralRequest.ReferralCategory getIntent();
 
-   public Enumeration<ReferralRequest.ReferralCategory> getCategoryElement();
+   public Enumeration<ReferralRequest.ReferralCategory> getIntentElement();
 
-   public Iqicorereferralrequest setCategory(
+   public Iqicorereferralrequest setIntent(
          ReferralRequest.ReferralCategory param);
 
-   public Iqicorereferralrequest setCategoryElement(
+   public Iqicorereferralrequest setIntentElement(
          Enumeration<ReferralRequest.ReferralCategory> param);
 
    public CodeableConcept getRefusalReason();
@@ -247,11 +245,11 @@ public interface Iqicorereferralrequest
 
    public List<Organization> getRecipientOrganizationTarget();
 
-   public CodeableConcept getReason();
+   public List<CodeableConcept> getReasonCode();
 
-   public Iqicorereferralrequest setReason(CodeableConcept param);
+   public Iqicorereferralrequest setReasonCode(List<CodeableConcept> param);
 
-   public boolean hasReason();
+   public boolean hasReasonCode();
 
    public CodeableConcept getType();
 
