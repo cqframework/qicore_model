@@ -101,11 +101,11 @@ public interface Iqicoredevice
 
    public Identifier addIdentifier();
 
-   public Identifier getUdiCarrier();
+   public Device.DeviceUdiComponent getUdiCarrier();
 
-   public Iqicoredevice setUdiCarrier(Identifier param);
+   public Iqicoredevice setUdiCarrier(Device.DeviceUdiComponent param);
 
-   public boolean hasUdiCarrier();
+   public boolean hasUdi();
 
    public boolean hasOwner();
 
