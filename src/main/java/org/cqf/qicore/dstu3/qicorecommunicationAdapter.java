@@ -185,11 +185,11 @@ public class qicorecommunicationAdapter implements Iqicorecommunication
       return adaptedClass.addPayload();
    }
 
-   public List<CodeableConcept> getReason()
+   public List<CodeableConcept> getReasonCode()
    {
       try
       {
-         return adaptedClass.getReason();
+         return adaptedClass.getReasonCode();
       }
       catch (Exception e)
       {
@@ -197,26 +197,26 @@ public class qicorecommunicationAdapter implements Iqicorecommunication
       }
    }
 
-   public Iqicorecommunication setReason(List<CodeableConcept> param)
+   public Iqicorecommunication setReasonCode(List<CodeableConcept> param)
    {
-      adaptedClass.setReason(param);
+      adaptedClass.setReasonCode(param);
       return this;
    }
 
-   public boolean hasReason()
+   public boolean hasReasonCode()
    {
-      return adaptedClass.hasReason();
+      return adaptedClass.hasReasonCode();
    }
 
-   public Iqicorecommunication addReason(CodeableConcept param)
+   public Iqicorecommunication addReasonCode(CodeableConcept param)
    {
-      adaptedClass.addReason(param);
+      adaptedClass.addReasonCode(param);
       return this;
    }
 
-   public CodeableConcept addReason()
+   public CodeableConcept addReasonCode()
    {
-      return adaptedClass.addReason();
+      return adaptedClass.addReasonCode();
    }
 
    public List<Annotation> getNote()
@@ -342,12 +342,12 @@ public class qicorecommunicationAdapter implements Iqicorecommunication
 
    public boolean hasParent()
    {
-      return adaptedClass.hasParent();
+      return adaptedClass.hasSubject();
    }
 
-   public List<Reference> getParent()
+   public Reference getParent()
    {
-      return adaptedClass.getParent();
+      return adaptedClass.getSubject();
    }
 
    public CodeableConcept getReasonNotPerformed()
@@ -437,7 +437,7 @@ public class qicorecommunicationAdapter implements Iqicorecommunication
       return this;
    }
 
-   public CodeableConcept getCategory()
+   public List<CodeableConcept> getCategory()
    {
       try
       {
@@ -449,7 +449,7 @@ public class qicorecommunicationAdapter implements Iqicorecommunication
       }
    }
 
-   public Iqicorecommunication setCategory(CodeableConcept param)
+   public Iqicorecommunication setCategory(List<CodeableConcept> param)
    {
       adaptedClass.setCategory(param);
       return this;
