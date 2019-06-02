@@ -39,21 +39,6 @@ public interface Iqicoreimmunization
 
    public void setAdaptee(Immunization param);
 
-   public boolean hasRequester();
-
-   public Reference getRequester();
-
-   public Iqicoreimmunization setRequester(Reference param);
-
-   public Practitioner getRequesterTarget();
-
-   public Iqicoreimmunization setRequesterTarget(Practitioner param);
-
-   public qicorepractitionerAdapter getRequesterAdapterTarget();
-
-   public Iqicoreimmunization setRequesterAdapterTarget(
-         qicorepractitionerAdapter param);
-
    public boolean hasLocation();
 
    public Reference getLocation();
@@ -195,17 +180,17 @@ public interface Iqicoreimmunization
 
    public boolean hasRoute();
 
-   public boolean hasWasNotGiven();
+   public boolean hasNotGiven();
 
-   public boolean hasWasNotGivenElement();
+   public boolean hasNotGivenElement();
 
-   public BooleanType getWasNotGivenElement();
+   public BooleanType getNotGivenElement();
 
-   public Boolean getWasNotGiven();
+   public Boolean getNotGiven();
 
-   public Iqicoreimmunization setWasNotGivenElement(BooleanType param);
+   public Iqicoreimmunization setNotGivenElement(BooleanType param);
 
-   public Iqicoreimmunization setWasNotGiven(Boolean param);
+   public Iqicoreimmunization setNotGiven(Boolean param);
 
    public boolean hasPatient();
 
@@ -222,20 +207,11 @@ public interface Iqicoreimmunization
    public Iqicoreimmunization setPatientAdapterTarget(
          qicorepatientAdapter param);
 
-   public boolean hasPerformer();
+   public boolean hasPractitioner();
 
-   public Reference getPerformer();
+   public List<Immunization.ImmunizationPractitionerComponent> getPractitioner();
 
-   public Iqicoreimmunization setPerformer(Reference param);
-
-   public Practitioner getPerformerTarget();
-
-   public Iqicoreimmunization setPerformerTarget(Practitioner param);
-
-   public qicorepractitionerAdapter getPerformerAdapterTarget();
-
-   public Iqicoreimmunization setPerformerAdapterTarget(
-         qicorepractitionerAdapter param);
+   public Iqicoreimmunization setPractitioner(List<Immunization.ImmunizationPractitionerComponent> param);
 
    public CodeableConcept getSite();
 
