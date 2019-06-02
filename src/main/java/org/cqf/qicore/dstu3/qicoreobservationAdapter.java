@@ -847,14 +847,14 @@ public class qicoreobservationAdapter implements Iqicoreobservation
 
    public boolean hasEncounter()
    {
-      return adaptedClass.hasEncounter();
+      return adaptedClass.hasContext();
    }
 
    public Reference getEncounter()
    {
       try
       {
-         return adaptedClass.getEncounter();
+         return adaptedClass.getContext();
       }
       catch (Exception e)
       {
@@ -864,30 +864,30 @@ public class qicoreobservationAdapter implements Iqicoreobservation
 
    public Iqicoreobservation setEncounter(Reference param)
    {
-      adaptedClass.setEncounter(param);
+      adaptedClass.setContext(param);
       return this;
    }
 
    public Encounter getEncounterTarget()
    {
       return (org.hl7.fhir.dstu3.model.Encounter) adaptedClass
-            .getEncounterTarget();
+            .getContextTarget();
    }
 
    public Iqicoreobservation setEncounterTarget(Encounter param)
    {
-      adaptedClass.setEncounterTarget(param);
+      adaptedClass.setContextTarget(param);
       return this;
    }
 
    public qicoreencounterAdapter getEncounterAdapterTarget()
    {
-      if (adaptedClass.getEncounter().getResource() instanceof org.hl7.fhir.dstu3.model.Encounter)
+      if (adaptedClass.getContext().getResource() instanceof org.hl7.fhir.dstu3.model.Encounter)
       {
          qicoreencounterAdapter profiledType = new qicoreencounterAdapter();
          profiledType
                .setAdaptee((org.hl7.fhir.dstu3.model.Encounter) adaptedClass
-                     .getEncounter().getResource());
+                     .getContext().getResource());
          return profiledType;
       }
       else
@@ -899,7 +899,7 @@ public class qicoreobservationAdapter implements Iqicoreobservation
    public Iqicoreobservation setEncounterAdapterTarget(
          qicoreencounterAdapter param)
    {
-      adaptedClass.setEncounterTarget(param.getAdaptee());
+      adaptedClass.setContextTarget(param.getAdaptee());
       return this;
    }
 
