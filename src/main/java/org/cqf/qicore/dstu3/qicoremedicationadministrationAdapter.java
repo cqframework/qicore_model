@@ -5,9 +5,8 @@ import org.hl7.fhir.dstu3.model.CodeType;
 import java.lang.String;
 import org.hl7.fhir.dstu3.model.Reference;
 import org.hl7.fhir.dstu3.model.Resource;
-import org.hl7.fhir.dstu3.model.Practitioner;
 import org.hl7.fhir.dstu3.model.Patient;
-import org.hl7.fhir.dstu3.model.RelatedPerson;
+
 import java.util.List;
 import org.hl7.fhir.dstu3.model.CodeableConcept;
 import org.hl7.fhir.dstu3.model.Annotation;
@@ -120,7 +119,7 @@ public class qicoremedicationadministrationAdapter implements Iqicoremedicationa
       return this;
    }
 
-   public Reference getPerformer()
+   public List<MedicationAdministration.MedicationAdministrationPerformerComponent> getPerformer()
    {
       try
       {
@@ -129,18 +128,6 @@ public class qicoremedicationadministrationAdapter implements Iqicoremedicationa
       catch (Exception e)
       {
          throw new RuntimeException("Error getting Performer", e);
-      }
-   }
-
-   public Resource getPerformerTarget()
-   {
-      try
-      {
-         return adaptedClass.getPerformerTarget();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting PerformerTarget", e);
       }
    }
 
@@ -149,151 +136,9 @@ public class qicoremedicationadministrationAdapter implements Iqicoremedicationa
       return adaptedClass.hasPerformer();
    }
 
-   public Reference getPerformerPractitioner()
-   {
-      try
-      {
-         return adaptedClass.getPerformer();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting Performer", e);
-      }
-   }
-
-   public Iqicoremedicationadministration setPerformer(Reference param)
+   public Iqicoremedicationadministration setPerformer(List<MedicationAdministration.MedicationAdministrationPerformerComponent> param)
    {
       adaptedClass.setPerformer(param);
-      return this;
-   }
-
-   public Practitioner getPerformerPractitionerTarget()
-   {
-      return (org.hl7.fhir.dstu3.model.Practitioner) adaptedClass
-            .getPerformerTarget();
-   }
-
-   public Iqicoremedicationadministration setPerformerTarget(Practitioner param)
-   {
-      adaptedClass.setPerformerTarget(param);
-      return this;
-   }
-
-   public qicorepractitionerAdapter getPerformerPractitionerAdapterTarget()
-   {
-      if (adaptedClass.getPerformer().getResource() instanceof org.hl7.fhir.dstu3.model.Practitioner)
-      {
-         qicorepractitionerAdapter profiledType = new qicorepractitionerAdapter();
-         profiledType
-               .setAdaptee((org.hl7.fhir.dstu3.model.Practitioner) adaptedClass
-                     .getPerformer().getResource());
-         return profiledType;
-      }
-      else
-      {
-         return null;
-      }
-   }
-
-   public Iqicoremedicationadministration setPerformerAdapterTarget(
-         qicorepractitionerAdapter param)
-   {
-      adaptedClass.setPerformerTarget(param.getAdaptee());
-      return this;
-   }
-
-   public Reference getPerformerPatient()
-   {
-      try
-      {
-         return adaptedClass.getPerformer();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting Performer", e);
-      }
-   }
-
-   public Patient getPerformerPatientTarget()
-   {
-      return (org.hl7.fhir.dstu3.model.Patient) adaptedClass
-            .getPerformerTarget();
-   }
-
-   public Iqicoremedicationadministration setPerformerTarget(Patient param)
-   {
-      adaptedClass.setPerformerTarget(param);
-      return this;
-   }
-
-   public qicorepatientAdapter getPerformerPatientAdapterTarget()
-   {
-      if (adaptedClass.getPerformer().getResource() instanceof org.hl7.fhir.dstu3.model.Patient)
-      {
-         qicorepatientAdapter profiledType = new qicorepatientAdapter();
-         profiledType
-               .setAdaptee((org.hl7.fhir.dstu3.model.Patient) adaptedClass
-                     .getPerformer().getResource());
-         return profiledType;
-      }
-      else
-      {
-         return null;
-      }
-   }
-
-   public Iqicoremedicationadministration setPerformerAdapterTarget(
-         qicorepatientAdapter param)
-   {
-      adaptedClass.setPerformerTarget(param.getAdaptee());
-      return this;
-   }
-
-   public Reference getPerformerRelatedPerson()
-   {
-      try
-      {
-         return adaptedClass.getPerformer();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting Performer", e);
-      }
-   }
-
-   public RelatedPerson getPerformerRelatedPersonTarget()
-   {
-      return (org.hl7.fhir.dstu3.model.RelatedPerson) adaptedClass
-            .getPerformerTarget();
-   }
-
-   public Iqicoremedicationadministration setPerformerTarget(
-         RelatedPerson param)
-   {
-      adaptedClass.setPerformerTarget(param);
-      return this;
-   }
-
-   public qicorerelatedpersonAdapter getPerformerRelatedPersonAdapterTarget()
-   {
-      if (adaptedClass.getPerformer().getResource() instanceof org.hl7.fhir.dstu3.model.RelatedPerson)
-      {
-         qicorerelatedpersonAdapter profiledType = new qicorerelatedpersonAdapter();
-         profiledType
-               .setAdaptee((org.hl7.fhir.dstu3.model.RelatedPerson) adaptedClass
-                     .getPerformer().getResource());
-         return profiledType;
-      }
-      else
-      {
-         return null;
-      }
-   }
-
-   public Iqicoremedicationadministration setPerformerAdapterTarget(
-         qicorerelatedpersonAdapter param)
-   {
-      adaptedClass.setPerformerTarget(param.getAdaptee());
       return this;
    }
 
@@ -335,14 +180,14 @@ public class qicoremedicationadministrationAdapter implements Iqicoremedicationa
 
    public boolean hasPatient()
    {
-      return adaptedClass.hasPatient();
+      return adaptedClass.hasSubject();
    }
 
    public Reference getPatient()
    {
       try
       {
-         return adaptedClass.getPatient();
+         return adaptedClass.getSubject();
       }
       catch (Exception e)
       {
@@ -352,30 +197,30 @@ public class qicoremedicationadministrationAdapter implements Iqicoremedicationa
 
    public Iqicoremedicationadministration setPatient(Reference param)
    {
-      adaptedClass.setPatient(param);
+      adaptedClass.setSubject(param);
       return this;
    }
 
    public Patient getPatientTarget()
    {
       return (org.hl7.fhir.dstu3.model.Patient) adaptedClass
-            .getPatientTarget();
+            .getSubjectTarget();
    }
 
    public Iqicoremedicationadministration setPatientTarget(Patient param)
    {
-      adaptedClass.setPatientTarget(param);
+      adaptedClass.setSubjectTarget(param);
       return this;
    }
 
    public qicorepatientAdapter getPatientAdapterTarget()
    {
-      if (adaptedClass.getPatient().getResource() instanceof org.hl7.fhir.dstu3.model.Patient)
+      if (adaptedClass.getSubject().getResource() instanceof org.hl7.fhir.dstu3.model.Patient)
       {
          qicorepatientAdapter profiledType = new qicorepatientAdapter();
          profiledType
                .setAdaptee((org.hl7.fhir.dstu3.model.Patient) adaptedClass
-                     .getPatient().getResource());
+                     .getSubject().getResource());
          return profiledType;
       }
       else
@@ -387,7 +232,7 @@ public class qicoremedicationadministrationAdapter implements Iqicoremedicationa
    public Iqicoremedicationadministration setPatientAdapterTarget(
          qicorepatientAdapter param)
    {
-      adaptedClass.setPatientTarget(param.getAdaptee());
+      adaptedClass.setSubjectTarget(param.getAdaptee());
       return this;
    }
 
@@ -461,11 +306,11 @@ public class qicoremedicationadministrationAdapter implements Iqicoremedicationa
       return adaptedClass.addNote();
    }
 
-   public List<CodeableConcept> getReasonGiven()
+   public List<CodeableConcept> getReasonCode()
    {
       try
       {
-         return adaptedClass.getReasonGiven();
+         return adaptedClass.getReasonCode();
       }
       catch (Exception e)
       {
@@ -473,27 +318,27 @@ public class qicoremedicationadministrationAdapter implements Iqicoremedicationa
       }
    }
 
-   public Iqicoremedicationadministration setReasonGiven(
+   public Iqicoremedicationadministration setReasonCode(
          List<CodeableConcept> param)
    {
-      adaptedClass.setReasonGiven(param);
+      adaptedClass.setReasonCode(param);
       return this;
    }
 
    public boolean hasReasonGiven()
    {
-      return adaptedClass.hasReasonGiven();
+      return adaptedClass.hasReasonCode();
    }
 
-   public Iqicoremedicationadministration addReasonGiven(CodeableConcept param)
+   public Iqicoremedicationadministration addReasonCode(CodeableConcept param)
    {
-      adaptedClass.addReasonGiven(param);
+      adaptedClass.addReasonCode(param);
       return this;
    }
 
-   public CodeableConcept addReasonGiven()
+   public CodeableConcept addReasonCode()
    {
-      return adaptedClass.addReasonGiven();
+      return adaptedClass.addReasonCode();
    }
 
    public Type getMedication()
@@ -789,14 +634,14 @@ public class qicoremedicationadministrationAdapter implements Iqicoremedicationa
 
    public boolean hasEncounter()
    {
-      return adaptedClass.hasEncounter();
+      return adaptedClass.hasContext();
    }
 
    public Reference getEncounter()
    {
       try
       {
-         return adaptedClass.getEncounter();
+         return adaptedClass.getContext();
       }
       catch (Exception e)
       {
@@ -806,30 +651,30 @@ public class qicoremedicationadministrationAdapter implements Iqicoremedicationa
 
    public Iqicoremedicationadministration setEncounter(Reference param)
    {
-      adaptedClass.setEncounter(param);
+      adaptedClass.setContext(param);
       return this;
    }
 
    public Encounter getEncounterTarget()
    {
       return (org.hl7.fhir.dstu3.model.Encounter) adaptedClass
-            .getEncounterTarget();
+            .getContextTarget();
    }
 
    public Iqicoremedicationadministration setEncounterTarget(Encounter param)
    {
-      adaptedClass.setEncounterTarget(param);
+      adaptedClass.setContextTarget(param);
       return this;
    }
 
    public qicoreencounterAdapter getEncounterAdapterTarget()
    {
-      if (adaptedClass.getEncounter().getResource() instanceof org.hl7.fhir.dstu3.model.Encounter)
+      if (adaptedClass.getContext().getResource() instanceof org.hl7.fhir.dstu3.model.Encounter)
       {
          qicoreencounterAdapter profiledType = new qicoreencounterAdapter();
          profiledType
                .setAdaptee((org.hl7.fhir.dstu3.model.Encounter) adaptedClass
-                     .getEncounter().getResource());
+                     .getContext().getResource());
          return profiledType;
       }
       else
@@ -841,7 +686,7 @@ public class qicoremedicationadministrationAdapter implements Iqicoremedicationa
    public Iqicoremedicationadministration setEncounterAdapterTarget(
          qicoreencounterAdapter param)
    {
-      adaptedClass.setEncounterTarget(param.getAdaptee());
+      adaptedClass.setContextTarget(param.getAdaptee());
       return this;
    }
 
