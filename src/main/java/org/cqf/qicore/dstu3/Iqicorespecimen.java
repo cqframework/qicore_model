@@ -29,17 +29,17 @@ public interface Iqicorespecimen
 
    public void setAdaptee(Specimen param);
 
-   public List<Specimen.SpecimenTreatmentComponent> getTreatment();
+   public List<Specimen.SpecimenProcessingComponent> getProcessing();
 
    public qicorespecimenAdapter setTreatment(
-         List<Specimen.SpecimenTreatmentComponent> param);
+         List<Specimen.SpecimenProcessingComponent> param);
 
-   public boolean hasTreatment();
+   public boolean hasProcessing();
 
-   public qicorespecimenAdapter addTreatment(
-         Specimen.SpecimenTreatmentComponent param);
+   public qicorespecimenAdapter addProcessing(
+         Specimen.SpecimenProcessingComponent param);
 
-   public Specimen.SpecimenTreatmentComponent addTreatment();
+   public Specimen.SpecimenProcessingComponent addTreatment();
 
    public boolean hasImplicitRules();
 
@@ -105,8 +105,6 @@ public interface Iqicorespecimen
    public List<Reference> getParent();
 
    public boolean hasRequest();
-
-   public List<DiagnosticRequest> getRequestDiagnosticRequestTarget();
 
    public List<Reference> getRequest();
 
