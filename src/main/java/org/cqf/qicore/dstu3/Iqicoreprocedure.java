@@ -11,7 +11,6 @@ import org.hl7.fhir.dstu3.model.CodeableConcept;
 import org.hl7.fhir.dstu3.model.Identifier;
 import org.hl7.fhir.dstu3.model.Resource;
 import org.hl7.fhir.dstu3.model.CarePlan;
-import org.hl7.fhir.dstu3.model.DiagnosticRequest;
 import org.hl7.fhir.dstu3.model.ProcedureRequest;
 import org.hl7.fhir.dstu3.model.ReferralRequest;
 import org.hl7.fhir.dstu3.model.Type;
@@ -87,37 +86,23 @@ public interface Iqicoreprocedure
 
    public Identifier addIdentifier();
 
-   public Reference getRequest();
+   public boolean hasBasedOn();
 
-   public Resource getRequestTarget();
+   public List<Reference> getBasedOn();
 
-   public boolean hasRequest();
+   public Iqicoreprocedure setBasedOn(List<Reference> param);
 
-   public Reference getRequestCarePlan();
+   public List<Reference> getBasedOnCarePlan();
 
-   public Iqicoreprocedure setRequest(Reference param);
+   public List<CarePlan> getBasedOnCarePlanTarget();
 
-   public CarePlan getRequestCarePlanTarget();
+   public List<Reference> getBasedOnProcedureRequest();
 
-   public Iqicoreprocedure setRequestTarget(CarePlan param);
+   public List<ProcedureRequest> getBasedOnProcedureRequestTarget();
 
-   public Reference getRequestDiagnosticRequest();
+   public List<Reference> getBasedOnReferralRequest();
 
-   public DiagnosticRequest getRequestDiagnosticRequestTarget();
-
-   public Iqicoreprocedure setRequestTarget(DiagnosticRequest param);
-
-   public Reference getRequestProcedureRequest();
-
-   public ProcedureRequest getRequestProcedureRequestTarget();
-
-   public Iqicoreprocedure setRequestTarget(ProcedureRequest param);
-
-   public Reference getRequestReferralRequest();
-
-   public ReferralRequest getRequestReferralRequestTarget();
-
-   public Iqicoreprocedure setRequestTarget(ReferralRequest param);
+   public List<ReferralRequest> getBasedOnReferralRequestTarget();
 
    public CodeableConcept getCategory();
 
@@ -137,15 +122,13 @@ public interface Iqicoreprocedure
 
    public boolean hasPerformedPeriod();
 
-   public boolean hasComponent();
+   public List<MedicationAdministration> getPartOfMedicationAdministrationTarget();
 
-   public List<MedicationAdministration> getComponentMedicationAdministrationTarget();
+   public List<Reference> getPartOf();
 
-   public List<Reference> getComponent();
+   public List<Procedure> getPartOfProcedureTarget();
 
-   public List<Procedure> getComponentProcedureTarget();
-
-   public List<Observation> getComponentObservationTarget();
+   public List<Observation> getPartOfObservationTarget();
 
    public boolean hasImplicitRules();
 
@@ -247,17 +230,17 @@ public interface Iqicoreprocedure
 
    public Iqicoreprocedure setId(String param);
 
-   public boolean hasNotPerformed();
+   public boolean hasNotDone();
 
-   public boolean hasNotPerformedElement();
+   public boolean hasNotDoneElement();
 
-   public BooleanType getNotPerformedElement();
+   public BooleanType getNotDoneElement();
 
-   public Boolean getNotPerformed();
+   public Boolean getNotDone();
 
-   public Iqicoreprocedure setNotPerformedElement(BooleanType param);
+   public Iqicoreprocedure setNotDoneElement(BooleanType param);
 
-   public Iqicoreprocedure setNotPerformed(Boolean param);
+   public Iqicoreprocedure setNotDone(Boolean param);
 
    public boolean hasStatus();
 
@@ -272,15 +255,11 @@ public interface Iqicoreprocedure
    public Iqicoreprocedure setStatusElement(
          Enumeration<Procedure.ProcedureStatus> param);
 
-   public List<CodeableConcept> getReasonNotPerformed();
+   public CodeableConcept getNotDoneReason();
 
-   public Iqicoreprocedure setReasonNotPerformed(List<CodeableConcept> param);
+   public Iqicoreprocedure setNotDoneReason(CodeableConcept param);
 
-   public boolean hasReasonNotPerformed();
-
-   public Iqicoreprocedure addReasonNotPerformed(CodeableConcept param);
-
-   public CodeableConcept addReasonNotPerformed();
+   public boolean hasNotDoneReason();
 
    public List<CodeableConcept> getFollowUp();
 
@@ -302,15 +281,15 @@ public interface Iqicoreprocedure
 
    public Iqicoreprocedure setApproachBodySite(List<BodySite> param);
 
-   public boolean hasEncounter();
+   public boolean hasContext();
 
-   public Reference getEncounter();
+   public Reference getContext();
 
-   public Iqicoreprocedure setEncounter(Reference param);
+   public Iqicoreprocedure setContext(Reference param);
 
-   public Encounter getEncounterTarget();
+   public Encounter getContextTarget();
 
-   public Iqicoreprocedure setEncounterTarget(Encounter param);
+   public Iqicoreprocedure setContextTarget(Encounter param);
 
    public qicoreencounterAdapter getEncounterAdapterTarget();
 
