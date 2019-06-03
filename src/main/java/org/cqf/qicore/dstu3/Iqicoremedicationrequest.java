@@ -13,7 +13,7 @@ import org.hl7.fhir.dstu3.model.Reference;
 import org.hl7.fhir.dstu3.model.Encounter;
 import org.hl7.fhir.dstu3.model.Resource;
 import org.hl7.fhir.dstu3.model.CodeableConcept;
-import org.hl7.fhir.dstu3.model.DosageInstruction;
+import org.hl7.fhir.dstu3.model.Dosage;
 import org.hl7.fhir.dstu3.model.UriType;
 import org.hl7.fhir.dstu3.model.Enumeration;
 import org.hl7.fhir.dstu3.model.Practitioner;
@@ -30,9 +30,9 @@ public interface Iqicoremedicationrequest
 
    public void setAdaptee(MedicationRequest param);
 
-   public List<qicoremedicationrequestDosageInstructionAdapter> getWrappedDosageInstruction();
+   public List<qicoremedicationrequestDosageInstructionAdapter> getWrappedDosage();
 
-   public Iqicoremedicationrequest setWrappedDosageInstruction(
+   public Iqicoremedicationrequest setWrappedDosage(
          List<qicoremedicationrequestDosageInstructionAdapter> param);
 
    public Iqicoremedicationrequest addWrappedDosageInstruction(
@@ -40,17 +40,17 @@ public interface Iqicoremedicationrequest
 
    public qicoremedicationrequestDosageInstructionAdapter addWrappedDosageInstruction();
 
-   public List<DosageInstruction> getDosageInstruction();
+   public List<Dosage> getDosageInstruction();
 
    public Iqicoremedicationrequest setDosageInstruction(
-         List<DosageInstruction> param);
+         List<Dosage> param);
 
    public boolean hasDosageInstruction();
 
    public Iqicoremedicationrequest addDosageInstruction(
-		   DosageInstruction param);
+		   Dosage param);
 
-   public DosageInstruction addDosageInstruction();
+   public Dosage addDosageInstruction();
 
    public List<Annotation> getNote();
 
@@ -195,17 +195,10 @@ public interface Iqicoremedicationrequest
 
    public boolean hasCategory();
 
-//   public boolean hasCategoryElement();
-
    public CodeableConcept getCategory();
-
- //  public Enumeration<MedicationOrder.MedicationOrderCategory> getCategoryElement();
 
    public Iqicoremedicationrequest setCategory(
 		   CodeableConcept param);
-
- //  public Iqicoremedicationorder setCategoryElement(
- //        Enumeration<MedicationOrder.MedicationOrderCategory> param);
 
    public Type getMedication();
 

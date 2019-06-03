@@ -43,11 +43,11 @@ public class qicorespecimenAdapter implements Iqicorespecimen
       this.adaptedClass = param;
    }
 
-   public List<Specimen.SpecimenTreatmentComponent> getTreatment()
+   public List<Specimen.SpecimenProcessingComponent> getProcessing()
    {
       try
       {
-         return adaptedClass.getTreatment();
+         return adaptedClass.getProcessing();
       }
       catch (Exception e)
       {
@@ -56,27 +56,27 @@ public class qicorespecimenAdapter implements Iqicorespecimen
    }
 
    public qicorespecimenAdapter setTreatment(
-         List<Specimen.SpecimenTreatmentComponent> param)
+         List<Specimen.SpecimenProcessingComponent> param)
    {
-      adaptedClass.setTreatment(param);
+      adaptedClass.setProcessing(param);
       return this;
    }
 
-   public boolean hasTreatment()
+   public boolean hasProcessing()
    {
-      return adaptedClass.hasTreatment();
+      return adaptedClass.hasProcessing();
    }
 
-   public qicorespecimenAdapter addTreatment(
-         Specimen.SpecimenTreatmentComponent param)
+   public qicorespecimenAdapter addProcessing(
+         Specimen.SpecimenProcessingComponent param)
    {
-      adaptedClass.addTreatment(param);
+      adaptedClass.addProcessing(param);
       return this;
    }
 
-   public Specimen.SpecimenTreatmentComponent addTreatment()
+   public Specimen.SpecimenProcessingComponent addTreatment()
    {
-      return adaptedClass.addTreatment();
+      return adaptedClass.addProcessing();
    }
 
    public boolean hasImplicitRules()
@@ -309,16 +309,6 @@ public class qicorespecimenAdapter implements Iqicorespecimen
       return adaptedClass.hasRequest();
    }
 
-   public List<DiagnosticRequest> getRequestDiagnosticRequestTarget() {
-		List<org.hl7.fhir.dstu3.model.DiagnosticRequest> items = new java.util.ArrayList<>();
-		List<org.hl7.fhir.dstu3.model.Resource> resources = adaptedClass
-				.getRequestTarget();
-		for (org.hl7.fhir.dstu3.model.Resource resource : resources) {
-			items.add((org.hl7.fhir.dstu3.model.DiagnosticRequest) resource);
-		}
-		return items;
-	}
-
    public List<Reference> getRequest()
    {
       return adaptedClass.getRequest();
@@ -326,10 +316,10 @@ public class qicorespecimenAdapter implements Iqicorespecimen
 
    public List<ProcedureRequest> getRequestProcedureRequestTarget() {
 		List<org.hl7.fhir.dstu3.model.ProcedureRequest> items = new java.util.ArrayList<>();
-		List<org.hl7.fhir.dstu3.model.Resource> resources = adaptedClass
+		List<org.hl7.fhir.dstu3.model.ProcedureRequest> resources = adaptedClass
 				.getRequestTarget();
-		for (org.hl7.fhir.dstu3.model.Resource resource : resources) {
-			items.add((org.hl7.fhir.dstu3.model.ProcedureRequest) resource);
+		for (ProcedureRequest resource : resources) {
+			items.add(resource);
 		}
 		return items;
 	}

@@ -1,5 +1,7 @@
 package org.cqf.qicore.dstu3;
 
+import ca.uhn.fhir.model.api.IResource;
+import org.hl7.fhir.dstu3.model.Bundle;
 import org.slf4j.LoggerFactory;
 import java.util.List;
 
@@ -14,9 +16,9 @@ public class AdapterFactory
    static public final Logger LOGGER = LoggerFactory
          .getLogger(AdapterFactory.class);
 
-   public static Map adapt(ca.uhn.fhir.model.api.Bundle bundle) {
+   public static Map adapt(org.hl7.fhir.dstu3.model.Bundle bundle) {
 		Map<String, List<?>> adapteeMap = new java.util.HashMap<>();
-		for (ca.uhn.fhir.model.api.BundleEntry entry : bundle.getEntries()) {
+		for (Bundle.BundleEntryComponent entry : bundle.getEntry()) {
 			Object adapter = adapt(entry.getResource());
 			if (adapter != null) {
 				List list = adapteeMap.get(entry.getResource().getClass()
@@ -32,11 +34,11 @@ public class AdapterFactory
 		return adapteeMap;
 	}
 
-   public static Object adapt(ca.uhn.fhir.model.api.IResource resource)
+   public static Object adapt(org.hl7.fhir.dstu3.model.Resource resource)
    {
       Object adapter = null;
-      String adapterName = resource.getResourceName() + "Adapter";
-      String resourceName = resource.getResourceName();
+      String adapterName = resource.getResourceType().name() + "Adapter";
+      String resourceName = resource.getResourceType().name();
       try
       {
          Class clazz = Class.forName(GENERATED_PACKAGE_PREFIX + adapterName);

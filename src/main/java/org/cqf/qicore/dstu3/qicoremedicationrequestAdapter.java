@@ -10,7 +10,7 @@ import org.hl7.fhir.dstu3.model.Reference;
 import org.hl7.fhir.dstu3.model.Encounter;
 import org.hl7.fhir.dstu3.model.Resource;
 import org.hl7.fhir.dstu3.model.CodeableConcept;
-import org.hl7.fhir.dstu3.model.DosageInstruction;
+import org.hl7.fhir.dstu3.model.Dosage;
 import org.hl7.fhir.dstu3.model.UriType;
 import org.hl7.fhir.dstu3.model.MedicationRequest.MedicationRequestDispenseRequestComponent;
 import org.hl7.fhir.dstu3.model.MedicationRequest.MedicationRequestStatus;
@@ -48,11 +48,11 @@ public class qicoremedicationrequestAdapter implements Iqicoremedicationrequest
       this.adaptedClass = param;
    }
 
-   public List<qicoremedicationrequestDosageInstructionAdapter> getWrappedDosageInstruction() {
+   public List<qicoremedicationrequestDosageInstructionAdapter> getWrappedDosage() {
 		List<qicoremedicationrequestDosageInstructionAdapter> wrappedItems = new java.util.ArrayList<>();
-		List<org.hl7.fhir.dstu3.model.DosageInstruction> items = adaptedClass
+		List<org.hl7.fhir.dstu3.model.Dosage> items = adaptedClass
 				.getDosageInstruction();
-		for (org.hl7.fhir.dstu3.model.DosageInstruction item : items) {
+		for (org.hl7.fhir.dstu3.model.Dosage item : items) {
 			wrappedItems
 					.add(new qicoremedicationrequestDosageInstructionAdapter(
 							item));
@@ -60,9 +60,9 @@ public class qicoremedicationrequestAdapter implements Iqicoremedicationrequest
 		return wrappedItems;
 	}
 
-   public Iqicoremedicationrequest setWrappedDosageInstruction(
+   public Iqicoremedicationrequest setWrappedDosage(
 			List<qicoremedicationrequestDosageInstructionAdapter> param) {
-		List<org.hl7.fhir.dstu3.model.DosageInstruction> items = new java.util.ArrayList<>();
+		List<org.hl7.fhir.dstu3.model.Dosage> items = new java.util.ArrayList<>();
 		for (qicoremedicationrequestDosageInstructionAdapter item : param) {
 			items.add(item.getAdaptee());
 		}
@@ -82,13 +82,13 @@ public class qicoremedicationrequestAdapter implements Iqicoremedicationrequest
 
    public qicoremedicationrequestDosageInstructionAdapter addWrappedDosageInstruction()
    {
-      org.hl7.fhir.dstu3.model.DosageInstruction item = new org.hl7.fhir.dstu3.model.DosageInstruction();
+      org.hl7.fhir.dstu3.model.Dosage item = new org.hl7.fhir.dstu3.model.Dosage();
       adaptedClass.addDosageInstruction(item);
       return new qicoremedicationrequestDosageInstructionAdapter(
             item);
    }
 
-   public List<DosageInstruction> getDosageInstruction()
+   public List<Dosage> getDosageInstruction()
    {
       try
       {
@@ -101,7 +101,7 @@ public class qicoremedicationrequestAdapter implements Iqicoremedicationrequest
    }
 
    public Iqicoremedicationrequest setDosageInstruction(
-         List<DosageInstruction> param)
+         List<Dosage> param)
    {
       adaptedClass.setDosageInstruction(param);
       return this;
@@ -113,13 +113,13 @@ public class qicoremedicationrequestAdapter implements Iqicoremedicationrequest
    }
 
    public Iqicoremedicationrequest addDosageInstruction(
-         DosageInstruction param)
+         Dosage param)
    {
       adaptedClass.addDosageInstruction(param);
       return this;
    }
 
-   public DosageInstruction addDosageInstruction()
+   public Dosage addDosageInstruction()
    {
       return adaptedClass.addDosageInstruction();
    }
@@ -512,7 +512,7 @@ public class qicoremedicationrequestAdapter implements Iqicoremedicationrequest
    {
       try
       {
-         return adaptedClass.getRequester();
+         return adaptedClass.getRequester().getAgent();
       }
       catch (Exception e)
       {
@@ -522,30 +522,30 @@ public class qicoremedicationrequestAdapter implements Iqicoremedicationrequest
 
    public Iqicoremedicationrequest setRequester(Reference param)
    {
-      adaptedClass.setRequester(param);
+      adaptedClass.getRequester().setAgent(param);
       return this;
    }
 
    public Practitioner getRequesterTarget()
    {
       return (org.hl7.fhir.dstu3.model.Practitioner) adaptedClass
-            .getRequesterTarget();
+            .getRequester().getAgentTarget();
    }
 
    public Iqicoremedicationrequest setRequesterTarget(Practitioner param)
    {
-      adaptedClass.setRequesterTarget(param);
+      adaptedClass.getRequester().setAgentTarget(param);
       return this;
    }
 
    public qicorepractitionerAdapter getRequesterAdapterTarget()
    {
-      if (adaptedClass.getRequester().getResource() instanceof org.hl7.fhir.dstu3.model.Practitioner)
+      if (adaptedClass.getRequester().getAgentTarget() instanceof org.hl7.fhir.dstu3.model.Practitioner)
       {
          qicorepractitionerAdapter profiledType = new qicorepractitionerAdapter();
          profiledType
                .setAdaptee((org.hl7.fhir.dstu3.model.Practitioner) adaptedClass
-                     .getRequester().getResource());
+                     .getRequester().getAgentTarget());
          return profiledType;
       }
       else
@@ -557,7 +557,7 @@ public class qicoremedicationrequestAdapter implements Iqicoremedicationrequest
    public Iqicoremedicationrequest setRequesterAdapterTarget(
          qicorepractitionerAdapter param)
    {
-      adaptedClass.setRequesterTarget(param.getAdaptee());
+      adaptedClass.getRequester().setAgentTarget(param.getAdaptee());
       return this;
    }
 
@@ -573,14 +573,14 @@ public class qicoremedicationrequestAdapter implements Iqicoremedicationrequest
 
    public boolean hasPatient()
    {
-      return adaptedClass.hasPatient();
+      return adaptedClass.hasSubject();
    }
 
    public Reference getPatient()
    {
       try
       {
-         return adaptedClass.getPatient();
+         return adaptedClass.getSubject();
       }
       catch (Exception e)
       {
@@ -590,30 +590,30 @@ public class qicoremedicationrequestAdapter implements Iqicoremedicationrequest
 
    public Iqicoremedicationrequest setPatient(Reference param)
    {
-      adaptedClass.setPatient(param);
+      adaptedClass.setSubject(param);
       return this;
    }
 
    public Patient getPatientTarget()
    {
       return (org.hl7.fhir.dstu3.model.Patient) adaptedClass
-            .getPatientTarget();
+            .getSubjectTarget();
    }
 
    public Iqicoremedicationrequest setPatientTarget(Patient param)
    {
-      adaptedClass.setPatientTarget(param);
+      adaptedClass.setSubjectTarget(param);
       return this;
    }
 
    public qicorepatientAdapter getPatientAdapterTarget()
    {
-      if (adaptedClass.getPatient().getResource() instanceof org.hl7.fhir.dstu3.model.Patient)
+      if (adaptedClass.getSubject().getResource() instanceof org.hl7.fhir.dstu3.model.Patient)
       {
          qicorepatientAdapter profiledType = new qicorepatientAdapter();
          profiledType
                .setAdaptee((org.hl7.fhir.dstu3.model.Patient) adaptedClass
-                     .getPatient().getResource());
+                     .getSubject().getResource());
          return profiledType;
       }
       else
@@ -625,7 +625,7 @@ public class qicoremedicationrequestAdapter implements Iqicoremedicationrequest
    public Iqicoremedicationrequest setPatientAdapterTarget(
          qicorepatientAdapter param)
    {
-      adaptedClass.setPatientTarget(param.getAdaptee());
+      adaptedClass.setSubjectTarget(param.getAdaptee());
       return this;
    }
 
@@ -633,11 +633,6 @@ public class qicoremedicationrequestAdapter implements Iqicoremedicationrequest
    {
       return adaptedClass.hasCategory();
    }
-
-//   public boolean hasCategoryElement()
-//   {
-//      return adaptedClass.hasCategoryElement();
-//   }
 
    public CodeableConcept getCategory()
    {
@@ -651,31 +646,12 @@ public class qicoremedicationrequestAdapter implements Iqicoremedicationrequest
       }
    }
 
-//   public Enumeration<MedicationOrder.MedicationOrderCategory> getCategoryElement()
-//   {
-//      try
-//      {
-//         return adaptedClass.getCategoryElement();
-//      }
-//      catch (Exception e)
-//      {
-//         throw new RuntimeException("Error getting CategoryElement", e);
-//      }
-//   }
-
    public Iqicoremedicationrequest setCategory(
 		   CodeableConcept param)
    {
       adaptedClass.setCategory(param);
       return this;
    }
-
-//   public Iqicoremedicationrequest setCategoryElement(
-//         Enumeration<MedicationOrder.MedicationOrderCategory> param)
-//   {
-//      adaptedClass.setCategoryElement(param);
-//      return this;
-//   }
 
    public Type getMedication()
    {

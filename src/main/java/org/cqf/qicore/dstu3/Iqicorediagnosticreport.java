@@ -88,21 +88,6 @@ public interface Iqicorediagnosticreport
 
    public DiagnosticReport.DiagnosticReportImageComponent addImage();
 
-   public boolean hasEncounter();
-
-   public Reference getEncounter();
-
-   public Iqicorediagnosticreport setEncounter(Reference param);
-
-   public Encounter getEncounterTarget();
-
-   public Iqicorediagnosticreport setEncounterTarget(Encounter param);
-
-   public qicoreencounterAdapter getEncounterAdapterTarget();
-
-   public Iqicorediagnosticreport setEncounterAdapterTarget(
-         qicoreencounterAdapter param);
-
    public List<Attachment> getPresentedForm();
 
    public Iqicorediagnosticreport setPresentedForm(List<Attachment> param);
@@ -232,11 +217,9 @@ public interface Iqicorediagnosticreport
 
    public boolean hasPerformer();
 
-   public List<Practitioner> getPerformerPractitionerTarget();
+   public List<DiagnosticReport.DiagnosticReportPerformerComponent> getPerformer();
 
-   public List<Reference> getPerformer();
-
-   public List<Organization> getPerformerOrganizationTarget();
+   public Resource getContextTarget();
 
    public boolean hasResult();
 
@@ -254,15 +237,21 @@ public interface Iqicorediagnosticreport
 
    public Iqicorediagnosticreport setImplicitRules(String param);
 
-   public boolean hasRequest();
+   public boolean hasBasedOn();
 
-   public List<DiagnosticRequest> getRequestDiagnosticRequestTarget();
+   public List<CarePlan> getBasedOnCarePlanTarget();
 
-   public List<Reference> getRequest();
+   public List<Reference> getBasedOn();
 
-   public List<ProcedureRequest> getRequestProcedureRequestTarget();
+   public List<ImmunizationRecommendation> getBasedOnImmunizationRecommendationTarget();
 
-   public List<ReferralRequest> getRequestReferralRequestTarget();
+   public List<MedicationRequest> getBasedOnMedicationRequestTarget();
+
+   public List<NutritionOrder> getBasedOnNutritionOrderTarget();
+
+   public List<ProcedureRequest> getBasedOnProcedureRequestTarget();
+
+   public List<ReferralRequest> getBasedOnReferralRequestTarget();
 
    public Type getEffective();
 

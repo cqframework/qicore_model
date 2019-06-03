@@ -35,18 +35,6 @@ public interface Iqicorepractitioner
 
    public void setAdaptee(Practitioner param);
 
-   public List<Practitioner.PractitionerRoleComponent> getRole();
-
-   public qicorepractitionerAdapter setRole(
-         List<Practitioner.PractitionerRoleComponent> param);
-
-   public boolean hasRole();
-
-   public qicorepractitionerAdapter addRole(
-         Practitioner.PractitionerRoleComponent param);
-
-   public Practitioner.PractitionerRoleComponent addRole();
-
    public boolean hasActive();
 
    public boolean hasActiveElement();

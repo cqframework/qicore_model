@@ -19,26 +19,26 @@ import org.hl7.fhir.dstu3.model.*;
 public class qicoremedicationrequestDosageInstructionAdapter
 {
 
-   private DosageInstruction adaptedClass;
+   private Dosage adaptedClass;
 
    public qicoremedicationrequestDosageInstructionAdapter()
    {
-      this.adaptedClass = new org.hl7.fhir.dstu3.model.DosageInstruction();
+      this.adaptedClass = new org.hl7.fhir.dstu3.model.Dosage();
    }
 
    public qicoremedicationrequestDosageInstructionAdapter(
-         DosageInstruction adaptee)
+         Dosage adaptee)
    {
       this.adaptedClass = adaptee;
    }
 
-   public DosageInstruction getAdaptee()
+   public Dosage getAdaptee()
    {
       return adaptedClass;
    }
 
    public void setAdaptee(
-         DosageInstruction param)
+         Dosage param)
    {
       this.adaptedClass = param;
    }
@@ -265,7 +265,7 @@ public class qicoremedicationrequestDosageInstructionAdapter
    {
       try
       {
-         return adaptedClass.getAdditionalInstructions();
+         return adaptedClass.getAdditionalInstruction();
       }
       catch (Exception e)
       {
@@ -277,25 +277,25 @@ public class qicoremedicationrequestDosageInstructionAdapter
    public qicoremedicationrequestDosageInstructionAdapter setAdditionalInstructions(
          List<CodeableConcept> param)
    {
-      adaptedClass.setAdditionalInstructions(param);
+      adaptedClass.setAdditionalInstruction(param);
       return this;
    }
 
    public boolean hasAdditionalInstructions()
    {
-      return adaptedClass.hasAdditionalInstructions();
+      return adaptedClass.hasAdditionalInstruction();
    }
 
    public qicoremedicationrequestDosageInstructionAdapter addAdditionalInstructions(
          CodeableConcept param)
    {
-      adaptedClass.addAdditionalInstructions(param);
+      adaptedClass.addAdditionalInstruction(param);
       return this;
    }
 
    public CodeableConcept addAdditionalInstructions()
    {
-      return adaptedClass.addAdditionalInstructions();
+      return adaptedClass.addAdditionalInstruction();
    }
 
    public Timing getTiming()

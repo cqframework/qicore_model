@@ -26,13 +26,6 @@ public interface Iqicoremedication
 
    public void setAdaptee(Medication param);
 
-   public Medication.MedicationProductComponent getProduct();
-
-   public qicoremedicationAdapter setProduct(
-         Medication.MedicationProductComponent param);
-
-   public boolean hasProduct();
-
    public boolean hasImplicitRules();
 
    public boolean hasImplicitRulesElement();

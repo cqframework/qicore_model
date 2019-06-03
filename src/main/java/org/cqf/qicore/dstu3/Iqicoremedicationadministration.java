@@ -11,9 +11,7 @@ import java.lang.String;
 
 import org.hl7.fhir.dstu3.model.Reference;
 import org.hl7.fhir.dstu3.model.Resource;
-import org.hl7.fhir.dstu3.model.Practitioner;
 import org.hl7.fhir.dstu3.model.Patient;
-import org.hl7.fhir.dstu3.model.RelatedPerson;
 import org.hl7.fhir.dstu3.model.CodeableConcept;
 import org.hl7.fhir.dstu3.model.Annotation;
 import org.hl7.fhir.dstu3.model.Type;
@@ -57,47 +55,11 @@ public interface Iqicoremedicationadministration
 
    public Iqicoremedicationadministration setLanguage(String param);
 
-   public Reference getPerformer();
-
-   public Resource getPerformerTarget();
+   public List<MedicationAdministration.MedicationAdministrationPerformerComponent> getPerformer();
 
    public boolean hasPerformer();
 
-   public Reference getPerformerPractitioner();
-
-   public Iqicoremedicationadministration setPerformer(Reference param);
-
-   public Practitioner getPerformerPractitionerTarget();
-
-   public Iqicoremedicationadministration setPerformerTarget(Practitioner param);
-
-   public qicorepractitionerAdapter getPerformerPractitionerAdapterTarget();
-
-   public Iqicoremedicationadministration setPerformerAdapterTarget(
-         qicorepractitionerAdapter param);
-
-   public Reference getPerformerPatient();
-
-   public Patient getPerformerPatientTarget();
-
-   public Iqicoremedicationadministration setPerformerTarget(Patient param);
-
-   public qicorepatientAdapter getPerformerPatientAdapterTarget();
-
-   public Iqicoremedicationadministration setPerformerAdapterTarget(
-         qicorepatientAdapter param);
-
-   public Reference getPerformerRelatedPerson();
-
-   public RelatedPerson getPerformerRelatedPersonTarget();
-
-   public Iqicoremedicationadministration setPerformerTarget(
-         RelatedPerson param);
-
-   public qicorerelatedpersonAdapter getPerformerRelatedPersonAdapterTarget();
-
-   public Iqicoremedicationadministration setPerformerAdapterTarget(
-         qicorerelatedpersonAdapter param);
+   public Iqicoremedicationadministration setPerformer(List<MedicationAdministration.MedicationAdministrationPerformerComponent> param);
 
    public List<Reference> getEventHistory();
    
@@ -148,16 +110,16 @@ public interface Iqicoremedicationadministration
 
    public Annotation addNote();
 
-   public List<CodeableConcept> getReasonGiven();
+   public List<CodeableConcept> getReasonCode();
 
-   public Iqicoremedicationadministration setReasonGiven(
+   public Iqicoremedicationadministration setReasonCode(
          List<CodeableConcept> param);
 
    public boolean hasReasonGiven();
 
-   public Iqicoremedicationadministration addReasonGiven(CodeableConcept param);
+   public Iqicoremedicationadministration addReasonCode(CodeableConcept param);
 
-   public CodeableConcept addReasonGiven();
+   public CodeableConcept addReasonCode();
 
    public Type getMedication();
 

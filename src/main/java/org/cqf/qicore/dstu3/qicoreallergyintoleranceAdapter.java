@@ -408,11 +408,6 @@ public class qicoreallergyintoleranceAdapter implements Iqicoreallergyintoleranc
       return adaptedClass.hasCategory();
    }
 
-//   public boolean hasCategoryElement()
-//   {
-//      return adaptedClass.hasCategoryElement();
-//   }
-
    public  List<Enumeration<AllergyIntoleranceCategory>> getCategory()
    {
       try
@@ -424,18 +419,6 @@ public class qicoreallergyintoleranceAdapter implements Iqicoreallergyintoleranc
          throw new RuntimeException("Error getting Category", e);
       }
    }
-
-//   public Enumeration<AllergyIntolerance.AllergyIntoleranceCategory> getCategoryElement()
-//   {
-//      try
-//      {
-//         return adaptedClass.getCategoryElement();
-//      }
-//      catch (Exception e)
-//      {
-//         throw new RuntimeException("Error getting CategoryElement", e);
-//      }
-//   }
 
    public Iqicoreallergyintolerance setCategory(
 		   List<Enumeration<AllergyIntoleranceCategory>> param)

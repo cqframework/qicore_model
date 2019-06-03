@@ -103,56 +103,42 @@ public interface Iqicoreprocedurerequest
    public Iqicoreprocedurerequest setPriorityElement(
          Enumeration<ProcedureRequest.ProcedureRequestPriority> param);
 
-   public Reference getOrderer();
+   public ProcedureRequest.ProcedureRequestRequesterComponent getRequester();
 
-   public Resource getOrdererTarget();
+   public boolean hasRequester();
 
-   public boolean hasOrderer();
+   public ProcedureRequest.ProcedureRequestRequesterComponent geRequesterPractitioner();
 
-   public Reference getOrdererPractitioner();
+   public Iqicoreprocedurerequest setOrderer(ProcedureRequest.ProcedureRequestRequesterComponent param);
 
-   public Iqicoreprocedurerequest setOrderer(Reference param);
+   public qicorepractitionerAdapter getRequesterPractitionerAdapterTarget();
 
-   public Practitioner getOrdererPractitionerTarget();
-
-   public Iqicoreprocedurerequest setOrdererTarget(Practitioner param);
-
-   public qicorepractitionerAdapter getOrdererPractitionerAdapterTarget();
-
-   public Iqicoreprocedurerequest setOrdererAdapterTarget(
+   public Iqicoreprocedurerequest setRequesterAdapterTarget(
          qicorepractitionerAdapter param);
 
-   public Reference getOrdererPatient();
-
-   public Patient getOrdererPatientTarget();
-
-   public Iqicoreprocedurerequest setOrdererTarget(Patient param);
-
-   public qicorepatientAdapter getOrdererPatientAdapterTarget();
-
-   public Iqicoreprocedurerequest setOrdererAdapterTarget(
+   public Iqicoreprocedurerequest setRequesterAdapterTarget(
          qicorepatientAdapter param);
 
-   public Reference getOrdererRelatedPerson();
+   public Reference getRequesterRelatedPerson();
 
-   public RelatedPerson getOrdererRelatedPersonTarget();
+   public RelatedPerson getRequesterRelatedPersonTarget();
 
-   public Iqicoreprocedurerequest setOrdererTarget(RelatedPerson param);
+   public Iqicoreprocedurerequest setRequesterTarget(RelatedPerson param);
 
-   public qicorerelatedpersonAdapter getOrdererRelatedPersonAdapterTarget();
+   public qicorerelatedpersonAdapter getRequesterRelatedPersonAdapterTarget();
 
-   public Iqicoreprocedurerequest setOrdererAdapterTarget(
+   public Iqicoreprocedurerequest setRequesterAdapterTarget(
          qicorerelatedpersonAdapter param);
 
-   public Reference getOrdererDevice();
+   public Reference getRequesterDevice();
 
-   public Device getOrdererDeviceTarget();
+   public Device getRequesterDeviceTarget();
 
-   public Iqicoreprocedurerequest setOrdererTarget(Device param);
+   public Iqicoreprocedurerequest setRequesterTarget(Device param);
 
-   public qicoredeviceAdapter getOrdererDeviceAdapterTarget();
+   public qicoredeviceAdapter getRequesterDeviceAdapterTarget();
 
-   public Iqicoreprocedurerequest setOrdererAdapterTarget(
+   public Iqicoreprocedurerequest setRequesterAdapterTarget(
          qicoredeviceAdapter param);
 
    public CodeType getAppropriatenessScoreCodeType();
@@ -163,23 +149,19 @@ public interface Iqicoreprocedurerequest
 
    public Iqicoreprocedurerequest setAppropriatenessScore(DecimalType param);
 
-   public Type getReason();
+   public List<CodeableConcept> getReasonCode();
 
-   public Iqicoreprocedurerequest setReason(Type param);
+   public Iqicoreprocedurerequest setReasonCode(List<CodeableConcept> param);
 
-   public CodeableConcept getReasonCodeableConcept();
+   public boolean hasReasonCode();
 
-   public boolean hasReasonCodeableConcept();
-
-   public boolean hasReason();
-
-   public Reference getReasonReference();
+   public List<Reference> getReasonReference();
 
    public Condition getReasonTarget();
 
-   public Iqicoreprocedurerequest setReason(Reference param);
+   public Iqicoreprocedurerequest setReason(List<Reference> param);
 
-   public Iqicoreprocedurerequest setReasonTarget(Condition param);
+   public Iqicoreprocedurerequest setReasonTarget(List<Resource> param);
 
    public boolean hasStatus();
 
@@ -220,21 +202,21 @@ public interface Iqicoreprocedurerequest
 
    public Iqicoreprocedurerequest setSubjectTarget(Group param);
 
-   public Type getScheduled();
+   public Type getOccurrence();
 
-   public Iqicoreprocedurerequest setScheduled(Type param);
+   public Iqicoreprocedurerequest setOccurrence(Type param);
 
-   public DateTimeType getScheduledDateTimeType();
+   public DateTimeType getOccurrenceDateTimeType();
 
-   public boolean hasScheduledDateTimeType();
+   public boolean hasOccurrenceDateTimeType();
 
-   public Period getScheduledPeriod();
+   public Period getOccurrencePeriod();
 
-   public boolean hasScheduledPeriod();
+   public boolean hasOccurrencePeriod();
 
-   public Timing getScheduledTiming();
+   public Timing getOccurrenceTiming();
 
-   public boolean hasScheduledTiming();
+   public boolean hasOccurrenceTiming();
 
    public List<Resource> getContained();
 
@@ -244,13 +226,13 @@ public interface Iqicoreprocedurerequest
 
    public Iqicoreprocedurerequest addContained(Resource param);
 
-   public boolean hasEncounter();
+   public boolean hasContext();
 
-   public Reference getEncounter();
+   public Reference getContext();
 
-   public Iqicoreprocedurerequest setEncounter(Reference param);
+   public Iqicoreprocedurerequest setContext(Reference param);
 
-   public Encounter getEncounterTarget();
+   public Encounter getContextTarget();
 
    public Iqicoreprocedurerequest setEncounterTarget(Encounter param);
 

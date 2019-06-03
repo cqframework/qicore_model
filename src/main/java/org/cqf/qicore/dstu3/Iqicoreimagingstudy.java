@@ -32,18 +32,6 @@ public interface Iqicoreimagingstudy
 
    public void setAdaptee(ImagingStudy param);
 
-   public List<ImagingStudy.StudyBaseLocationComponent> getBaseLocation();
-
-   public qicoreimagingstudyAdapter setBaseLocation(
-         List<ImagingStudy.StudyBaseLocationComponent> param);
-
-   public boolean hasBaseLocation();
-
-   public qicoreimagingstudyAdapter addBaseLocation(
-         ImagingStudy.StudyBaseLocationComponent param);
-
-   public ImagingStudy.StudyBaseLocationComponent addBaseLocation();
-
    public boolean hasPatient();
 
    public Reference getPatient();
@@ -164,10 +152,6 @@ public interface Iqicoreimagingstudy
    public Iqicoreimagingstudy setAccession(Identifier param);
 
    public boolean hasAccession();
-
-   public boolean hasProcedure();
-
-   public List<Reference> getProcedure();
 
    public Range getRadiationDose();
 

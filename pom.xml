@@ -3,24 +3,24 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>cqframework.info</groupId>
 	<artifactId>qicore</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.3</version>
 	<name>QI Core Interfaces and Adapters</name>
 	<description>Java logical interfaces and corresponding HAPI FHIR implementation adapters for the FHIR QI Core profile set</description>
 	<dependencies>
 		<dependency>
 			<groupId>ca.uhn.hapi.fhir</groupId>
 			<artifactId>hapi-fhir-base</artifactId>
-			<version>2.2</version>
+			<version>3.7.0</version>
 		</dependency>
  		<dependency>
 			<groupId>ca.uhn.hapi.fhir</groupId>
 			<artifactId>hapi-fhir-structures-dstu2</artifactId>
-			<version>2.2</version>
+			<version>3.7.0</version>
 		</dependency> 
 		<dependency>
 			<groupId>ca.uhn.hapi.fhir</groupId>
 			<artifactId>hapi-fhir-structures-dstu3</artifactId>
-			<version>2.2</version>
+			<version>3.7.0</version>
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>

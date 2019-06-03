@@ -70,15 +70,15 @@ public interface Iqicorecommunication
 
    public Communication.CommunicationPayloadComponent addPayload();
 
-   public List<CodeableConcept> getReason();
+   public List<CodeableConcept> getReasonCode();
 
-   public Iqicorecommunication setReason(List<CodeableConcept> param);
+   public Iqicorecommunication setReasonCode(List<CodeableConcept> param);
 
-   public boolean hasReason();
+   public boolean hasReasonCode();
 
-   public Iqicorecommunication addReason(CodeableConcept param);
+   public Iqicorecommunication addReasonCode(CodeableConcept param);
 
-   public CodeableConcept addReason();
+   public CodeableConcept addReasonCode();
 
    public List<Annotation> getNote();
 
@@ -115,7 +115,7 @@ public interface Iqicorecommunication
 
    public boolean hasParent();
 
-   public List<Reference> getParent();
+   public Reference getParent();
 
    public CodeableConcept getReasonNotPerformed();
 
@@ -139,9 +139,9 @@ public interface Iqicorecommunication
    public Iqicorecommunication setStatusElement(
          Enumeration<Communication.CommunicationStatus> param);
 
-   public CodeableConcept getCategory();
+   public List<CodeableConcept> getCategory();
 
-   public Iqicorecommunication setCategory(CodeableConcept param);
+   public Iqicorecommunication setCategory(List<CodeableConcept> param);
 
    public boolean hasCategory();
 

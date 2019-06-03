@@ -213,11 +213,11 @@ public class qicoregoalAdapter implements Iqicoregoal
       return adaptedClass.addNote();
    }
 
-   public List<Goal.GoalOutcomeComponent> getOutcome()
+   public List<CodeableConcept> getOutcomeCode()
    {
       try
       {
-         return adaptedClass.getOutcome();
+         return adaptedClass.getOutcomeCode();
       }
       catch (Exception e)
       {
@@ -225,26 +225,21 @@ public class qicoregoalAdapter implements Iqicoregoal
       }
    }
 
-   public qicoregoalAdapter setOutcome(List<Goal.GoalOutcomeComponent> param)
+   public qicoregoalAdapter setOutcomeCode(List<CodeableConcept> param)
    {
-      adaptedClass.setOutcome(param);
+      adaptedClass.setOutcomeCode(param);
       return this;
    }
 
-   public boolean hasOutcome()
+   public boolean hasOutcomeCode()
    {
-      return adaptedClass.hasOutcome();
+      return adaptedClass.hasOutcomeCode();
    }
 
-   public qicoregoalAdapter addOutcome(Goal.GoalOutcomeComponent param)
+   public qicoregoalAdapter addOutcomeCode(CodeableConcept param)
    {
-      adaptedClass.addOutcome(param);
+      adaptedClass.addOutcomeCode(param);
       return this;
-   }
-
-   public Goal.GoalOutcomeComponent addOutcome()
-   {
-      return adaptedClass.addOutcome();
    }
 
    public List<Identifier> getIdentifier()
@@ -549,7 +544,7 @@ public class qicoregoalAdapter implements Iqicoregoal
       return this;
    }
 
-   public Type getTarget()
+   public Goal.GoalTargetComponent getTarget()
    {
       try
       {
@@ -561,51 +556,17 @@ public class qicoregoalAdapter implements Iqicoregoal
       }
    }
 
-   public Iqicoregoal setTarget(Type param)
+   public Iqicoregoal setTarget(Goal.GoalTargetComponent param)
    {
       adaptedClass.setTarget(param);
       return this;
    }
 
-   public DateType getTargetDateType()
+   public StringType getStatusReasonElement()
    {
       try
       {
-         return adaptedClass.getTargetDateType();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting TargetDateType", e);
-      }
-   }
-
-   public boolean hasTargetDateType()
-   {
-      return adaptedClass.hasTargetDateType();
-   }
-
-   public Duration getTargetDuration()
-   {
-      try
-      {
-         return adaptedClass.getTargetDuration();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting TargetDuration", e);
-      }
-   }
-
-   public boolean hasTargetDuration()
-   {
-      return adaptedClass.hasTargetDuration();
-   }
-
-   public List<CodeableConcept> getStatusReason()
-   {
-      try
-      {
-         return adaptedClass.getStatusReason();
+         return adaptedClass.getStatusReasonElement();
       }
       catch (Exception e)
       {
@@ -613,26 +574,15 @@ public class qicoregoalAdapter implements Iqicoregoal
       }
    }
 
-   public Iqicoregoal setStatusReason(List<CodeableConcept> param)
+   public Iqicoregoal setStatusReasonElement(StringType param)
    {
-      adaptedClass.setStatusReason(param);
+      adaptedClass.setStatusReasonElement(param);
       return this;
    }
 
-   public boolean hasStatusReason()
+   public boolean hasStatusReasonElement()
    {
       return adaptedClass.hasStatusReason();
-   }
-
-   public Iqicoregoal addStatusReason(CodeableConcept param)
-   {
-      adaptedClass.addStatusReason(param);
-      return this;
-   }
-
-   public CodeableConcept addStatusReason()
-   {
-      return adaptedClass.addStatusReason();
    }
 
    public boolean hasImplicitRules()
@@ -767,12 +717,12 @@ public class qicoregoalAdapter implements Iqicoregoal
 		return items;
 	}
 
-   public List<NutritionRequest> getAddressesNutritionRequestTarget() {
-		List<org.hl7.fhir.dstu3.model.NutritionRequest> items = new java.util.ArrayList<>();
+   public List<NutritionOrder> getAddressesNutritionOrderTarget() {
+		List<org.hl7.fhir.dstu3.model.NutritionOrder> items = new java.util.ArrayList<>();
 		List<org.hl7.fhir.dstu3.model.Resource> resources = adaptedClass
 				.getAddressesTarget();
 		for (org.hl7.fhir.dstu3.model.Resource resource : resources) {
-			items.add((org.hl7.fhir.dstu3.model.NutritionRequest) resource);
+			items.add((org.hl7.fhir.dstu3.model.NutritionOrder) resource);
 		}
 		return items;
 	}

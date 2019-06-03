@@ -46,12 +46,12 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
 
    public boolean hasSupportingInformation()
    {
-      return adaptedClass.hasSupportingInformation();
+      return adaptedClass.hasSupportingInfo();
    }
 
    public List<Reference> getSupportingInformation()
    {
-      return adaptedClass.getSupportingInformation();
+      return adaptedClass.getSupportingInfo();
    }
 
    public boolean hasLanguage()
@@ -130,16 +130,6 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
 		return items;
 	}
 
-   public List<DiagnosticRequest> getBasedOnDiagnosticRequestTarget() {
-		List<org.hl7.fhir.dstu3.model.DiagnosticRequest> items = new java.util.ArrayList<>();
-		List<org.hl7.fhir.dstu3.model.Resource> resources = adaptedClass
-				.getBasedOnTarget();
-		for (org.hl7.fhir.dstu3.model.Resource resource : resources) {
-			items.add((org.hl7.fhir.dstu3.model.DiagnosticRequest) resource);
-		}
-		return items;
-	}
-
    public List<ProcedureRequest> getBasedOnProcedureRequestTarget() {
 		List<org.hl7.fhir.dstu3.model.ProcedureRequest> items = new java.util.ArrayList<>();
 		List<org.hl7.fhir.dstu3.model.Resource> resources = adaptedClass
@@ -150,7 +140,7 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
 		return items;
 	}
 
-   public CodeableConcept getPriority()
+   public ReferralRequest.ReferralPriority getPriority()
    {
       try
       {
@@ -162,7 +152,7 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
       }
    }
 
-   public Iqicorereferralrequest setPriority(CodeableConcept param)
+   public Iqicorereferralrequest setPriority(ReferralRequest.ReferralPriority param)
    {
       adaptedClass.setPriority(param);
       return this;
@@ -173,11 +163,11 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
       return adaptedClass.hasPriority();
    }
 
-   public Identifier getParent()
+   public Reference getSubject()
    {
       try
       {
-         return adaptedClass.getParent();
+         return adaptedClass.getSubject();
       }
       catch (Exception e)
       {
@@ -185,15 +175,15 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
       }
    }
 
-   public Iqicorereferralrequest setParent(Identifier param)
+   public Iqicorereferralrequest setSubject(Reference param)
    {
-      adaptedClass.setParent(param);
+      adaptedClass.setSubject(param);
       return this;
    }
 
-   public boolean hasParent()
+   public boolean hasSubject()
    {
-      return adaptedClass.hasParent();
+      return adaptedClass.hasSubject();
    }
 
    public boolean hasImplicitRules()
@@ -385,7 +375,7 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
       return adaptedClass.hasStatusElement();
    }
 
-   public ReferralRequest.ReferralStatus getStatus()
+   public ReferralRequest.ReferralRequestStatus getStatus()
    {
       try
       {
@@ -397,7 +387,7 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
       }
    }
 
-   public Enumeration<ReferralRequest.ReferralStatus> getStatusElement()
+   public Enumeration<ReferralRequest.ReferralRequestStatus> getStatusElement()
    {
       try
       {
@@ -409,14 +399,14 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
       }
    }
 
-   public Iqicorereferralrequest setStatus(ReferralRequest.ReferralStatus param)
+   public Iqicorereferralrequest setStatus(ReferralRequest.ReferralRequestStatus param)
    {
       adaptedClass.setStatus(param);
       return this;
    }
 
    public Iqicorereferralrequest setStatusElement(
-         Enumeration<ReferralRequest.ReferralStatus> param)
+           Enumeration<ReferralRequest.ReferralRequestStatus> param)
    {
       adaptedClass.setStatusElement(param);
       return this;
@@ -459,14 +449,14 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
 
    public boolean hasPatient()
    {
-      return adaptedClass.hasPatient();
+      return adaptedClass.hasSubject();
    }
 
    public Reference getPatient()
    {
       try
       {
-         return adaptedClass.getPatient();
+         return adaptedClass.getSubject();
       }
       catch (Exception e)
       {
@@ -476,30 +466,30 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
 
    public Iqicorereferralrequest setPatient(Reference param)
    {
-      adaptedClass.setPatient(param);
+      adaptedClass.setSubject(param);
       return this;
    }
 
    public Patient getPatientTarget()
    {
       return (org.hl7.fhir.dstu3.model.Patient) adaptedClass
-            .getPatientTarget();
+            .getSubjectTarget();
    }
 
    public Iqicorereferralrequest setPatientTarget(Patient param)
    {
-      adaptedClass.setPatientTarget(param);
+      adaptedClass.setSubjectTarget(param);
       return this;
    }
 
    public qicorepatientAdapter getPatientAdapterTarget()
    {
-      if (adaptedClass.getPatient().getResource() instanceof org.hl7.fhir.dstu3.model.Patient)
+      if (adaptedClass.getSubject().getResource() instanceof org.hl7.fhir.dstu3.model.Patient)
       {
          qicorepatientAdapter profiledType = new qicorepatientAdapter();
          profiledType
                .setAdaptee((org.hl7.fhir.dstu3.model.Patient) adaptedClass
-                     .getPatient().getResource());
+                     .getSubject().getResource());
          return profiledType;
       }
       else
@@ -511,7 +501,7 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
    public Iqicorereferralrequest setPatientAdapterTarget(
          qicorepatientAdapter param)
    {
-      adaptedClass.setPatientTarget(param.getAdaptee());
+      adaptedClass.setSubjectTarget(param.getAdaptee());
       return this;
    }
 
@@ -538,30 +528,30 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
       return adaptedClass.hasSpecialty();
    }
 
-   public Period getFulfillmentTime()
+   public Period getOccurrencePeriod()
    {
       try
       {
-         return adaptedClass.getFulfillmentTime();
+         return adaptedClass.getOccurrencePeriod();
       }
       catch (Exception e)
       {
-         throw new RuntimeException("Error getting FulfillmentTime", e);
+         throw new RuntimeException("Error getting OccurrencePeriod", e);
       }
    }
 
    public Iqicorereferralrequest setFulfillmentTime(Period param)
    {
-      adaptedClass.setFulfillmentTime(param);
+      adaptedClass.setOccurrence(param);
       return this;
    }
 
-   public boolean hasFulfillmentTime()
+   public boolean hasOccurrencePeriod()
    {
-      return adaptedClass.hasFulfillmentTime();
+      return adaptedClass.hasOccurrencePeriod();
    }
 
-   public Reference getRequester()
+   public ReferralRequest.ReferralRequestRequesterComponent getRequester()
    {
       try
       {
@@ -577,7 +567,7 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
    {
       try
       {
-         return adaptedClass.getRequesterTarget();
+         return adaptedClass.getRequester().getAgentTarget();
       }
       catch (Exception e)
       {
@@ -594,7 +584,7 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
    {
       try
       {
-         return adaptedClass.getRequester();
+         return adaptedClass.getRequester().getAgent();
       }
       catch (Exception e)
       {
@@ -604,30 +594,30 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
 
    public Iqicorereferralrequest setRequester(Reference param)
    {
-      adaptedClass.setRequester(param);
+      adaptedClass.getRequester().setAgent(param);
       return this;
    }
 
    public Practitioner getRequesterPractitionerTarget()
    {
       return (org.hl7.fhir.dstu3.model.Practitioner) adaptedClass
-            .getRequesterTarget();
+            .getRequester().getAgentTarget();
    }
 
    public Iqicorereferralrequest setRequesterTarget(Practitioner param)
    {
-      adaptedClass.setRequesterTarget(param);
+      adaptedClass.getRequester().setAgentTarget(param);
       return this;
    }
 
    public qicorepractitionerAdapter getRequesterPractitionerAdapterTarget()
    {
-      if (adaptedClass.getRequester().getResource() instanceof org.hl7.fhir.dstu3.model.Practitioner)
+      if (adaptedClass.getRequester().getAgentTarget() instanceof org.hl7.fhir.dstu3.model.Practitioner)
       {
          qicorepractitionerAdapter profiledType = new qicorepractitionerAdapter();
          profiledType
                .setAdaptee((org.hl7.fhir.dstu3.model.Practitioner) adaptedClass
-                     .getRequester().getResource());
+                     .getRequester().getAgentTarget());
          return profiledType;
       }
       else
@@ -639,7 +629,7 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
    public Iqicorereferralrequest setRequesterAdapterTarget(
          qicorepractitionerAdapter param)
    {
-      adaptedClass.setRequesterTarget(param.getAdaptee());
+      adaptedClass.getRequester().setAgentTarget(param.getAdaptee());
       return this;
    }
 
@@ -647,7 +637,7 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
    {
       try
       {
-         return adaptedClass.getRequester();
+         return adaptedClass.getRequester().getAgent();
       }
       catch (Exception e)
       {
@@ -658,23 +648,23 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
    public Organization getRequesterOrganizationTarget()
    {
       return (org.hl7.fhir.dstu3.model.Organization) adaptedClass
-            .getRequesterTarget();
+            .getRequester().getAgentTarget();
    }
 
    public Iqicorereferralrequest setRequesterTarget(Organization param)
    {
-      adaptedClass.setRequesterTarget(param);
+      adaptedClass.getRequester().setAgentTarget(param);
       return this;
    }
 
    public qicoreorganizationAdapter getRequesterOrganizationAdapterTarget()
    {
-      if (adaptedClass.getRequester().getResource() instanceof org.hl7.fhir.dstu3.model.Organization)
+      if (adaptedClass.getRequester().getAgentTarget() instanceof org.hl7.fhir.dstu3.model.Organization)
       {
          qicoreorganizationAdapter profiledType = new qicoreorganizationAdapter();
          profiledType
                .setAdaptee((org.hl7.fhir.dstu3.model.Organization) adaptedClass
-                     .getRequester().getResource());
+                     .getRequester().getAgentTarget());
          return profiledType;
       }
       else
@@ -686,7 +676,7 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
    public Iqicorereferralrequest setRequesterAdapterTarget(
          qicoreorganizationAdapter param)
    {
-      adaptedClass.setRequesterTarget(param.getAdaptee());
+      adaptedClass.getRequester().setAgentTarget(param.getAdaptee());
       return this;
    }
 
@@ -694,7 +684,7 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
    {
       try
       {
-         return adaptedClass.getRequester();
+         return adaptedClass.getRequester().getAgent();
       }
       catch (Exception e)
       {
@@ -705,23 +695,23 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
    public Patient getRequesterPatientTarget()
    {
       return (org.hl7.fhir.dstu3.model.Patient) adaptedClass
-            .getRequesterTarget();
+            .getRequester().getAgentTarget();
    }
 
    public Iqicorereferralrequest setRequesterTarget(Patient param)
    {
-      adaptedClass.setRequesterTarget(param);
+      adaptedClass.getRequester().setAgentTarget(param);
       return this;
    }
 
    public qicorepatientAdapter getRequesterPatientAdapterTarget()
    {
-      if (adaptedClass.getRequester().getResource() instanceof org.hl7.fhir.dstu3.model.Patient)
+      if (adaptedClass.getRequester().getAgentTarget() instanceof org.hl7.fhir.dstu3.model.Patient)
       {
          qicorepatientAdapter profiledType = new qicorepatientAdapter();
          profiledType
                .setAdaptee((org.hl7.fhir.dstu3.model.Patient) adaptedClass
-                     .getRequester().getResource());
+                     .getRequester().getAgentTarget());
          return profiledType;
       }
       else
@@ -733,25 +723,25 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
    public Iqicorereferralrequest setRequesterAdapterTarget(
          qicorepatientAdapter param)
    {
-      adaptedClass.setRequesterTarget(param.getAdaptee());
+      adaptedClass.getRequester().setAgentTarget(param.getAdaptee());
       return this;
    }
 
-   public boolean hasCategory()
+   public boolean hasIntent()
    {
-      return adaptedClass.hasCategory();
+      return adaptedClass.hasIntent();
    }
 
-   public boolean hasCategoryElement()
+   public boolean hasIntentElement()
    {
-      return adaptedClass.hasCategoryElement();
+      return adaptedClass.hasIntentElement();
    }
 
-   public ReferralRequest.ReferralCategory getCategory()
+   public ReferralRequest.ReferralCategory getIntent()
    {
       try
       {
-         return adaptedClass.getCategory();
+         return adaptedClass.getIntent();
       }
       catch (Exception e)
       {
@@ -759,11 +749,11 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
       }
    }
 
-   public Enumeration<ReferralRequest.ReferralCategory> getCategoryElement()
+   public Enumeration<ReferralRequest.ReferralCategory> getIntentElement()
    {
       try
       {
-         return adaptedClass.getCategoryElement();
+         return adaptedClass.getIntentElement();
       }
       catch (Exception e)
       {
@@ -771,17 +761,17 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
       }
    }
 
-   public Iqicorereferralrequest setCategory(
+   public Iqicorereferralrequest setIntent(
          ReferralRequest.ReferralCategory param)
    {
-      adaptedClass.setCategory(param);
+      adaptedClass.setIntent(param);
       return this;
    }
 
-   public Iqicorereferralrequest setCategoryElement(
+   public Iqicorereferralrequest setIntentElement(
          Enumeration<ReferralRequest.ReferralCategory> param)
    {
-      adaptedClass.setCategoryElement(param);
+      adaptedClass.setIntentElement(param);
       return this;
    }
 
@@ -890,11 +880,11 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
 		return items;
 	}
 
-   public CodeableConcept getReason()
+   public List<CodeableConcept> getReasonCode()
    {
       try
       {
-         return adaptedClass.getReason();
+         return adaptedClass.getReasonCode();
       }
       catch (Exception e)
       {
@@ -902,15 +892,15 @@ public class qicorereferralrequestAdapter implements Iqicorereferralrequest
       }
    }
 
-   public Iqicorereferralrequest setReason(CodeableConcept param)
+   public Iqicorereferralrequest setReasonCode(List<CodeableConcept> param)
    {
-      adaptedClass.setReason(param);
+      adaptedClass.setReasonCode(param);
       return this;
    }
 
-   public boolean hasReason()
+   public boolean hasReasonCode()
    {
-      return adaptedClass.hasReason();
+      return adaptedClass.hasReasonCode();
    }
 
    public CodeableConcept getType()

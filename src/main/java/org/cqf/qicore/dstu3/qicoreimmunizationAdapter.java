@@ -49,64 +49,6 @@ public class qicoreimmunizationAdapter implements Iqicoreimmunization
       this.adaptedClass = param;
    }
 
-   public boolean hasRequester()
-   {
-      return adaptedClass.hasRequester();
-   }
-
-   public Reference getRequester()
-   {
-      try
-      {
-         return adaptedClass.getRequester();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting Requester", e);
-      }
-   }
-
-   public Iqicoreimmunization setRequester(Reference param)
-   {
-      adaptedClass.setRequester(param);
-      return this;
-   }
-
-   public Practitioner getRequesterTarget()
-   {
-      return (org.hl7.fhir.dstu3.model.Practitioner) adaptedClass
-            .getRequesterTarget();
-   }
-
-   public Iqicoreimmunization setRequesterTarget(Practitioner param)
-   {
-      adaptedClass.setRequesterTarget(param);
-      return this;
-   }
-
-   public qicorepractitionerAdapter getRequesterAdapterTarget()
-   {
-      if (adaptedClass.getRequester().getResource() instanceof org.hl7.fhir.dstu3.model.Practitioner)
-      {
-         qicorepractitionerAdapter profiledType = new qicorepractitionerAdapter();
-         profiledType
-               .setAdaptee((org.hl7.fhir.dstu3.model.Practitioner) adaptedClass
-                     .getRequester().getResource());
-         return profiledType;
-      }
-      else
-      {
-         return null;
-      }
-   }
-
-   public Iqicoreimmunization setRequesterAdapterTarget(
-         qicorepractitionerAdapter param)
-   {
-      adaptedClass.setRequesterTarget(param.getAdaptee());
-      return this;
-   }
-
    public boolean hasLocation()
    {
       return adaptedClass.hasLocation();
@@ -624,21 +566,21 @@ public class qicoreimmunizationAdapter implements Iqicoreimmunization
       return adaptedClass.hasRoute();
    }
 
-   public boolean hasWasNotGiven()
+   public boolean hasNotGiven()
    {
-      return adaptedClass.hasWasNotGiven();
+      return adaptedClass.hasNotGiven();
    }
 
-   public boolean hasWasNotGivenElement()
+   public boolean hasNotGivenElement()
    {
-      return adaptedClass.hasWasNotGivenElement();
+      return adaptedClass.hasNotGivenElement();
    }
 
-   public BooleanType getWasNotGivenElement()
+   public BooleanType getNotGivenElement()
    {
       try
       {
-         return adaptedClass.getWasNotGivenElement();
+         return adaptedClass.getNotGivenElement();
       }
       catch (Exception e)
       {
@@ -646,27 +588,27 @@ public class qicoreimmunizationAdapter implements Iqicoreimmunization
       }
    }
 
-   public Boolean getWasNotGiven()
+   public Boolean getNotGiven()
    {
       try
       {
-         return adaptedClass.getWasNotGiven();
+         return adaptedClass.getNotGiven();
       }
       catch (Exception e)
       {
-         throw new RuntimeException("Error getting WasNotGiven", e);
+         throw new RuntimeException("Error getting NotGiven", e);
       }
    }
 
-   public Iqicoreimmunization setWasNotGivenElement(BooleanType param)
+   public Iqicoreimmunization setNotGivenElement(BooleanType param)
    {
-      adaptedClass.setWasNotGivenElement(param);
+      adaptedClass.setNotGivenElement(param);
       return this;
    }
 
-   public Iqicoreimmunization setWasNotGiven(Boolean param)
+   public Iqicoreimmunization setNotGiven(Boolean param)
    {
-      adaptedClass.setWasNotGiven(param);
+      adaptedClass.setNotGiven(param);
       return this;
    }
 
@@ -728,16 +670,16 @@ public class qicoreimmunizationAdapter implements Iqicoreimmunization
       return this;
    }
 
-   public boolean hasPerformer()
+   public boolean hasPractitioner()
    {
-      return adaptedClass.hasPerformer();
+      return adaptedClass.hasPractitioner();
    }
 
-   public Reference getPerformer()
+   public List<Immunization.ImmunizationPractitionerComponent> getPractitioner()
    {
       try
       {
-         return adaptedClass.getPerformer();
+         return adaptedClass.getPractitioner();
       }
       catch (Exception e)
       {
@@ -745,44 +687,9 @@ public class qicoreimmunizationAdapter implements Iqicoreimmunization
       }
    }
 
-   public Iqicoreimmunization setPerformer(Reference param)
+   public Iqicoreimmunization setPractitioner(List<Immunization.ImmunizationPractitionerComponent> param)
    {
-      adaptedClass.setPerformer(param);
-      return this;
-   }
-
-   public Practitioner getPerformerTarget()
-   {
-      return (org.hl7.fhir.dstu3.model.Practitioner) adaptedClass
-            .getPerformerTarget();
-   }
-
-   public Iqicoreimmunization setPerformerTarget(Practitioner param)
-   {
-      adaptedClass.setPerformerTarget(param);
-      return this;
-   }
-
-   public qicorepractitionerAdapter getPerformerAdapterTarget()
-   {
-      if (adaptedClass.getPerformer().getResource() instanceof org.hl7.fhir.dstu3.model.Practitioner)
-      {
-         qicorepractitionerAdapter profiledType = new qicorepractitionerAdapter();
-         profiledType
-               .setAdaptee((org.hl7.fhir.dstu3.model.Practitioner) adaptedClass
-                     .getPerformer().getResource());
-         return profiledType;
-      }
-      else
-      {
-         return null;
-      }
-   }
-
-   public Iqicoreimmunization setPerformerAdapterTarget(
-         qicorepractitionerAdapter param)
-   {
-      adaptedClass.setPerformerTarget(param.getAdaptee());
+      adaptedClass.setPractitioner(param);
       return this;
    }
 

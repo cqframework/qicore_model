@@ -78,15 +78,13 @@ public interface Iqicoregoal
 
    public Annotation addNote();
 
-   public List<Goal.GoalOutcomeComponent> getOutcome();
+   public List<CodeableConcept> getOutcomeCode();
 
-   public qicoregoalAdapter setOutcome(List<Goal.GoalOutcomeComponent> param);
+   public boolean hasOutcomeCode();
 
-   public boolean hasOutcome();
+   public qicoregoalAdapter setOutcomeCode(List<CodeableConcept> param);
 
-   public qicoregoalAdapter addOutcome(Goal.GoalOutcomeComponent param);
-
-   public Goal.GoalOutcomeComponent addOutcome();
+   public qicoregoalAdapter addOutcomeCode(CodeableConcept param);
 
    public List<Identifier> getIdentifier();
 
@@ -160,27 +158,15 @@ public interface Iqicoregoal
 
    public Iqicoregoal setId(String param);
 
-   public Type getTarget();
+   public Goal.GoalTargetComponent getTarget();
 
-   public Iqicoregoal setTarget(Type param);
+   public Iqicoregoal setTarget(Goal.GoalTargetComponent param);
 
-   public DateType getTargetDateType();
+   public StringType getStatusReasonElement();
 
-   public boolean hasTargetDateType();
+   public Iqicoregoal setStatusReasonElement(StringType param);
 
-   public Duration getTargetDuration();
-
-   public boolean hasTargetDuration();
-
-   public List<CodeableConcept> getStatusReason();
-
-   public Iqicoregoal setStatusReason(List<CodeableConcept> param);
-
-   public boolean hasStatusReason();
-
-   public Iqicoregoal addStatusReason(CodeableConcept param);
-
-   public CodeableConcept addStatusReason();
+   public boolean hasStatusReasonElement();
 
    public boolean hasImplicitRules();
 
@@ -216,7 +202,7 @@ public interface Iqicoregoal
 
    public List<MedicationStatement> getAddressesMedicationStatementTarget();
 
-   public List<NutritionRequest> getAddressesNutritionRequestTarget();
+   public List<NutritionOrder> getAddressesNutritionOrderTarget();
 
    public List<ProcedureRequest> getAddressesProcedureRequestTarget();
 

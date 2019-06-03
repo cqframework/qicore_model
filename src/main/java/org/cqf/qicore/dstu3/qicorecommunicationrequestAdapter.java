@@ -79,7 +79,7 @@ public class qicorecommunicationrequestAdapter implements Iqicorecommunicationre
    {
       try
       {
-         return adaptedClass.getRequester();
+         return adaptedClass.getRequester().getAgent();
       }
       catch (Exception e)
       {
@@ -91,7 +91,7 @@ public class qicorecommunicationrequestAdapter implements Iqicorecommunicationre
    {
       try
       {
-         return adaptedClass.getRequesterTarget();
+         return adaptedClass.getRequester().getAgentTarget();
       }
       catch (Exception e)
       {
@@ -108,7 +108,7 @@ public class qicorecommunicationrequestAdapter implements Iqicorecommunicationre
    {
       try
       {
-         return adaptedClass.getRequester();
+         return adaptedClass.getRequester().getAgent();
       }
       catch (Exception e)
       {
@@ -118,30 +118,30 @@ public class qicorecommunicationrequestAdapter implements Iqicorecommunicationre
 
    public Iqicorecommunicationrequest setRequester(Reference param)
    {
-      adaptedClass.setRequester(param);
+      adaptedClass.getRequester().setAgent(param);
       return this;
    }
 
    public Patient getRequesterPatientTarget()
    {
       return (org.hl7.fhir.dstu3.model.Patient) adaptedClass
-            .getRequesterTarget();
+            .getRequester().getAgentTarget();
    }
 
    public Iqicorecommunicationrequest setRequesterTarget(Patient param)
    {
-      adaptedClass.setRequesterTarget(param);
+      adaptedClass.getRequester().setAgentTarget(param);
       return this;
    }
 
    public qicorepatientAdapter getRequesterPatientAdapterTarget()
    {
-      if (adaptedClass.getRequester().getResource() instanceof org.hl7.fhir.dstu3.model.Patient)
+      if (adaptedClass.getRequester().getAgentTarget() instanceof org.hl7.fhir.dstu3.model.Patient)
       {
          qicorepatientAdapter profiledType = new qicorepatientAdapter();
          profiledType
                .setAdaptee((org.hl7.fhir.dstu3.model.Patient) adaptedClass
-                     .getRequester().getResource());
+                     .getRequester().getAgentTarget());
          return profiledType;
       }
       else
@@ -153,7 +153,7 @@ public class qicorecommunicationrequestAdapter implements Iqicorecommunicationre
    public Iqicorecommunicationrequest setRequesterAdapterTarget(
          qicorepatientAdapter param)
    {
-      adaptedClass.setRequesterTarget(param.getAdaptee());
+      adaptedClass.getRequester().setAgentTarget(param.getAdaptee());
       return this;
    }
 
@@ -161,7 +161,7 @@ public class qicorecommunicationrequestAdapter implements Iqicorecommunicationre
    {
       try
       {
-         return adaptedClass.getRequester();
+         return adaptedClass.getRequester().getAgent();
       }
       catch (Exception e)
       {
@@ -172,23 +172,23 @@ public class qicorecommunicationrequestAdapter implements Iqicorecommunicationre
    public Practitioner getRequesterPractitionerTarget()
    {
       return (org.hl7.fhir.dstu3.model.Practitioner) adaptedClass
-            .getRequesterTarget();
+            .getRequester().getAgentTarget();
    }
 
    public Iqicorecommunicationrequest setRequesterTarget(Practitioner param)
    {
-      adaptedClass.setRequesterTarget(param);
+      adaptedClass.getRequester().setAgentTarget(param);
       return this;
    }
 
    public qicorepractitionerAdapter getRequesterPractitionerAdapterTarget()
    {
-      if (adaptedClass.getRequester().getResource() instanceof org.hl7.fhir.dstu3.model.Practitioner)
+      if (adaptedClass.getRequester().getAgentTarget() instanceof org.hl7.fhir.dstu3.model.Practitioner)
       {
          qicorepractitionerAdapter profiledType = new qicorepractitionerAdapter();
          profiledType
                .setAdaptee((org.hl7.fhir.dstu3.model.Practitioner) adaptedClass
-                     .getRequester().getResource());
+                     .getRequester().getAgentTarget());
          return profiledType;
       }
       else
@@ -200,7 +200,7 @@ public class qicorecommunicationrequestAdapter implements Iqicorecommunicationre
    public Iqicorecommunicationrequest setRequesterAdapterTarget(
          qicorepractitionerAdapter param)
    {
-      adaptedClass.setRequesterTarget(param.getAdaptee());
+      adaptedClass.getRequester().setAgentTarget(param.getAdaptee());
       return this;
    }
 
@@ -208,7 +208,7 @@ public class qicorecommunicationrequestAdapter implements Iqicorecommunicationre
    {
       try
       {
-         return adaptedClass.getRequester();
+         return adaptedClass.getRequester().getAgent();
       }
       catch (Exception e)
       {
@@ -219,23 +219,23 @@ public class qicorecommunicationrequestAdapter implements Iqicorecommunicationre
    public RelatedPerson getRequesterRelatedPersonTarget()
    {
       return (org.hl7.fhir.dstu3.model.RelatedPerson) adaptedClass
-            .getRequesterTarget();
+            .getRequester().getAgentTarget();
    }
 
    public Iqicorecommunicationrequest setRequesterTarget(RelatedPerson param)
    {
-      adaptedClass.setRequesterTarget(param);
+      adaptedClass.getRequester().setAgentTarget(param);
       return this;
    }
 
    public qicorerelatedpersonAdapter getRequesterRelatedPersonAdapterTarget()
    {
-      if (adaptedClass.getRequester().getResource() instanceof org.hl7.fhir.dstu3.model.RelatedPerson)
+      if (adaptedClass.getRequester().getAgentTarget() instanceof org.hl7.fhir.dstu3.model.RelatedPerson)
       {
          qicorerelatedpersonAdapter profiledType = new qicorerelatedpersonAdapter();
          profiledType
                .setAdaptee((org.hl7.fhir.dstu3.model.RelatedPerson) adaptedClass
-                     .getRequester().getResource());
+                     .getRequester().getAgentTarget());
          return profiledType;
       }
       else
@@ -247,7 +247,7 @@ public class qicorecommunicationrequestAdapter implements Iqicorecommunicationre
    public Iqicorecommunicationrequest setRequesterAdapterTarget(
          qicorerelatedpersonAdapter param)
    {
-      adaptedClass.setRequesterTarget(param.getAdaptee());
+      adaptedClass.getRequester().setAgentTarget(param.getAdaptee());
       return this;
    }
 
@@ -442,7 +442,7 @@ public class qicorecommunicationrequestAdapter implements Iqicorecommunicationre
       return adaptedClass.addPayload();
    }
 
-   public CodeableConcept getPriority()
+   public CommunicationRequest.CommunicationPriority getPriority()
    {
       try
       {
@@ -454,7 +454,7 @@ public class qicorecommunicationrequestAdapter implements Iqicorecommunicationre
       }
    }
 
-   public Iqicorecommunicationrequest setPriority(CodeableConcept param)
+   public Iqicorecommunicationrequest setPriority(CommunicationRequest.CommunicationPriority param)
    {
       adaptedClass.setPriority(param);
       return this;
@@ -700,7 +700,7 @@ public class qicorecommunicationrequestAdapter implements Iqicorecommunicationre
       return adaptedClass.addIdentifier();
    }
 
-   public CodeableConcept getCategory()
+   public List<CodeableConcept> getCategory()
    {
       try
       {
@@ -712,7 +712,7 @@ public class qicorecommunicationrequestAdapter implements Iqicorecommunicationre
       }
    }
 
-   public Iqicorecommunicationrequest setCategory(CodeableConcept param)
+   public Iqicorecommunicationrequest setCategory(List<CodeableConcept> param)
    {
       adaptedClass.setCategory(param);
       return this;
@@ -992,56 +992,56 @@ public class qicorecommunicationrequestAdapter implements Iqicorecommunicationre
       return this;
    }
 
-   public Type getScheduled()
+   public Type getOccurrence()
    {
       try
       {
-         return adaptedClass.getScheduled();
+         return adaptedClass.getOccurrence();
       }
       catch (Exception e)
       {
-         throw new RuntimeException("Error getting Scheduled", e);
+         throw new RuntimeException("Error getting Occurrence", e);
       }
    }
 
-   public Iqicorecommunicationrequest setScheduled(Type param)
+   public Iqicorecommunicationrequest setOccurrence(Type param)
    {
-      adaptedClass.setScheduled(param);
+      adaptedClass.setOccurrence(param);
       return this;
    }
 
-   public DateTimeType getScheduledDateTimeType()
+   public DateTimeType getOccurrenceDateTimeType()
    {
       try
       {
-         return adaptedClass.getScheduledDateTimeType();
+         return adaptedClass.getOccurrenceDateTimeType();
       }
       catch (Exception e)
       {
-         throw new RuntimeException("Error getting ScheduledDateTimeType", e);
+         throw new RuntimeException("Error getting OccurrenceDateTimeType", e);
       }
    }
 
-   public boolean hasScheduledDateTimeType()
+   public boolean hasOccurrenceDateTimeType()
    {
-      return adaptedClass.hasScheduledDateTimeType();
+      return adaptedClass.hasOccurrenceDateTimeType();
    }
 
-   public Period getScheduledPeriod()
+   public Period getOccurrencePeriod()
    {
       try
       {
-         return adaptedClass.getScheduledPeriod();
+         return adaptedClass.getOccurrencePeriod();
       }
       catch (Exception e)
       {
-         throw new RuntimeException("Error getting ScheduledPeriod", e);
+         throw new RuntimeException("Error getting OccurrencePeriod", e);
       }
    }
 
-   public boolean hasScheduledPeriod()
+   public boolean hasOccurrencePeriod()
    {
-      return adaptedClass.hasScheduledPeriod();
+      return adaptedClass.hasOccurrencePeriod();
    }
 
    public boolean hasId()
@@ -1090,11 +1090,11 @@ public class qicorecommunicationrequestAdapter implements Iqicorecommunicationre
       return this;
    }
 
-   public List<CodeableConcept> getReason()
+   public List<CodeableConcept> getReasonCode()
    {
       try
       {
-         return adaptedClass.getReason();
+         return adaptedClass.getReasonCode();
       }
       catch (Exception e)
       {
@@ -1102,25 +1102,25 @@ public class qicorecommunicationrequestAdapter implements Iqicorecommunicationre
       }
    }
 
-   public Iqicorecommunicationrequest setReason(List<CodeableConcept> param)
+   public Iqicorecommunicationrequest setReasonCode(List<CodeableConcept> param)
    {
-      adaptedClass.setReason(param);
+      adaptedClass.setReasonCode(param);
       return this;
    }
 
-   public boolean hasReason()
+   public boolean hasReasonCode()
    {
-      return adaptedClass.hasReason();
+      return adaptedClass.hasReasonCode();
    }
 
-   public Iqicorecommunicationrequest addReason(CodeableConcept param)
+   public Iqicorecommunicationrequest addReasonCode(CodeableConcept param)
    {
-      adaptedClass.addReason(param);
+      adaptedClass.addReasonCode(param);
       return this;
    }
 
    public CodeableConcept addReason()
    {
-      return adaptedClass.addReason();
+      return adaptedClass.addReasonCode();
    }
 }

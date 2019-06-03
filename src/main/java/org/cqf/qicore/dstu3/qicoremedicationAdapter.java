@@ -38,30 +38,6 @@ public class qicoremedicationAdapter implements Iqicoremedication
       this.adaptedClass = param;
    }
 
-   public Medication.MedicationProductComponent getProduct()
-   {
-      try
-      {
-         return adaptedClass.getProduct();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting Product", e);
-      }
-   }
-
-   public qicoremedicationAdapter setProduct(
-         Medication.MedicationProductComponent param)
-   {
-      adaptedClass.setProduct(param);
-      return this;
-   }
-
-   public boolean hasProduct()
-   {
-      return adaptedClass.hasProduct();
-   }
-
    public boolean hasImplicitRules()
    {
       return adaptedClass.hasImplicitRules();

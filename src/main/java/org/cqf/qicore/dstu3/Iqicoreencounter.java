@@ -40,13 +40,7 @@ public interface Iqicoreencounter
 
    public List<Reference> getIncomingReferral();
 
-   public boolean hasIndication();
-
-   public List<Condition> getIndicationConditionTarget();
-
-   public List<Reference> getIndication();
-
-   public List<Procedure> getIndicationProcedureTarget();
+   public boolean hasDiagnosis();
 
    public boolean hasEpisodeOfCare();
 
@@ -100,17 +94,17 @@ public interface Iqicoreencounter
 
    public Encounter.EncounterParticipantComponent addParticipant();
 
-   public List<Encounter.EncounterStatusHistoryComponent> getStatusHistory();
+   public List<Encounter.StatusHistoryComponent> getStatusHistory();
 
    public qicoreencounterAdapter setStatusHistory(
-         List<Encounter.EncounterStatusHistoryComponent> param);
+         List<Encounter.StatusHistoryComponent> param);
 
    public boolean hasStatusHistory();
 
    public qicoreencounterAdapter addStatusHistory(
-         Encounter.EncounterStatusHistoryComponent param);
+         Encounter.StatusHistoryComponent param);
 
-   public Encounter.EncounterStatusHistoryComponent addStatusHistory();
+   public Encounter.StatusHistoryComponent addStatusHistory();
 
    public List<Resource> getContained();
 

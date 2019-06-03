@@ -4,11 +4,12 @@ import org.hl7.fhir.dstu3.model.Procedure;
 import org.hl7.fhir.dstu3.model.Reference;
 import org.hl7.fhir.dstu3.model.Location;
 import org.hl7.fhir.dstu3.model.CodeableConcept;
+
+import java.util.ArrayList;
 import java.util.List;
 import org.hl7.fhir.dstu3.model.Identifier;
 import org.hl7.fhir.dstu3.model.Resource;
 import org.hl7.fhir.dstu3.model.CarePlan;
-import org.hl7.fhir.dstu3.model.DiagnosticRequest;
 import org.hl7.fhir.dstu3.model.ProcedureRequest;
 import org.hl7.fhir.dstu3.model.ReferralRequest;
 import org.hl7.fhir.dstu3.model.Type;
@@ -213,11 +214,11 @@ public class qicoreprocedureAdapter implements Iqicoreprocedure
       return adaptedClass.addIdentifier();
    }
 
-   public Reference getRequest()
+   public List<Reference> getRequest()
    {
       try
       {
-         return adaptedClass.getRequest();
+         return adaptedClass.getBasedOn();
       }
       catch (Exception e)
       {
@@ -225,11 +226,11 @@ public class qicoreprocedureAdapter implements Iqicoreprocedure
       }
    }
 
-   public Resource getRequestTarget()
+   public List<Resource> getBasedOnTarget()
    {
       try
       {
-         return adaptedClass.getRequestTarget();
+         return adaptedClass.getBasedOnTarget();
       }
       catch (Exception e)
       {
@@ -237,16 +238,64 @@ public class qicoreprocedureAdapter implements Iqicoreprocedure
       }
    }
 
-   public boolean hasRequest()
+   public boolean hasBasedOn()
    {
-      return adaptedClass.hasRequest();
+      return adaptedClass.hasBasedOn();
    }
 
-   public Reference getRequestCarePlan()
+   public List<Reference> getBasedOn()
    {
       try
       {
-         return adaptedClass.getRequest();
+         return adaptedClass.getBasedOn();
+      }
+      catch (Exception e)
+      {
+         throw new RuntimeException("Error getting BasedOn", e);
+      }
+   }
+
+   public Iqicoreprocedure setBasedOn(List<Reference> param)
+   {
+      adaptedClass.setBasedOn(param);
+      return this;
+   }
+
+   public List<Reference> getBasedOnCarePlan()
+   {
+      List<Reference> items = new ArrayList<>();
+      List<Reference> references = adaptedClass.getBasedOn();
+      for(Reference reference : references){
+         if (reference.getResource() instanceof CarePlan) {
+            items.add(reference);
+         }
+      }
+      return items;
+   }
+
+   public List<CarePlan> getBasedOnCarePlanTarget()
+   {
+      List<CarePlan> items = new ArrayList<>();
+      List<Resource> resources = adaptedClass.getBasedOnTarget();
+      for (Resource resource : resources) {
+         if (resource instanceof CarePlan) {
+            items.add((CarePlan) resource);
+         }
+      }
+      return items;
+   }
+
+   public Iqicoreprocedure setContextTarget(Resource param)
+   {
+      adaptedClass.setContextTarget(param);
+      return this;
+   }
+
+   public List<Reference> getBasedOnProcedureRequest()
+   {
+      try
+      {
+         return adaptedClass.getBasedOn();
       }
       catch (Exception e)
       {
@@ -254,94 +303,40 @@ public class qicoreprocedureAdapter implements Iqicoreprocedure
       }
    }
 
-   public Iqicoreprocedure setRequest(Reference param)
+   public List<ProcedureRequest> getBasedOnProcedureRequestTarget()
    {
-      adaptedClass.setRequest(param);
-      return this;
-   }
-
-   public CarePlan getRequestCarePlanTarget()
-   {
-      return (org.hl7.fhir.dstu3.model.CarePlan) adaptedClass
-            .getRequestTarget();
-   }
-
-   public Iqicoreprocedure setRequestTarget(CarePlan param)
-   {
-      adaptedClass.setRequestTarget(param);
-      return this;
-   }
-
-   public Reference getRequestDiagnosticRequest()
-   {
-      try
-      {
-         return adaptedClass.getRequest();
+      List<ProcedureRequest> items = new ArrayList<>();
+      List<Resource> resources = adaptedClass.getBasedOnTarget();
+      for(Resource resource : resources) {
+         if (resource instanceof ProcedureRequest) {
+            items.add((ProcedureRequest) resource);
+         }
       }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting Request", e);
+      return items;
+   }
+
+   public List<Reference> getBasedOnReferralRequest()
+   {
+      List<Reference> items = new ArrayList<>();
+      List<Reference> references = adaptedClass.getBasedOn();
+      for(Reference reference : references){
+         if (reference.getResource() instanceof ReferralRequest) {
+            items.add(reference);
+         }
       }
+      return items;
    }
 
-   public DiagnosticRequest getRequestDiagnosticRequestTarget()
+   public List<ReferralRequest> getBasedOnReferralRequestTarget()
    {
-      return (org.hl7.fhir.dstu3.model.DiagnosticRequest) adaptedClass
-            .getRequestTarget();
-   }
-
-   public Iqicoreprocedure setRequestTarget(DiagnosticRequest param)
-   {
-      adaptedClass.setRequestTarget(param);
-      return this;
-   }
-
-   public Reference getRequestProcedureRequest()
-   {
-      try
-      {
-         return adaptedClass.getRequest();
+      List<ReferralRequest> items = new ArrayList<>();
+      List<Resource> resources = adaptedClass.getBasedOnTarget();
+      for(Resource resource : resources) {
+         if (resource instanceof ProcedureRequest) {
+            items.add((ReferralRequest) resource);
+         }
       }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting Request", e);
-      }
-   }
-
-   public ProcedureRequest getRequestProcedureRequestTarget()
-   {
-      return (org.hl7.fhir.dstu3.model.ProcedureRequest) adaptedClass
-            .getRequestTarget();
-   }
-
-   public Iqicoreprocedure setRequestTarget(ProcedureRequest param)
-   {
-      adaptedClass.setRequestTarget(param);
-      return this;
-   }
-
-   public Reference getRequestReferralRequest()
-   {
-      try
-      {
-         return adaptedClass.getRequest();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting Request", e);
-      }
-   }
-
-   public ReferralRequest getRequestReferralRequestTarget()
-   {
-      return (org.hl7.fhir.dstu3.model.ReferralRequest) adaptedClass
-            .getRequestTarget();
-   }
-
-   public Iqicoreprocedure setRequestTarget(ReferralRequest param)
-   {
-      adaptedClass.setRequestTarget(param);
-      return this;
+      return items;
    }
 
    public CodeableConcept getCategory()
@@ -419,40 +414,35 @@ public class qicoreprocedureAdapter implements Iqicoreprocedure
       return adaptedClass.hasPerformedPeriod();
    }
 
-   public boolean hasComponent()
-   {
-      return adaptedClass.hasComponent();
+   public List<MedicationAdministration> getPartOfMedicationAdministrationTarget() {
+      List<org.hl7.fhir.dstu3.model.MedicationAdministration> items = new java.util.ArrayList<>();
+      List<org.hl7.fhir.dstu3.model.Resource> resources = adaptedClass
+              .getPartOfTarget();
+      for (org.hl7.fhir.dstu3.model.Resource resource : resources) {
+         items.add((org.hl7.fhir.dstu3.model.MedicationAdministration) resource);
+      }
+      return items;
    }
 
-   public List<MedicationAdministration> getComponentMedicationAdministrationTarget() {
-		List<org.hl7.fhir.dstu3.model.MedicationAdministration> items = new java.util.ArrayList<>();
-		List<org.hl7.fhir.dstu3.model.Resource> resources = adaptedClass
-				.getComponentTarget();
-		for (org.hl7.fhir.dstu3.model.Resource resource : resources) {
-			items.add((org.hl7.fhir.dstu3.model.MedicationAdministration) resource);
-		}
-		return items;
-	}
-
-   public List<Reference> getComponent()
+   public List<Reference> getPartOf()
    {
-      return adaptedClass.getComponent();
+      return adaptedClass.getPartOf();
    }
 
-   public List<Procedure> getComponentProcedureTarget() {
-		List<org.hl7.fhir.dstu3.model.Procedure> items = new java.util.ArrayList<>();
-		List<org.hl7.fhir.dstu3.model.Resource> resources = adaptedClass
-				.getComponentTarget();
-		for (org.hl7.fhir.dstu3.model.Resource resource : resources) {
-			items.add((org.hl7.fhir.dstu3.model.Procedure) resource);
-		}
-		return items;
-	}
+   public List<Procedure> getPartOfProcedureTarget() {
+      List<org.hl7.fhir.dstu3.model.Procedure> items = new java.util.ArrayList<>();
+      List<org.hl7.fhir.dstu3.model.Resource> resources = adaptedClass
+              .getPartOfTarget();
+      for (org.hl7.fhir.dstu3.model.Resource resource : resources) {
+         items.add((org.hl7.fhir.dstu3.model.Procedure) resource);
+      }
+      return items;
+   }
 
-   public List<Observation> getComponentObservationTarget() {
+   public List<Observation> getPartOfObservationTarget() {
 		List<org.hl7.fhir.dstu3.model.Observation> items = new java.util.ArrayList<>();
 		List<org.hl7.fhir.dstu3.model.Resource> resources = adaptedClass
-				.getComponentTarget();
+				.getPartOfTarget();
 		for (org.hl7.fhir.dstu3.model.Resource resource : resources) {
 			items.add((org.hl7.fhir.dstu3.model.Observation) resource);
 		}
@@ -545,7 +535,7 @@ public class qicoreprocedureAdapter implements Iqicoreprocedure
    {
       try
       {
-         return adaptedClass.getNotes();
+         return adaptedClass.getNote();
       }
       catch (Exception e)
       {
@@ -555,24 +545,24 @@ public class qicoreprocedureAdapter implements Iqicoreprocedure
 
    public Iqicoreprocedure setNotes(List<Annotation> param)
    {
-      adaptedClass.setNotes(param);
+      adaptedClass.setNote(param);
       return this;
    }
 
    public boolean hasNotes()
    {
-      return adaptedClass.hasNotes();
+      return adaptedClass.hasNote();
    }
 
    public Iqicoreprocedure addNotes(Annotation param)
    {
-      adaptedClass.addNotes(param);
+      adaptedClass.addNote(param);
       return this;
    }
 
    public Annotation addNotes()
    {
-      return adaptedClass.addNotes();
+      return adaptedClass.addNote();
    }
 
    public List<CodeableConcept> getReasonCode()
@@ -833,21 +823,21 @@ public class qicoreprocedureAdapter implements Iqicoreprocedure
       return this;
    }
 
-   public boolean hasNotPerformed()
+   public boolean hasNotDone()
    {
-      return adaptedClass.hasNotPerformed();
+      return adaptedClass.hasNotDone();
    }
 
-   public boolean hasNotPerformedElement()
+   public boolean hasNotDoneElement()
    {
-      return adaptedClass.hasNotPerformedElement();
+      return adaptedClass.hasNotDoneElement();
    }
 
-   public BooleanType getNotPerformedElement()
+   public BooleanType getNotDoneElement()
    {
       try
       {
-         return adaptedClass.getNotPerformedElement();
+         return adaptedClass.getNotDoneElement();
       }
       catch (Exception e)
       {
@@ -855,11 +845,11 @@ public class qicoreprocedureAdapter implements Iqicoreprocedure
       }
    }
 
-   public Boolean getNotPerformed()
+   public Boolean getNotDone()
    {
       try
       {
-         return adaptedClass.getNotPerformed();
+         return adaptedClass.getNotDone();
       }
       catch (Exception e)
       {
@@ -867,15 +857,15 @@ public class qicoreprocedureAdapter implements Iqicoreprocedure
       }
    }
 
-   public Iqicoreprocedure setNotPerformedElement(BooleanType param)
+   public Iqicoreprocedure setNotDoneElement(BooleanType param)
    {
-      adaptedClass.setNotPerformedElement(param);
+      adaptedClass.setNotDoneElement(param);
       return this;
    }
 
-   public Iqicoreprocedure setNotPerformed(Boolean param)
+   public Iqicoreprocedure setNotDone(Boolean param)
    {
-      adaptedClass.setNotPerformed(param);
+      adaptedClass.setNotDone(param);
       return this;
    }
 
@@ -926,11 +916,11 @@ public class qicoreprocedureAdapter implements Iqicoreprocedure
       return this;
    }
 
-   public List<CodeableConcept> getReasonNotPerformed()
+   public CodeableConcept getNotDoneReason()
    {
       try
       {
-         return adaptedClass.getReasonNotPerformed();
+         return adaptedClass.getNotDoneReason();
       }
       catch (Exception e)
       {
@@ -938,26 +928,15 @@ public class qicoreprocedureAdapter implements Iqicoreprocedure
       }
    }
 
-   public Iqicoreprocedure setReasonNotPerformed(List<CodeableConcept> param)
+   public Iqicoreprocedure setNotDoneReason(CodeableConcept param)
    {
-      adaptedClass.setReasonNotPerformed(param);
+      adaptedClass.setNotDoneReason(param);
       return this;
    }
 
-   public boolean hasReasonNotPerformed()
+   public boolean hasNotDoneReason()
    {
-      return adaptedClass.hasReasonNotPerformed();
-   }
-
-   public Iqicoreprocedure addReasonNotPerformed(CodeableConcept param)
-   {
-      adaptedClass.addReasonNotPerformed(param);
-      return this;
-   }
-
-   public CodeableConcept addReasonNotPerformed()
-   {
-      return adaptedClass.addReasonNotPerformed();
+      return adaptedClass.hasNotDoneReason();
    }
 
    public List<CodeableConcept> getFollowUp()
@@ -1047,16 +1026,16 @@ public class qicoreprocedureAdapter implements Iqicoreprocedure
       return this;
    }
 
-   public boolean hasEncounter()
+   public boolean hasContext()
    {
-      return adaptedClass.hasEncounter();
+      return adaptedClass.hasContext();
    }
 
-   public Reference getEncounter()
+   public Reference getContext()
    {
       try
       {
-         return adaptedClass.getEncounter();
+         return adaptedClass.getContext();
       }
       catch (Exception e)
       {
@@ -1064,32 +1043,32 @@ public class qicoreprocedureAdapter implements Iqicoreprocedure
       }
    }
 
-   public Iqicoreprocedure setEncounter(Reference param)
+   public Iqicoreprocedure setContext(Reference param)
    {
-      adaptedClass.setEncounter(param);
+      adaptedClass.setContext(param);
       return this;
    }
 
-   public Encounter getEncounterTarget()
+   public Encounter getContextTarget()
    {
       return (org.hl7.fhir.dstu3.model.Encounter) adaptedClass
-            .getEncounterTarget();
+            .getContextTarget();
    }
 
-   public Iqicoreprocedure setEncounterTarget(Encounter param)
+   public Iqicoreprocedure setContextTarget(Encounter param)
    {
-      adaptedClass.setEncounterTarget(param);
+      adaptedClass.setContextTarget(param);
       return this;
    }
 
    public qicoreencounterAdapter getEncounterAdapterTarget()
    {
-      if (adaptedClass.getEncounter().getResource() instanceof org.hl7.fhir.dstu3.model.Encounter)
+      if (adaptedClass.getContext().getResource() instanceof org.hl7.fhir.dstu3.model.Encounter)
       {
          qicoreencounterAdapter profiledType = new qicoreencounterAdapter();
          profiledType
                .setAdaptee((org.hl7.fhir.dstu3.model.Encounter) adaptedClass
-                     .getEncounter().getResource());
+                     .getContext().getResource());
          return profiledType;
       }
       else
@@ -1101,7 +1080,7 @@ public class qicoreprocedureAdapter implements Iqicoreprocedure
    public Iqicoreprocedure setEncounterAdapterTarget(
          qicoreencounterAdapter param)
    {
-      adaptedClass.setEncounterTarget(param.getAdaptee());
+      adaptedClass.setContextTarget(param.getAdaptee());
       return this;
    }
 

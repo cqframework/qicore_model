@@ -317,11 +317,11 @@ public class qicoredeviceAdapter implements Iqicoredevice
       return adaptedClass.addIdentifier();
    }
 
-   public Identifier getUdiCarrier()
+   public Device.DeviceUdiComponent getUdiCarrier()
    {
       try
       {
-         return adaptedClass.getUdiCarrier();
+         return adaptedClass.getUdi();
       }
       catch (Exception e)
       {
@@ -329,15 +329,15 @@ public class qicoredeviceAdapter implements Iqicoredevice
       }
    }
 
-   public Iqicoredevice setUdiCarrier(Identifier param)
+   public Iqicoredevice setUdiCarrier(Device.DeviceUdiComponent param)
    {
-      adaptedClass.setUdiCarrier(param);
+      adaptedClass.setUdi(param);
       return this;
    }
 
-   public boolean hasUdiCarrier()
+   public boolean hasUdi()
    {
-      return adaptedClass.hasUdiCarrier();
+      return adaptedClass.hasUdi();
    }
 
    public boolean hasOwner()
@@ -545,7 +545,7 @@ public class qicoredeviceAdapter implements Iqicoredevice
       return adaptedClass.hasStatusElement();
    }
 
-   public Device.DeviceStatus getStatus()
+   public Device.FHIRDeviceStatus getStatus()
    {
       try
       {
@@ -557,7 +557,7 @@ public class qicoredeviceAdapter implements Iqicoredevice
       }
    }
 
-   public Enumeration<Device.DeviceStatus> getStatusElement()
+   public Enumeration<Device.FHIRDeviceStatus> getStatusElement()
    {
       try
       {
@@ -569,13 +569,13 @@ public class qicoredeviceAdapter implements Iqicoredevice
       }
    }
 
-   public Iqicoredevice setStatus(Device.DeviceStatus param)
+   public Iqicoredevice setStatus(Device.FHIRDeviceStatus param)
    {
       adaptedClass.setStatus(param);
       return this;
    }
 
-   public Iqicoredevice setStatusElement(Enumeration<Device.DeviceStatus> param)
+   public Iqicoredevice setStatusElement(Enumeration<Device.FHIRDeviceStatus> param)
    {
       adaptedClass.setStatusElement(param);
       return this;

@@ -26,7 +26,6 @@ import org.hl7.fhir.dstu3.model.Identifier;
 import org.hl7.fhir.dstu3.model.Enumeration;
 import org.hl7.fhir.dstu3.model.Annotation;
 import org.hl7.fhir.dstu3.model.IdType;
-import org.hl7.fhir.dstu3.model.DateType;
 
 import java.util.Date;
 
@@ -255,11 +254,11 @@ public interface Iqicorecondition
 
    public boolean hasAssertedDateElement();
 
-   public DateType getAssertedDateElement();
+   public DateTimeType getAssertedDateElement();
 
    public Date getAssertedDate();
 
-   public Iqicorecondition setAssertedDateElement(DateType param);
+   public Iqicorecondition setAssertedDateElement(DateTimeType param);
 
    public Iqicorecondition setAssertedDate(Date param);
 

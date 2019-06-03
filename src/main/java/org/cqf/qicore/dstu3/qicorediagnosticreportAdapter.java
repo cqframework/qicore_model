@@ -242,64 +242,6 @@ public class qicorediagnosticreportAdapter implements Iqicorediagnosticreport
       return adaptedClass.addImage();
    }
 
-   public boolean hasEncounter()
-   {
-      return adaptedClass.hasEncounter();
-   }
-
-   public Reference getEncounter()
-   {
-      try
-      {
-         return adaptedClass.getEncounter();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting Encounter", e);
-      }
-   }
-
-   public Iqicorediagnosticreport setEncounter(Reference param)
-   {
-      adaptedClass.setEncounter(param);
-      return this;
-   }
-
-   public Encounter getEncounterTarget()
-   {
-      return (org.hl7.fhir.dstu3.model.Encounter) adaptedClass
-            .getEncounterTarget();
-   }
-
-   public Iqicorediagnosticreport setEncounterTarget(Encounter param)
-   {
-      adaptedClass.setEncounterTarget(param);
-      return this;
-   }
-
-   public qicoreencounterAdapter getEncounterAdapterTarget()
-   {
-      if (adaptedClass.getEncounter().getResource() instanceof org.hl7.fhir.dstu3.model.Encounter)
-      {
-         qicoreencounterAdapter profiledType = new qicoreencounterAdapter();
-         profiledType
-               .setAdaptee((org.hl7.fhir.dstu3.model.Encounter) adaptedClass
-                     .getEncounter().getResource());
-         return profiledType;
-      }
-      else
-      {
-         return null;
-      }
-   }
-
-   public Iqicorediagnosticreport setEncounterAdapterTarget(
-         qicoreencounterAdapter param)
-   {
-      adaptedClass.setEncounterTarget(param.getAdaptee());
-      return this;
-   }
-
    public List<Attachment> getPresentedForm()
    {
       try
@@ -793,29 +735,13 @@ public class qicorediagnosticreportAdapter implements Iqicorediagnosticreport
       return adaptedClass.hasPerformer();
    }
 
-   public List<Practitioner> getPerformerPractitionerTarget() {
-		List<org.hl7.fhir.dstu3.model.Practitioner> items = new java.util.ArrayList<>();
-		List<org.hl7.fhir.dstu3.model.Resource> resources = adaptedClass
-				.getPerformerTarget();
-		for (org.hl7.fhir.dstu3.model.Resource resource : resources) {
-			items.add((org.hl7.fhir.dstu3.model.Practitioner) resource);
-		}
-		return items;
-	}
-
-   public List<Reference> getPerformer()
+   public List<DiagnosticReport.DiagnosticReportPerformerComponent> getPerformer()
    {
       return adaptedClass.getPerformer();
    }
 
-   public List<Organization> getPerformerOrganizationTarget() {
-		List<org.hl7.fhir.dstu3.model.Organization> items = new java.util.ArrayList<>();
-		List<org.hl7.fhir.dstu3.model.Resource> resources = adaptedClass
-				.getPerformerTarget();
-		for (org.hl7.fhir.dstu3.model.Resource resource : resources) {
-			items.add((org.hl7.fhir.dstu3.model.Organization) resource);
-		}
-		return items;
+   public Resource getContextTarget() {
+		return adaptedClass.getContextTarget();
 	}
 
    public boolean hasResult()
@@ -874,45 +800,75 @@ public class qicorediagnosticreportAdapter implements Iqicorediagnosticreport
       return this;
    }
 
-   public boolean hasRequest()
+   public boolean hasBasedOn()
    {
-      return adaptedClass.hasRequest();
+      return adaptedClass.hasBasedOn();
    }
 
-   public List<DiagnosticRequest> getRequestDiagnosticRequestTarget() {
-		List<org.hl7.fhir.dstu3.model.DiagnosticRequest> items = new java.util.ArrayList<>();
+   public List<CarePlan> getBasedOnCarePlanTarget() {
+		List<org.hl7.fhir.dstu3.model.CarePlan> items = new java.util.ArrayList<>();
 		List<org.hl7.fhir.dstu3.model.Resource> resources = adaptedClass
-				.getRequestTarget();
+				.getBasedOnTarget();
 		for (org.hl7.fhir.dstu3.model.Resource resource : resources) {
-			items.add((org.hl7.fhir.dstu3.model.DiagnosticRequest) resource);
+			items.add((org.hl7.fhir.dstu3.model.CarePlan) resource);
 		}
 		return items;
 	}
 
-   public List<Reference> getRequest()
+   public List<Reference> getBasedOn()
    {
-      return adaptedClass.getRequest();
+      return adaptedClass.getBasedOn();
    }
 
-   public List<ProcedureRequest> getRequestProcedureRequestTarget() {
-		List<org.hl7.fhir.dstu3.model.ProcedureRequest> items = new java.util.ArrayList<>();
+   public List<ImmunizationRecommendation> getBasedOnImmunizationRecommendationTarget() {
+		List<org.hl7.fhir.dstu3.model.ImmunizationRecommendation> items = new java.util.ArrayList<>();
 		List<org.hl7.fhir.dstu3.model.Resource> resources = adaptedClass
-				.getRequestTarget();
+				.getBasedOnTarget();
 		for (org.hl7.fhir.dstu3.model.Resource resource : resources) {
-			items.add((org.hl7.fhir.dstu3.model.ProcedureRequest) resource);
+			items.add((org.hl7.fhir.dstu3.model.ImmunizationRecommendation) resource);
 		}
 		return items;
 	}
 
-   public List<ReferralRequest> getRequestReferralRequestTarget() {
-		List<org.hl7.fhir.dstu3.model.ReferralRequest> items = new java.util.ArrayList<>();
+   public List<MedicationRequest> getBasedOnMedicationRequestTarget() {
+		List<org.hl7.fhir.dstu3.model.MedicationRequest> items = new java.util.ArrayList<>();
 		List<org.hl7.fhir.dstu3.model.Resource> resources = adaptedClass
-				.getRequestTarget();
+				.getBasedOnTarget();
 		for (org.hl7.fhir.dstu3.model.Resource resource : resources) {
-			items.add((org.hl7.fhir.dstu3.model.ReferralRequest) resource);
+			items.add((org.hl7.fhir.dstu3.model.MedicationRequest) resource);
 		}
 		return items;
 	}
+
+   public List<NutritionOrder> getBasedOnNutritionOrderTarget() {
+      List<org.hl7.fhir.dstu3.model.NutritionOrder> items = new java.util.ArrayList<>();
+      List<org.hl7.fhir.dstu3.model.Resource> resources = adaptedClass
+              .getBasedOnTarget();
+      for (org.hl7.fhir.dstu3.model.Resource resource : resources) {
+         items.add((org.hl7.fhir.dstu3.model.NutritionOrder) resource);
+      }
+      return items;
+   }
+
+   public List<ProcedureRequest> getBasedOnProcedureRequestTarget() {
+      List<org.hl7.fhir.dstu3.model.ProcedureRequest> items = new java.util.ArrayList<>();
+      List<org.hl7.fhir.dstu3.model.Resource> resources = adaptedClass
+              .getBasedOnTarget();
+      for (org.hl7.fhir.dstu3.model.Resource resource : resources) {
+         items.add((org.hl7.fhir.dstu3.model.ProcedureRequest) resource);
+      }
+      return items;
+   }
+
+   public List<ReferralRequest> getBasedOnReferralRequestTarget() {
+      List<org.hl7.fhir.dstu3.model.ReferralRequest> items = new java.util.ArrayList<>();
+      List<org.hl7.fhir.dstu3.model.Resource> resources = adaptedClass
+              .getBasedOnTarget();
+      for (org.hl7.fhir.dstu3.model.Resource resource : resources) {
+         items.add((org.hl7.fhir.dstu3.model.ReferralRequest) resource);
+      }
+      return items;
+   }
 
    public Type getEffective()
    {

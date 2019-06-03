@@ -1,28 +1,12 @@
 package org.cqf.qicore.dstu3;
 
-import org.hl7.fhir.dstu3.model.MedicationDispense;
-import org.hl7.fhir.dstu3.model.IntegerType;
+import org.hl7.fhir.dstu3.model.*;
+
 import java.util.List;
-import org.hl7.fhir.dstu3.model.Reference;
-import org.hl7.fhir.dstu3.model.Practitioner;
-import org.hl7.fhir.dstu3.model.Annotation;
-import org.hl7.fhir.dstu3.model.Resource;
-import org.hl7.fhir.dstu3.model.Enumeration;
-import org.hl7.fhir.dstu3.model.SimpleQuantity;
-import org.hl7.fhir.dstu3.model.Organization;
-import org.hl7.fhir.dstu3.model.CodeType;
 import java.lang.String;
-import org.hl7.fhir.dstu3.model.Patient;
-import org.hl7.fhir.dstu3.model.IdType;
-import org.hl7.fhir.dstu3.model.UriType;
+
 import org.hl7.fhir.dstu3.model.MedicationDispense.MedicationDispenseSubstitutionComponent;
-import org.hl7.fhir.dstu3.model.Period;
-import org.hl7.fhir.dstu3.model.CodeableConcept;
-import org.hl7.fhir.dstu3.model.DosageInstruction;
-import org.hl7.fhir.dstu3.model.Identifier;
-import org.hl7.fhir.dstu3.model.Location;
-import org.hl7.fhir.dstu3.model.Type;
-import org.hl7.fhir.dstu3.model.Medication;
+import org.hl7.fhir.dstu3.model.Dosage;
 
 public class qicoremedicationdispenseAdapter implements Iqicoremedicationdispense
 {
@@ -78,16 +62,16 @@ public class qicoremedicationdispenseAdapter implements Iqicoremedicationdispens
       return this;
    }
 
-   public boolean hasDispenser()
+   public boolean hasPerformer()
    {
-      return adaptedClass.hasDispenser();
+      return adaptedClass.hasPerformer();
    }
 
-   public Reference getDispenser()
+   public List<MedicationDispense.MedicationDispensePerformerComponent> getPerformer()
    {
       try
       {
-         return adaptedClass.getDispenser();
+         return adaptedClass.getPerformer();
       }
       catch (Exception e)
       {
@@ -95,44 +79,9 @@ public class qicoremedicationdispenseAdapter implements Iqicoremedicationdispens
       }
    }
 
-   public Iqicoremedicationdispense setDispenser(Reference param)
+   public Iqicoremedicationdispense setPerformer(List<MedicationDispense.MedicationDispensePerformerComponent> param)
    {
-      adaptedClass.setDispenser(param);
-      return this;
-   }
-
-   public Practitioner getDispenserTarget()
-   {
-      return (org.hl7.fhir.dstu3.model.Practitioner) adaptedClass
-            .getDispenserTarget();
-   }
-
-   public Iqicoremedicationdispense setDispenserTarget(Practitioner param)
-   {
-      adaptedClass.setDispenserTarget(param);
-      return this;
-   }
-
-   public qicorepractitionerAdapter getDispenserAdapterTarget()
-   {
-      if (adaptedClass.getDispenser().getResource() instanceof org.hl7.fhir.dstu3.model.Practitioner)
-      {
-         qicorepractitionerAdapter profiledType = new qicorepractitionerAdapter();
-         profiledType
-               .setAdaptee((org.hl7.fhir.dstu3.model.Practitioner) adaptedClass
-                     .getDispenser().getResource());
-         return profiledType;
-      }
-      else
-      {
-         return null;
-      }
-   }
-
-   public Iqicoremedicationdispense setDispenserAdapterTarget(
-         qicorepractitionerAdapter param)
-   {
-      adaptedClass.setDispenserTarget(param.getAdaptee());
+      adaptedClass.setPerformer(param);
       return this;
    }
 
@@ -172,9 +121,9 @@ public class qicoremedicationdispenseAdapter implements Iqicoremedicationdispens
 
    public List<qicoremedicationdispenseDosageInstructionAdapter> getWrappedDosageInstruction() {
 		List<qicoremedicationdispenseDosageInstructionAdapter> wrappedItems = new java.util.ArrayList<>();
-		List<org.hl7.fhir.dstu3.model.DosageInstruction> items = adaptedClass
+		List<org.hl7.fhir.dstu3.model.Dosage> items = adaptedClass
 				.getDosageInstruction();
-		for (org.hl7.fhir.dstu3.model.DosageInstruction item : items) {
+		for (org.hl7.fhir.dstu3.model.Dosage item : items) {
 			wrappedItems
 					.add(new qicoremedicationdispenseDosageInstructionAdapter(item));
 		}
@@ -183,7 +132,7 @@ public class qicoremedicationdispenseAdapter implements Iqicoremedicationdispens
 
    public Iqicoremedicationdispense setWrappedDosageInstruction(
 			List<qicoremedicationdispenseDosageInstructionAdapter> param) {
-		List<org.hl7.fhir.dstu3.model.DosageInstruction> items = new java.util.ArrayList<>();
+		List<org.hl7.fhir.dstu3.model.Dosage> items = new java.util.ArrayList<>();
 		for (qicoremedicationdispenseDosageInstructionAdapter item : param) {
 			items.add(item.getAdaptee());
 		}
@@ -203,13 +152,13 @@ public class qicoremedicationdispenseAdapter implements Iqicoremedicationdispens
 
    public qicoremedicationdispenseDosageInstructionAdapter addWrappedDosageInstruction()
    {
-      org.hl7.fhir.dstu3.model.DosageInstruction item = new org.hl7.fhir.dstu3.model.DosageInstruction();
+      org.hl7.fhir.dstu3.model.Dosage item = new org.hl7.fhir.dstu3.model.Dosage();
       adaptedClass.addDosageInstruction(item);
       return new qicoremedicationdispenseDosageInstructionAdapter(
             item);
    }
 
-   public List<DosageInstruction> getDosageInstruction()
+   public List<Dosage> getDosageInstruction()
    {
       try
       {
@@ -222,7 +171,7 @@ public class qicoremedicationdispenseAdapter implements Iqicoremedicationdispens
    }
 
    public Iqicoremedicationdispense setDosageInstruction(
-         List<DosageInstruction> param)
+         List<Dosage> param)
    {
       adaptedClass.setDosageInstruction(param);
       return this;
@@ -234,13 +183,13 @@ public class qicoremedicationdispenseAdapter implements Iqicoremedicationdispens
    }
 
    public Iqicoremedicationdispense addDosageInstruction(
-		   DosageInstruction param)
+		   Dosage param)
    {
       adaptedClass.addDosageInstruction(param);
       return this;
    }
 
-   public DosageInstruction addDosageInstruction()
+   public Dosage addDosageInstruction()
    {
       return adaptedClass.addDosageInstruction();
    }
@@ -415,43 +364,6 @@ public class qicoremedicationdispenseAdapter implements Iqicoremedicationdispens
       return adaptedClass.hasSubstitution();
    }
 
-   public boolean hasDispensingOrganization()
-   {
-      return adaptedClass.hasDispensingOrganization();
-   }
-
-   public Reference getDispensingOrganization()
-   {
-      try
-      {
-         return adaptedClass.getDispensingOrganization();
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Error getting DispensingOrganization",
-               e);
-      }
-   }
-
-   public Iqicoremedicationdispense setDispensingOrganization(Reference param)
-   {
-      adaptedClass.setDispensingOrganization(param);
-      return this;
-   }
-
-   public Organization getDispensingOrganizationTarget()
-   {
-      return (org.hl7.fhir.dstu3.model.Organization) adaptedClass
-            .getDispensingOrganizationTarget();
-   }
-
-   public Iqicoremedicationdispense setDispensingOrganizationTarget(
-         Organization param)
-   {
-      adaptedClass.setDispensingOrganizationTarget(param);
-      return this;
-   }
-
    public boolean hasLanguage()
    {
       return adaptedClass.hasLanguage();
@@ -500,14 +412,14 @@ public class qicoremedicationdispenseAdapter implements Iqicoremedicationdispens
 
    public boolean hasPatient()
    {
-      return adaptedClass.hasPatient();
+      return adaptedClass.hasSubject();
    }
 
    public Reference getPatient()
    {
       try
       {
-         return adaptedClass.getPatient();
+         return adaptedClass.getSubject();
       }
       catch (Exception e)
       {
@@ -517,30 +429,30 @@ public class qicoremedicationdispenseAdapter implements Iqicoremedicationdispens
 
    public Iqicoremedicationdispense setPatient(Reference param)
    {
-      adaptedClass.setPatient(param);
+      adaptedClass.setSubject(param);
       return this;
    }
 
    public Patient getPatientTarget()
    {
       return (org.hl7.fhir.dstu3.model.Patient) adaptedClass
-            .getPatientTarget();
+            .getSubjectTarget();
    }
 
    public Iqicoremedicationdispense setPatientTarget(Patient param)
    {
-      adaptedClass.setPatientTarget(param);
+      adaptedClass.setSubjectTarget(param);
       return this;
    }
 
    public qicorepatientAdapter getPatientAdapterTarget()
    {
-      if (adaptedClass.getPatient().getResource() instanceof org.hl7.fhir.dstu3.model.Patient)
+      if (adaptedClass.getSubject().getResource() instanceof org.hl7.fhir.dstu3.model.Patient)
       {
          qicorepatientAdapter profiledType = new qicorepatientAdapter();
          profiledType
                .setAdaptee((org.hl7.fhir.dstu3.model.Patient) adaptedClass
-                     .getPatient().getResource());
+                     .getSubject().getResource());
          return profiledType;
       }
       else
@@ -552,7 +464,7 @@ public class qicoremedicationdispenseAdapter implements Iqicoremedicationdispens
    public Iqicoremedicationdispense setPatientAdapterTarget(
          qicorepatientAdapter param)
    {
-      adaptedClass.setPatientTarget(param.getAdaptee());
+      adaptedClass.setSubjectTarget(param.getAdaptee());
       return this;
    }
 
@@ -753,7 +665,7 @@ public class qicoremedicationdispenseAdapter implements Iqicoremedicationdispens
       return adaptedClass.hasType();
    }
 
-   public Identifier getIdentifier()
+   public List<Identifier> getIdentifier()
    {
       try
       {
@@ -765,7 +677,7 @@ public class qicoremedicationdispenseAdapter implements Iqicoremedicationdispens
       }
    }
 
-   public Iqicoremedicationdispense setIdentifier(Identifier param)
+   public Iqicoremedicationdispense setIdentifier(List<Identifier> param)
    {
       adaptedClass.setIdentifier(param);
       return this;

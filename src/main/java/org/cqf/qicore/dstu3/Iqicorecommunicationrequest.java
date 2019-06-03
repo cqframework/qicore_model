@@ -131,9 +131,9 @@ public interface Iqicorecommunicationrequest
 
    public CommunicationRequest.CommunicationRequestPayloadComponent addPayload();
 
-   public CodeableConcept getPriority();
+   public CommunicationRequest.CommunicationPriority getPriority();
 
-   public Iqicorecommunicationrequest setPriority(CodeableConcept param);
+   public Iqicorecommunicationrequest setPriority(CommunicationRequest.CommunicationPriority param);
 
    public boolean hasPriority();
 
@@ -200,9 +200,9 @@ public interface Iqicorecommunicationrequest
 
    public Identifier addIdentifier();
 
-   public CodeableConcept getCategory();
+   public List<CodeableConcept> getCategory();
 
-   public Iqicorecommunicationrequest setCategory(CodeableConcept param);
+   public Iqicorecommunicationrequest setCategory(List<CodeableConcept> param);
 
    public boolean hasCategory();
 
@@ -269,17 +269,17 @@ public interface Iqicorecommunicationrequest
    public Iqicorecommunicationrequest setSenderAdapterTarget(
          qicoreorganizationAdapter param);
 
-   public Type getScheduled();
+   public Type getOccurrence();
 
-   public Iqicorecommunicationrequest setScheduled(Type param);
+   public Iqicorecommunicationrequest setOccurrence(Type param);
 
-   public DateTimeType getScheduledDateTimeType();
+   public DateTimeType getOccurrenceDateTimeType();
 
-   public boolean hasScheduledDateTimeType();
+   public boolean hasOccurrenceDateTimeType();
 
-   public Period getScheduledPeriod();
+   public Period getOccurrencePeriod();
 
-   public boolean hasScheduledPeriod();
+   public boolean hasOccurrencePeriod();
 
    public boolean hasId();
 
@@ -293,13 +293,13 @@ public interface Iqicorecommunicationrequest
 
    public Iqicorecommunicationrequest setId(String param);
 
-   public List<CodeableConcept> getReason();
+   public List<CodeableConcept> getReasonCode();
 
-   public Iqicorecommunicationrequest setReason(List<CodeableConcept> param);
+   public Iqicorecommunicationrequest setReasonCode(List<CodeableConcept> param);
 
-   public boolean hasReason();
+   public boolean hasReasonCode();
 
-   public Iqicorecommunicationrequest addReason(CodeableConcept param);
+   public Iqicorecommunicationrequest addReasonCode(CodeableConcept param);
 
    public CodeableConcept addReason();
 }

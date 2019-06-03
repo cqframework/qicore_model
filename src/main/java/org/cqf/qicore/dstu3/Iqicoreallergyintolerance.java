@@ -129,11 +129,7 @@ public interface Iqicoreallergyintolerance
 
    public boolean hasCategory();
 
-//   public boolean hasCategoryElement();
-
    public List<Enumeration<AllergyIntoleranceCategory>> getCategory();
-
-//   public Enumeration<AllergyIntolerance.AllergyIntoleranceCategory> getCategoryElement();
 
    public Iqicoreallergyintolerance setCategory(
 		   List<Enumeration<AllergyIntoleranceCategory>> param);
