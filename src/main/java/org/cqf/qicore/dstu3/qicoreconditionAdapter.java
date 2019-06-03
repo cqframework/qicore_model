@@ -22,7 +22,7 @@ import org.hl7.fhir.dstu3.model.Identifier;
 import org.hl7.fhir.dstu3.model.Enumeration;
 import org.hl7.fhir.dstu3.model.Annotation;
 import org.hl7.fhir.dstu3.model.IdType;
-import org.hl7.fhir.dstu3.model.DateType;
+
 import java.util.Date;
 
 public class qicoreconditionAdapter implements Iqicorecondition
@@ -897,7 +897,7 @@ public class qicoreconditionAdapter implements Iqicorecondition
       return adaptedClass.hasAssertedDateElement();
    }
 
-   public DateType getAssertedDateElement()
+   public DateTimeType getAssertedDateElement()
    {
       try
       {
@@ -921,7 +921,7 @@ public class qicoreconditionAdapter implements Iqicorecondition
       }
    }
 
-   public Iqicorecondition setAssertedDateElement(DateType param)
+   public Iqicorecondition setAssertedDateElement(DateTimeType param)
    {
       adaptedClass.setAssertedDateElement(param);
       return this;
