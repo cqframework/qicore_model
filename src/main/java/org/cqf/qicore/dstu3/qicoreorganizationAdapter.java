@@ -344,7 +344,7 @@ public class qicoreorganizationAdapter implements Iqicoreorganization
       return this;
    }
 
-   public CodeableConcept getType()
+   public List<CodeableConcept> getType()
    {
       try
       {
@@ -356,7 +356,7 @@ public class qicoreorganizationAdapter implements Iqicoreorganization
       }
    }
 
-   public Iqicoreorganization setType(CodeableConcept param)
+   public Iqicoreorganization setType(List<CodeableConcept> param)
    {
       adaptedClass.setType(param);
       return this;

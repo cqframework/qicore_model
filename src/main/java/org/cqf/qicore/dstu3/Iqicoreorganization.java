@@ -116,9 +116,9 @@ public interface Iqicoreorganization
 
    public Iqicoreorganization setAlias(List<StringType> param);
 
-   public CodeableConcept getType();
+   public List<CodeableConcept> getType();
 
-   public Iqicoreorganization setType(CodeableConcept param);
+   public Iqicoreorganization setType(List<CodeableConcept> param);
 
    public boolean hasType();
 
