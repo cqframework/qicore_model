@@ -14,25 +14,25 @@ import org.hl7.fhir.dstu3.model.Ratio;
 public class qicoremedicationIngredientAdapter
 {
 
-   private Medication.MedicationProductIngredientComponent adaptedClass;
+   private Medication.MedicationIngredientComponent adaptedClass;
 
    public qicoremedicationIngredientAdapter()
    {
-      this.adaptedClass = new org.hl7.fhir.dstu3.model.Medication.MedicationProductIngredientComponent();
+      this.adaptedClass = new org.hl7.fhir.dstu3.model.Medication.MedicationIngredientComponent();
    }
 
    public qicoremedicationIngredientAdapter(
-         Medication.MedicationProductIngredientComponent adaptee)
+         Medication.MedicationIngredientComponent adaptee)
    {
       this.adaptedClass = adaptee;
    }
 
-   public Medication.MedicationProductIngredientComponent getAdaptee()
+   public Medication.MedicationIngredientComponent getAdaptee()
    {
       return adaptedClass;
    }
 
-   public void setAdaptee(Medication.MedicationProductIngredientComponent param)
+   public void setAdaptee(Medication.MedicationIngredientComponent param)
    {
       this.adaptedClass = param;
    }
